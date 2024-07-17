@@ -17,7 +17,7 @@ Platformer/Puzzle
 
 ## Gameplay
 Players control a young alchemist apprentice who must navigate through levels filled with obstacles and enemies using both light and shadows. By creating potions that alter the properties of light, players can cast shadows to create platforms, hide from enemies, and solve intricate puzzles. The game features hand-drawn art and a whimsical storybook style.
-# Luminous shadows
+# Alchemy Arena
 ## Genre
 Multiplayer Battle Arena
 
