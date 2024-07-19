@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuqpjlp4i7pkb"]
+
+[ext_resource type="Script" path="res://utils/camera.gd" id="1_dcs5i"]
+
+[node name="CameraRoot" type="Node3D"]
+script = ExtResource("1_dcs5i")
+distance = 8.0
+
+[node name="TwistPivot" type="Node3D" parent="."]
+
+[node name="PitchPivot" type="Node3D" parent="TwistPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 7.45058e-08, 0, -5.96046e-08, 1, 0, 0, 5)

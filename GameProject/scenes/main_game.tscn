@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc20yrpx00mn1"]
+
+[ext_resource type="Script" path="res://utils/game_manager.gd" id="1_tdjfd"]
+[ext_resource type="PackedScene" uid="uid://c57b16nj7p50k" path="res://scenes/game.tscn" id="2_lipx0"]
+
+[node name="SubViewportContainer" type="SubViewportContainer"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 4
+
+[node name="SubViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+size = Vector2i(288, 162)
+render_target_update_mode = 4
+script = ExtResource("1_tdjfd")
+
+[node name="Node3D" parent="SubViewport" instance=ExtResource("2_lipx0")]

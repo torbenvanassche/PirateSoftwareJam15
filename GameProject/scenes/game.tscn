@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://c57b16nj7p50k"]
+
+[ext_resource type="PackedScene" uid="uid://cwycwp30gjjet" path="res://scenes/character.tscn" id="1_yoqlc"]
+[ext_resource type="PackedScene" uid="uid://cuqpjlp4i7pkb" path="res://scenes/camera.tscn" id="3_o5mjl"]
+[ext_resource type="Shader" path="res://shaders/outline.gdshader" id="4_r3k4d"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xurpc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_limok"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_shc8u"]
+render_priority = 0
+shader = ExtResource("4_r3k4d")
+shader_parameter/depth_threshold = 0.05
+shader_parameter/reverse_depth_threshold = 0.25
+shader_parameter/normal_threshold = 0.6
+shader_parameter/darken_amount = 0.3
+shader_parameter/lighten_amount = 1.5
+shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
+shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ye7d4"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ga03j"]
+material = SubResource("ShaderMaterial_ye7d4")
+flip_faces = true
+size = Vector2(2, 2)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_xurpc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_limok")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_yoqlc")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0.469377, 6.52125, 0.0470721)
+
+[node name="CameraRoot" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_o5mjl")]
+target = NodePath("../CharacterBody3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CameraRoot"]
+material_override = SubResource("ShaderMaterial_shc8u")
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_ga03j")
+skeleton = NodePath("../../..")

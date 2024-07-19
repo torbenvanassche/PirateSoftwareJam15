@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwycwp30gjjet"]
+
+[ext_resource type="Script" path="res://player/character_controller.gd" id="1_70u55"]
+[ext_resource type="Script" path="res://inventory/scripts/inventory.gd" id="2_pnb6b"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_63u1p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7egxx"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.686275, 1, 1, 1)
+roughness = 0.1
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_42esf"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("inventory")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11559, 0)
+script = ExtResource("1_70u55")
+inventory = NodePath("inventory")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_63u1p")
+surface_material_override/0 = SubResource("StandardMaterial3D_7egxx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_42esf")
+
+[node name="inventory" type="Node" parent="."]
+script = ExtResource("2_pnb6b")
+unlocked_slots = 5
+max_slots = 5
