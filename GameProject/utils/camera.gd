@@ -4,18 +4,23 @@ extends Node3D
 @export var target: Node3D
 
 @export var distance: float = 7
-@export var distance_interval: Vector2i = Vector2i(5, 10);
+@export var distance_interval: Vector2i = Vector2i(5, 20);
 @export var follow_speed = 1;
+
+@export var can_rotate: bool = true;
+@export var can_zoom: bool = true;
+
+@onready var camera: Camera3D = %Camera3D;
 
 var pitch_input: float = 0
 var twist_input: float = 0
 var mouse_position:Vector2;
 
 func _init():
-	Manager.instance.camera = self;
+	Manager.instance.camera_controller = self;
 
 func _ready():
-	%Camera3D.position.z = distance;
+	camera.position.z = distance;
 	
 func _process(delta):
 	$TwistPivot.rotate_y(twist_input)
@@ -28,7 +33,7 @@ func _process(delta):
 	pitch_input = 0.0
 	
 func _unhandled_input(event):
-	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED && can_rotate:
 		twist_input = - event.relative.x * Settings.camera_rotation_sensitivity;
 		pitch_input = - event.relative.y * Settings.camera_rotation_sensitivity;
 	
@@ -39,13 +44,13 @@ func _unhandled_input(event):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			get_viewport().warp_mouse(mouse_position)
-		
-	var dist = %Camera3D.position.distance_to(Manager.instance.player.position)
-	if Input.is_action_just_pressed("zoom_out") and dist < distance_interval.y:
-		%Camera3D.position -= transform.basis.z * Settings.camera_zoom_sensitivity;
-
-	elif Input.is_action_just_pressed("zoom_in") and dist > distance_interval.x:
-		%Camera3D.position += transform.basis.z * Settings.camera_zoom_sensitivity;
+	
+	if can_zoom && target:
+		var dist = camera.global_position.distance_to(target.global_position)
+		if Input.is_action_just_pressed("zoom_in") and dist < distance_interval.y:
+			camera.position += transform.basis.z * Settings.camera_zoom_sensitivity;
+		if Input.is_action_just_pressed("zoom_out") and dist > distance_interval.x:
+			camera.position -= transform.basis.z * Settings.camera_zoom_sensitivity;
 	
 	if Input.is_action_just_pressed("cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
