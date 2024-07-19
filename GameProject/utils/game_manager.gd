@@ -1,9 +1,9 @@
-extends Node3D
+extends Node
 class_name Manager
 
 @export var scenes: Array[Node]
-@export var player: CharacterController;
-@export var camera: CameraController;
+var player: CharacterController;
+var camera_controller: CameraController;
 
 static var instance: Manager;
 
