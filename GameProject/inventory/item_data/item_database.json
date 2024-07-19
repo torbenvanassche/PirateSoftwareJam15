@@ -1,0 +1,10 @@
+{
+	"wheat": {
+		"name": "Wheat",
+		"description": "Raw wheat farmed in a field.",
+		"stack_size": 5,
+		"random_weight": 5,
+		"grow_time": 5,
+		"yield": 1
+	}
+}
