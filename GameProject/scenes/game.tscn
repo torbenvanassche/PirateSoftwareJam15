@@ -47,6 +47,25 @@ surface_material_override/0 = ExtResource("1_8p8rk")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_limok")
 
+[node name="CottageBlockout" parent="MeshInstance3D" instance=ExtResource("8_rdlc8")]
+transform = Transform3D(0.0174763, 0, 0, 0, 7.56661, 0, 0, 0, 0.0186879, -0.0690604, 0.414833, 0.0749895)
+skeleton = NodePath("")
+
+[node name="Field" parent="MeshInstance3D" instance=ExtResource("6_7gvnk")]
+transform = Transform3D(0.0174763, 0, 0, 0, 7.56661, 0, 0, 0, 0.0186879, 0.15314, 0.513056, 0.149313)
+
+[node name="Field2" parent="MeshInstance3D" instance=ExtResource("6_7gvnk")]
+transform = Transform3D(0.0174763, 0, 0, 0, 7.56661, 0, 0, 0, 0.0186879, 0.233022, 0.513056, 0.149313)
+
+[node name="Field3" parent="MeshInstance3D" instance=ExtResource("6_7gvnk")]
+transform = Transform3D(0.0174763, 0, 0, 0, 7.56661, 0, 0, 0, 0.0186879, 0.15314, 0.513056, 0.0817665)
+
+[node name="Field4" parent="MeshInstance3D" instance=ExtResource("6_7gvnk")]
+transform = Transform3D(0.0174763, 0, 0, 0, 7.56661, 0, 0, 0, 0.0186879, 0.233022, 0.513056, 0.0817665)
+
+[node name="CanyonPieces" parent="MeshInstance3D" instance=ExtResource("7_tp6ph")]
+transform = Transform3D(0.0174763, 0, 0, 0, 7.56661, 0, 0, 0, 0.0186879, -0.00769923, -9.66914, 0.107949)
+
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_yoqlc")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -65,22 +84,3 @@ skeleton = NodePath("../../..")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hc04y")
-
-[node name="CottageBlockout" parent="." instance=ExtResource("8_rdlc8")]
-transform = Transform3D(1.58534, 0, 0, 0, 1.58534, 0, 0, 0, 1.58534, -7.20646, 0.0887145, 3.27576)
-skeleton = NodePath("")
-
-[node name="Field" parent="." instance=ExtResource("6_7gvnk")]
-transform = Transform3D(1.58534, 0, 0, 0, 1.58534, 0, 0, 0, 1.58534, 12.9502, 0.109294, 9.58084)
-
-[node name="Field2" parent="." instance=ExtResource("6_7gvnk")]
-transform = Transform3D(1.58534, 0, 0, 0, 1.58534, 0, 0, 0, 1.58534, 20.1966, 0.109294, 9.58084)
-
-[node name="Field3" parent="." instance=ExtResource("6_7gvnk")]
-transform = Transform3D(1.58534, 0, 0, 0, 1.58534, 0, 0, 0, 1.58534, 12.9502, 0.109294, 3.85067)
-
-[node name="Field4" parent="." instance=ExtResource("6_7gvnk")]
-transform = Transform3D(1.58534, 0, 0, 0, 1.58534, 0, 0, 0, 1.58534, 20.1966, 0.109294, 3.85067)
-
-[node name="CanyonPieces" parent="." instance=ExtResource("7_tp6ph")]
-transform = Transform3D(1.58534, 0, 0, 0, 1.58534, 0, 0, 0, 1.58534, -1.64016, -2.02406, 6.07177)
