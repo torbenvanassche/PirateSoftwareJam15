@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://caro4sqg4bxqb"
-path="res://.godot/imported/CottageBlockout.fbx-080577329dc9e91deeb2885188eb9657.scn"
+uid="uid://c8wfajmm63ptd"
+path="res://.godot/imported/Field.glb-41fe19f78d6da994edad4670671e1ac0.scn"
 
 [deps]
 
-source_file="res://models/CottageBlockout.fbx"
-dest_files=["res://.godot/imported/CottageBlockout.fbx-080577329dc9e91deeb2885188eb9657.scn"]
+source_file="res://models/Field.glb"
+dest_files=["res://.godot/imported/Field.glb-41fe19f78d6da994edad4670671e1ac0.scn"]
 
 [params]
 
@@ -29,6 +29,12 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:field": {
+"generate/physics": true
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

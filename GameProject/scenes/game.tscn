@@ -1,15 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://c57b16nj7p50k"]
+[gd_scene load_steps=14 format=3 uid="uid://c57b16nj7p50k"]
 
 [ext_resource type="Material" uid="uid://cvpuwyeb06dcg" path="res://materials/mat_ground.tres" id="1_8p8rk"]
 [ext_resource type="PackedScene" uid="uid://cwycwp30gjjet" path="res://scenes/character.tscn" id="1_yoqlc"]
 [ext_resource type="PackedScene" uid="uid://cuqpjlp4i7pkb" path="res://scenes/camera.tscn" id="3_o5mjl"]
 [ext_resource type="Shader" path="res://shaders/outline.gdshader" id="4_r3k4d"]
-[ext_resource type="PackedScene" uid="uid://caro4sqg4bxqb" path="res://models/CottageBlockout.fbx" id="5_1bc0j"]
-[ext_resource type="PackedScene" uid="uid://c4ef5bk5wpnt0" path="res://models/Field.fbx" id="6_pydp3"]
+[ext_resource type="PackedScene" uid="uid://c8wfajmm63ptd" path="res://models/Field.glb" id="6_7gvnk"]
+[ext_resource type="PackedScene" uid="uid://cyo64je0nkbjc" path="res://models/CanyonPieces.glb" id="7_tp6ph"]
+[ext_resource type="PackedScene" uid="uid://c3of2gdyvnmj3" path="res://models/CottageBlockout.glb" id="8_rdlc8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xurpc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_limok"]
+size = Vector3(5.43903, 1, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_shc8u"]
 render_priority = 0
@@ -36,7 +38,7 @@ tonemap_mode = 1
 [node name="Node3D" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, 0)
+transform = Transform3D(90.7137, 0, 0, 0, 0.209518, 0, 0, 0, 84.8325, -0.941734, 0.00179958, -3.08579)
 mesh = SubResource("BoxMesh_xurpc")
 surface_material_override/0 = ExtResource("1_8p8rk")
 
@@ -48,7 +50,7 @@ shape = SubResource("BoxShape3D_limok")
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_yoqlc")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0.469377, 6.52125, 0.0470721)
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0.471864, 6.52125, 0.0470721)
 shadow_enabled = true
 shadow_bias = 0.05
 
@@ -64,8 +66,21 @@ skeleton = NodePath("../../..")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hc04y")
 
-[node name="cottage" parent="." instance=ExtResource("5_1bc0j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.72608, 0, 4.91602)
+[node name="CottageBlockout" parent="." instance=ExtResource("8_rdlc8")]
+transform = Transform3D(1.58534, 0, 0, 0, 1.58534, 0, 0, 0, 1.58534, -7.20646, 0.0887145, 3.27576)
+skeleton = NodePath("")
 
-[node name="field1" parent="." instance=ExtResource("6_pydp3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75476, 0.0158606, 4.398)
+[node name="Field" parent="." instance=ExtResource("6_7gvnk")]
+transform = Transform3D(1.58534, 0, 0, 0, 1.58534, 0, 0, 0, 1.58534, 12.9502, 0.109294, 9.58084)
+
+[node name="Field2" parent="." instance=ExtResource("6_7gvnk")]
+transform = Transform3D(1.58534, 0, 0, 0, 1.58534, 0, 0, 0, 1.58534, 20.1966, 0.109294, 9.58084)
+
+[node name="Field3" parent="." instance=ExtResource("6_7gvnk")]
+transform = Transform3D(1.58534, 0, 0, 0, 1.58534, 0, 0, 0, 1.58534, 12.9502, 0.109294, 3.85067)
+
+[node name="Field4" parent="." instance=ExtResource("6_7gvnk")]
+transform = Transform3D(1.58534, 0, 0, 0, 1.58534, 0, 0, 0, 1.58534, 20.1966, 0.109294, 3.85067)
+
+[node name="CanyonPieces" parent="." instance=ExtResource("7_tp6ph")]
+transform = Transform3D(1.58534, 0, 0, 0, 1.58534, 0, 0, 0, 1.58534, -1.64016, -2.02406, 6.07177)

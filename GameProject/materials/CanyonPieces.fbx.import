@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c4ef5bk5wpnt0"
-path="res://.godot/imported/Field.fbx-a24d72761d032ceb0279e47e86ac7482.scn"
+uid="uid://cpsubwylcttkg"
+path="res://.godot/imported/CanyonPieces.fbx-ffc132ee791324a3d1727ced8c56fe15.scn"
 
 [deps]
 
-source_file="res://models/Field.fbx"
-dest_files=["res://.godot/imported/Field.fbx-a24d72761d032ceb0279e47e86ac7482.scn"]
+source_file="res://materials/CanyonPieces.fbx"
+dest_files=["res://.godot/imported/CanyonPieces.fbx-ffc132ee791324a3d1727ced8c56fe15.scn"]
 
 [params]
 
