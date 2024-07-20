@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://c57b16nj7p50k"]
+[gd_scene load_steps=13 format=3 uid="uid://c57b16nj7p50k"]
 
 [ext_resource type="Material" uid="uid://cvpuwyeb06dcg" path="res://materials/mat_ground.tres" id="1_8p8rk"]
 [ext_resource type="PackedScene" uid="uid://cwycwp30gjjet" path="res://scenes/character.tscn" id="1_yoqlc"]
 [ext_resource type="PackedScene" uid="uid://cuqpjlp4i7pkb" path="res://scenes/camera.tscn" id="3_o5mjl"]
 [ext_resource type="Shader" path="res://shaders/outline.gdshader" id="4_r3k4d"]
+[ext_resource type="PackedScene" uid="uid://caro4sqg4bxqb" path="res://models/CottageBlockout.fbx" id="5_1bc0j"]
+[ext_resource type="PackedScene" uid="uid://c4ef5bk5wpnt0" path="res://models/Field.fbx" id="6_pydp3"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xurpc"]
 
@@ -61,3 +63,9 @@ skeleton = NodePath("../../..")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hc04y")
+
+[node name="cottage" parent="." instance=ExtResource("5_1bc0j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.72608, 0, 4.91602)
+
+[node name="field1" parent="." instance=ExtResource("6_pydp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75476, 0.0158606, 4.398)
