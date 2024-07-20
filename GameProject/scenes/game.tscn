@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://c57b16nj7p50k"]
+[gd_scene load_steps=11 format=3 uid="uid://c57b16nj7p50k"]
 
+[ext_resource type="Material" uid="uid://cvpuwyeb06dcg" path="res://materials/mat_ground.tres" id="1_8p8rk"]
 [ext_resource type="PackedScene" uid="uid://cwycwp30gjjet" path="res://scenes/character.tscn" id="1_yoqlc"]
 [ext_resource type="PackedScene" uid="uid://cuqpjlp4i7pkb" path="res://scenes/camera.tscn" id="3_o5mjl"]
 [ext_resource type="Shader" path="res://shaders/outline.gdshader" id="4_r3k4d"]
@@ -26,11 +27,16 @@ material = SubResource("ShaderMaterial_ye7d4")
 flip_faces = true
 size = Vector2(2, 2)
 
+[sub_resource type="Environment" id="Environment_hc04y"]
+ambient_light_color = Color(1, 1, 1, 1)
+tonemap_mode = 1
+
 [node name="Node3D" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, 0, 0)
 mesh = SubResource("BoxMesh_xurpc")
+surface_material_override/0 = ExtResource("1_8p8rk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
 
@@ -41,6 +47,8 @@ shape = SubResource("BoxShape3D_limok")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0.469377, 6.52125, 0.0470721)
+shadow_enabled = true
+shadow_bias = 0.05
 
 [node name="CameraRoot" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_o5mjl")]
 target = NodePath("../CharacterBody3D")
@@ -50,3 +58,6 @@ material_override = SubResource("ShaderMaterial_shc8u")
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_ga03j")
 skeleton = NodePath("../../..")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hc04y")
