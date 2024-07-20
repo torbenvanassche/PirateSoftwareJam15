@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1ouaj32dec6i"]
+[gd_scene load_steps=4 format=3 uid="uid://c1ouaj32dec6i"]
 
-[ext_resource type="PackedScene" uid="uid://cc20yrpx00mn1" path="res://scenes/main_game.tscn" id="1_53fop"]
+[ext_resource type="Script" path="res://utils/scene_management/scene_manager.gd" id="2_puta8"]
 [ext_resource type="Script" path="res://inventory/scripts/inventory_ui.gd" id="2_wloh2"]
+[ext_resource type="Resource" uid="uid://caedrsqk0vks7" path="res://scene_infos/game_scene_info.tres" id="3_codhc"]
 
 [node name="main" type="Node"]
 
@@ -13,4 +14,7 @@ offset_bottom = 40.0
 columns = 5
 script = ExtResource("2_wloh2")
 
-[node name="SubViewportContainer" parent="." instance=ExtResource("1_53fop")]
+[node name="scene_manager" type="Node" parent="."]
+script = ExtResource("2_puta8")
+scenes = Array[Resource("res://utils/scene_management/scene_info.gd")]([ExtResource("3_codhc")])
+initial_scene = ExtResource("3_codhc")

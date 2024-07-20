@@ -1,7 +1,6 @@
 extends Node
 class_name Manager
 
-@export var scenes: Array[Node]
 var player: CharacterController;
 var camera_controller: CameraController;
 
