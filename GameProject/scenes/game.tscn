@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c57b16nj7p50k"]
+[gd_scene load_steps=15 format=3 uid="uid://c57b16nj7p50k"]
 
 [ext_resource type="Material" uid="uid://cvpuwyeb06dcg" path="res://materials/mat_ground.tres" id="1_8p8rk"]
 [ext_resource type="PackedScene" uid="uid://cwycwp30gjjet" path="res://scenes/character.tscn" id="1_yoqlc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Shader" path="res://shaders/outline.gdshader" id="4_r3k4d"]
 [ext_resource type="PackedScene" uid="uid://c8wfajmm63ptd" path="res://models/Field.glb" id="6_7gvnk"]
 [ext_resource type="PackedScene" uid="uid://cyo64je0nkbjc" path="res://models/CanyonPieces.glb" id="7_tp6ph"]
+[ext_resource type="PackedScene" uid="uid://c7mckeqrkh8i5" path="res://models/Character.glb" id="8_eyvro"]
 [ext_resource type="PackedScene" uid="uid://c3of2gdyvnmj3" path="res://models/CottageBlockout.glb" id="8_rdlc8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xurpc"]
@@ -38,7 +39,7 @@ tonemap_mode = 1
 [node name="Node3D" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(90.7137, 0, 0, 0, 0.209518, 0, 0, 0, 84.8325, -0.941734, 0.00179958, -3.08579)
+transform = Transform3D(90.7137, 0, 0, 0, 0.209518, 0, 0, 0, 84.8325, -1.02947, 0.0160441, -2.98874)
 mesh = SubResource("BoxMesh_xurpc")
 surface_material_override/0 = ExtResource("1_8p8rk")
 
@@ -84,3 +85,6 @@ skeleton = NodePath("../../..")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hc04y")
+
+[node name="Character" parent="." instance=ExtResource("8_eyvro")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.09062, 0.120803, -0.191341)
