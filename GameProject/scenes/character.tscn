@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://player/character_controller.gd" id="1_70u55"]
 [ext_resource type="Script" path="res://inventory/scripts/inventory.gd" id="2_pnb6b"]
-[ext_resource type="PackedScene" uid="uid://c7mckeqrkh8i5" path="res://models/Character.glb" id="3_q4ok2"]
+[ext_resource type="PackedScene" uid="uid://c7mckeqrkh8i5" path="res://player/Character.glb" id="3_q4ok2"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_63u1p"]
 
