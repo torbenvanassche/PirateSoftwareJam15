@@ -64,6 +64,7 @@ func set_scene_reference(id: String, target: Node):
 	get_scene_info(id).node = target;
 		
 func set_active_scene(scene_name: String, config: SceneConfig) -> Node:
+	print(scene_name)
 	var previous_scene_info: SceneInfo = null;
 	if active_scene:
 		previous_scene_info = node_to_info(active_scene);

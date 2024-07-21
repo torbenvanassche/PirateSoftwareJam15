@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://db81p7xt2bkuk" path="res://themes/main_theme.tres" id="2_73npf"]
 
 [node name="main_menu" type="CanvasLayer"]
+layer = 0
 script = ExtResource("1_6cspd")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 color = Color(1, 1, 1, 0.12549)
 
 [node name="Buttons" type="MarginContainer" parent="."]
@@ -30,6 +32,8 @@ theme_override_constants/separation = 50
 
 [node name="new_game" type="Button" parent="Buttons/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../quit")
+focus_neighbor_bottom = NodePath("../settings")
 theme = ExtResource("2_73npf")
 text = "Play"
 
@@ -41,16 +45,22 @@ text = "Load Game	"
 
 [node name="settings" type="Button" parent="Buttons/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../new_game")
+focus_neighbor_bottom = NodePath("../credits")
 theme = ExtResource("2_73npf")
 text = "Settings"
 
 [node name="credits" type="Button" parent="Buttons/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../settings")
+focus_neighbor_bottom = NodePath("../quit")
 theme = ExtResource("2_73npf")
 text = "Credits"
 
 [node name="quit" type="Button" parent="Buttons/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../credits")
+focus_neighbor_bottom = NodePath("../new_game")
 theme = ExtResource("2_73npf")
 text = "Quit"
 

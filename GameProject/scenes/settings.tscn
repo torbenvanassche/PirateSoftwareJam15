@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://byi41etxy35r2"]
+
+[ext_resource type="PackedScene" uid="uid://dny1dqcanlco0" path="res://scenes/base_window.tscn" id="1_bsqw3"]
+
+[node name="Window" instance=ExtResource("1_bsqw3")]
+size_preset = "full_size"

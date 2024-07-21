@@ -41,15 +41,21 @@ script = ExtResource("2_jqdt8")
 
 [node name="resume" type="Button" parent="VBoxContainer/content/VBoxContainer" index="0"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../quit")
+focus_neighbor_bottom = NodePath("../settings")
 theme = ExtResource("3_ctil3")
 text = "RESUME"
 
 [node name="settings" type="Button" parent="VBoxContainer/content/VBoxContainer" index="1"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../resume")
+focus_neighbor_bottom = NodePath("../quit")
 theme = ExtResource("3_ctil3")
 text = "SETTINGS"
 
 [node name="quit" type="Button" parent="VBoxContainer/content/VBoxContainer" index="2"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../settings")
+focus_neighbor_bottom = NodePath("../resume")
 theme = ExtResource("3_ctil3")
 text = "QUIT TO MENU"

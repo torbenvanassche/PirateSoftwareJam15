@@ -11,12 +11,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch = true
-stretch_shrink = 4
+stretch_shrink = 3
 script = ExtResource("1_t3qmm")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 handle_input_locally = false
-size = Vector2i(288, 162)
+size = Vector2i(384, 216)
 render_target_update_mode = 4
 
 [node name="Node3D" parent="SubViewport" instance=ExtResource("2_lipx0")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

@@ -1,9 +1,21 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://db81p7xt2bkuk"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://db81p7xt2bkuk"]
 
 [ext_resource type="FontFile" uid="uid://wwdgbviudmnu" path="res://fonts/pixelart.ttf" id="1_6twr5"]
+[ext_resource type="Texture2D" uid="uid://nvg3adru56le" path="res://inventory/sprites/slot_background.png" id="2_li6qk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5ydh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8r5s"]
+bg_color = Color(0, 0, 0, 1)
+expand_margin_top = 6.0
+expand_margin_bottom = 6.0
 
 [resource]
 default_font_size = 16
 Button/fonts/font = ExtResource("1_6twr5")
+HSlider/icons/grabber = ExtResource("2_li6qk")
+HSlider/icons/grabber_highlight = ExtResource("2_li6qk")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_v5ydh")
+HSlider/styles/slider = SubResource("StyleBoxFlat_p8r5s")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/fonts/font = ExtResource("1_6twr5")

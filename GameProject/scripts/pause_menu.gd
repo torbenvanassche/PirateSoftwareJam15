@@ -17,6 +17,9 @@ func _ready():
 func on_disable():
 	Manager.instance.pause(false)
 	
+func on_enable():
+	resume_button.grab_focus();
+	
 func resume():
 	print("resuming")
 	window_controller.close_requested.emit()
