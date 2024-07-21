@@ -8,8 +8,7 @@ var window_controller: DraggableControl;
 
 func _ready():	
 	resume_button.pressed.connect(resume)
-	print("ready!")
-	settings_button.pressed.connect(func(): print("Not implemented yet."))
+	settings_button.pressed.connect(func(): SceneManager.instance.set_active_scene("settings", SceneConfig.new()))
 	
 	quit_button.pressed.connect(func(): window_controller.close_requested.emit())
 	quit_button.pressed.connect(SceneManager.instance.reset_to_scene.bind("main_menu"))
@@ -21,5 +20,4 @@ func on_enable():
 	resume_button.grab_focus();
 	
 func resume():
-	print("resuming")
 	window_controller.close_requested.emit()

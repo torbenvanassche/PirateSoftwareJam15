@@ -1,13 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://byi41etxy35r2"]
+[gd_scene load_steps=4 format=3 uid="uid://byi41etxy35r2"]
 
 [ext_resource type="PackedScene" uid="uid://dny1dqcanlco0" path="res://scenes/base_window.tscn" id="1_bsqw3"]
 [ext_resource type="Theme" uid="uid://db81p7xt2bkuk" path="res://themes/main_theme.tres" id="2_ng10n"]
+[ext_resource type="Script" path="res://scripts/settings_menu.gd" id="2_t53yf"]
 
-[node name="Window" instance=ExtResource("1_bsqw3")]
+[node name="Window" node_paths=PackedStringArray("sub_elements") instance=ExtResource("1_bsqw3")]
 size_preset = "full_size"
+sub_elements = [NodePath("VBoxContainer/content")]
 
 [node name="Title" parent="VBoxContainer/topbar/HBoxContainer/MarginContainer" index="0"]
 text = "Settings"
+
+[node name="content" parent="VBoxContainer" index="1"]
+script = ExtResource("2_t53yf")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/content" index="0"]
 layout_mode = 1
@@ -49,5 +54,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme = ExtResource("2_ng10n")
+min_value = 1.0
 max_value = 5.0
 value = 2.0
+tick_count = 4
