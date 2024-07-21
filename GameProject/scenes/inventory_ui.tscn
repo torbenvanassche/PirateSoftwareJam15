@@ -8,10 +8,6 @@ offset_right = -888.0
 offset_bottom = -367.0
 size_preset = "custom"
 
-[node name="Button" parent="VBoxContainer/topbar/HBoxContainer" index="1"]
-focus_mode = 0
-mouse_default_cursor_shape = 2
-
 [node name="InventoryUI" type="GridContainer" parent="VBoxContainer/content" index="0"]
 layout_mode = 1
 anchors_preset = 8

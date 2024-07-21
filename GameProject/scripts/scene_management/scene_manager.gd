@@ -98,7 +98,3 @@ func to_previous_scene(hide_current: bool = false, stop_processing_current: bool
 		
 func ui_is_open(exceptions: Array[String] = ["pause"]) -> bool:
 	return get_children().all(func(x: Node): return node_to_info(x).is_ui && x.visible && !exceptions.has(node_to_info(x).id));
-
-func _unhandled_input(event):
-	if event.is_action_pressed("cancel") && !ui_is_open():
-		Manager.instance.pause();

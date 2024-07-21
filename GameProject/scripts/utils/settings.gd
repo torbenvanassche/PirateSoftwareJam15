@@ -4,8 +4,13 @@ extends Node
 var camera_rotation_sensitivity = 0.01;
 var camera_zoom_sensitivity = 0.5;
 
+#general settings
+var camera_pixelation_ratio: int = 3;
+
 #menu options
 var close_context_on_mouse_exit: bool = true;
+
+signal settings_changed();
 
 #volume
 var master_volume: float = 1;

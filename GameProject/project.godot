@@ -17,9 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Settings="*res://utils/settings.gd"
+Settings="*res://scripts/utils/settings.gd"
 ItemManager="*res://inventory/scripts/item_manager.gd"
-Debug="*res://utils/debug.gd"
+Debug="*res://scripts/utils/debug.gd"
 
 [filesystem]
 

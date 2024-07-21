@@ -54,7 +54,6 @@ func on_enable(_options: Dictionary = {}):
 			pass
 		"none":
 			top_bar.visible = false;
-			content_panel.color = Color.TRANSPARENT;
 			pass
 
 	match size_preset:
