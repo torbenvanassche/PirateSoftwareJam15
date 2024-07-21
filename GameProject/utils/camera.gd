@@ -16,27 +16,38 @@ var pitch_input: float = 0
 var twist_input: float = 0
 var mouse_position:Vector2;
 
+const DEADZONE_THRESHOLD = 0.1;
+
 func _init():
 	Manager.instance.camera_controller = self;
 
 func _ready():
-	camera.position.z = distance;
-	
+	camera.position.z = distance
+
 func _process(delta):
-	$TwistPivot.rotate_y(twist_input)
-	$TwistPivot/PitchPivot.rotate_x((pitch_input))
-	$TwistPivot/PitchPivot.rotation.x = clamp($TwistPivot/PitchPivot.rotation.x, -0.7, -0.15)
+	var joy_twist_input = Input.get_joy_axis(0, JOY_AXIS_RIGHT_X)  # 0 is the device index, change if necessary
+	var joy_pitch_input = Input.get_joy_axis(0, JOY_AXIS_RIGHT_Y)
+
+	if abs(joy_twist_input) > DEADZONE_THRESHOLD:
+		twist_input = -joy_twist_input
+
+	if abs(joy_pitch_input) > DEADZONE_THRESHOLD:
+		pitch_input = -joy_pitch_input
 	
-	position = position.lerp(target.position, delta * follow_speed);
+	$TwistPivot.rotate_y(twist_input * Settings.camera_rotation_sensitivity)
+	$TwistPivot/PitchPivot.rotate_x(pitch_input * Settings.camera_rotation_sensitivity)
+	$TwistPivot/PitchPivot.rotation.x = clamp($TwistPivot/PitchPivot.rotation.x, -0.7, -0.15)
+
+	position = position.lerp(target.position, delta * follow_speed)
 	
 	twist_input = 0.0
 	pitch_input = 0.0
-	
+
 func _unhandled_input(event):
-	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED && can_rotate:
-		twist_input = - event.relative.x * Settings.camera_rotation_sensitivity;
-		pitch_input = - event.relative.y * Settings.camera_rotation_sensitivity;
-	
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and can_rotate:
+		twist_input = -event.relative.x
+		pitch_input = -event.relative.y
+
 	if Input.is_action_just_pressed("enable_camera_rotate"):
 		mouse_position = get_viewport().get_mouse_position()
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -44,14 +55,14 @@ func _unhandled_input(event):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			get_viewport().warp_mouse(mouse_position)
-	
-	if can_zoom && target:
+
+	if can_zoom and target:
 		var dist = camera.global_position.distance_to(target.global_position)
 		if Input.is_action_just_pressed("zoom_in") and dist < distance_interval.y:
-			camera.position += transform.basis.z * Settings.camera_zoom_sensitivity;
+			camera.position += transform.basis.z * Settings.camera_zoom_sensitivity
 		if Input.is_action_just_pressed("zoom_out") and dist > distance_interval.x:
-			camera.position -= transform.basis.z * Settings.camera_zoom_sensitivity;
-	
+			camera.position -= transform.basis.z * Settings.camera_zoom_sensitivity
+
 	if Input.is_action_just_pressed("cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_viewport().warp_mouse(mouse_position)
