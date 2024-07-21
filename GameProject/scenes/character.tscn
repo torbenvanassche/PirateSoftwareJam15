@@ -20,5 +20,5 @@ shape = SubResource("CapsuleShape3D_42esf")
 
 [node name="inventory" type="Node" parent="."]
 script = ExtResource("2_pnb6b")
-unlocked_slots = 5
-max_slots = 5
+unlocked_slots = 4
+max_slots = 16

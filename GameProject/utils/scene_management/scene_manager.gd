@@ -3,6 +3,7 @@ extends Node
 
 @export var scenes: Array[SceneInfo];
 @export var initial_scene: SceneInfo;
+@export var ui_root: CanvasLayer;
 static var instance: SceneManager;
 var game_loaded_timestamp: Dictionary;
 
@@ -36,7 +37,10 @@ func get_or_create_scene(scene_name: String):
 			return scene_info.node;
 		else:
 			var node = scene_info.packed_scene.instantiate();
-			add_child(node)
+			if scene_info.is_ui:
+				ui_root.add_child(node)
+			else:
+				add_child(node)
 			scene_info.node = node
 			return node;
 	else:
