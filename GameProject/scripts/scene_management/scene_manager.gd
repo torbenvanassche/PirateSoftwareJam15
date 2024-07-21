@@ -28,7 +28,7 @@ var active_scene: Node:
 		scene_entered.emit(active_scene);
 			
 func get_or_create_scene(scene_name: String):	
-	var filtered: Array = scenes.filter(func(scene: SceneInfo): return scene.id == scene_name);
+	var filtered: Array = scenes.filter(func(scene: SceneInfo): return scene != null && scene.id == scene_name);
 	if filtered.size() == 0:
 		Debug.err(scene_name + " was not found, unable to instantiate!")	
 	elif filtered.size() == 1:

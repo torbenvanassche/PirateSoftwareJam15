@@ -1,6 +1,53 @@
-[gd_scene load_steps=2 format=3 uid="uid://byi41etxy35r2"]
+[gd_scene load_steps=3 format=3 uid="uid://byi41etxy35r2"]
 
 [ext_resource type="PackedScene" uid="uid://dny1dqcanlco0" path="res://scenes/base_window.tscn" id="1_bsqw3"]
+[ext_resource type="Theme" uid="uid://db81p7xt2bkuk" path="res://themes/main_theme.tres" id="2_ng10n"]
 
 [node name="Window" instance=ExtResource("1_bsqw3")]
 size_preset = "full_size"
+
+[node name="Title" parent="VBoxContainer/topbar/HBoxContainer/MarginContainer" index="0"]
+text = "Settings"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/content" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/content/MarginContainer" index="0"]
+layout_mode = 2
+
+[node name="render_settings" type="Label" parent="VBoxContainer/content/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+text = "Render Settings"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/content/MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/content/MarginContainer/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/content/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+text = "Pixel filter"
+vertical_alignment = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/content/MarginContainer/VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 3
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/content/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("2_ng10n")
+max_value = 5.0
+value = 2.0

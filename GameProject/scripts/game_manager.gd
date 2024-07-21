@@ -1,7 +1,7 @@
 extends Node
 class_name Manager
 
-var player: CharacterController;
+var player: Player;
 var camera_controller: CameraController;
 
 static var instance: Manager;
@@ -22,7 +22,7 @@ func pause(pause_game = !get_tree().paused):
 		SceneManager.instance.set_active_scene("paused", SceneConfig.new(false));
 		
 func _process(delta):
-	if Input.is_action_just_pressed("accept"):
+	if Input.is_action_just_pressed("jump"):
 		var btn = get_viewport().gui_get_focus_owner();
 		if btn is Button:
 			btn.pressed.emit();
