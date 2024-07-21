@@ -24,6 +24,7 @@ Debug="*res://scripts/utils/debug.gd"
 [filesystem]
 
 import/blender/enabled=false
+import/fbx/enabled=false
 
 [input]
 
