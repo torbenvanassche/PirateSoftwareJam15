@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SceneInfo" load_steps=3 format=3 uid="uid://c2g2ogo7ujhge"]
+
+[ext_resource type="PackedScene" uid="uid://cnhmia0poksoq" path="res://scenes/inventory_ui.tscn" id="1_607om"]
+[ext_resource type="Script" path="res://utils/scene_management/scene_info.gd" id="1_g3fg4"]
+
+[resource]
+script = ExtResource("1_g3fg4")
+id = "inventory"
+packed_scene = ExtResource("1_607om")
+is_ui = true

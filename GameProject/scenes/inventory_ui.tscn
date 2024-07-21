@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnhmia0poksoq"]
+
+[ext_resource type="PackedScene" uid="uid://dny1dqcanlco0" path="res://scenes/base_window.tscn" id="1_l0w1b"]
+[ext_resource type="Script" path="res://inventory/scripts/inventory_ui.gd" id="2_vmqag"]
+
+[node name="Control" instance=ExtResource("1_l0w1b")]
+offset_right = -888.0
+offset_bottom = -367.0
+size_preset = "custom"
+
+[node name="Button" parent="VBoxContainer/topbar/HBoxContainer" index="1"]
+focus_mode = 0
+mouse_default_cursor_shape = 2
+
+[node name="InventoryUI" type="GridContainer" parent="VBoxContainer/content" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = -106.0
+offset_right = 106.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+script = ExtResource("2_vmqag")
+slot_size_constraints = Vector2i(40, 55)
+show_locked = true

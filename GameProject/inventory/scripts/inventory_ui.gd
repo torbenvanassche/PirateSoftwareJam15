@@ -9,17 +9,20 @@ var elements: Array[ItemSlotUI] = []
 var selected_slot: ItemSlotUI;
 var btn_grp: ButtonGroup = ButtonGroup.new()
 
+@export var slot_size_constraints: Vector2i = Vector2i(25, 50);
 @export var show_locked: bool = false;
 
 func _ready():
-	resized.connect(_control_size)
 	on_enable.call_deferred()
 	
 func _control_size():
+	var size_constraint = min((size.x / columns) - get_theme_constant("h_separation"), (size.y / (controller.data.size() / columns)) - get_theme_constant("v_separation"));
+	var container_size = clamp((size.x / columns) - get_theme_constant("h_separation"), slot_size_constraints.x, slot_size_constraints.y);
+	print(container_size, size)
+	
 	for e: Control in get_children():
-		var container_size_x = clamp((size.x / columns) - get_theme_constant("h_separation"), 50, 100);
-		e.custom_minimum_size.x = container_size_x;
-		e.custom_minimum_size.y = container_size_x;
+		e.custom_minimum_size.x = container_size;
+		e.custom_minimum_size.y = container_size;
 
 func on_enable(_options: Dictionary = {}):
 	if !item_ui_packed:
@@ -27,6 +30,7 @@ func on_enable(_options: Dictionary = {}):
 		return;
 	controller = Manager.instance.player.inventory;
 	set_controller(controller);
+	resized.connect(_control_size)
 	btn_grp.allow_unpress = true;
 
 func set_controller(con: Inventory):
