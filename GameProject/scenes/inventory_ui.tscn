@@ -4,7 +4,6 @@
 [ext_resource type="Script" path="res://inventory/scripts/inventory_ui.gd" id="2_vmqag"]
 
 [node name="Control" instance=ExtResource("1_l0w1b")]
-anchors_preset = 15
 offset_right = -888.0
 offset_bottom = -367.0
 size_preset = "custom"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btxpvywm2sfuj"
-path="res://.godot/imported/wheat.png-979765fc313c3729b904c40d5d1c58cb.ctex"
+uid="uid://dim2ylw7ggq76"
+path="res://.godot/imported/tilemap_packed.png-4c9bdbd02624781be861e74e46f9d602.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://inventory/item_data/sprites/wheat.png"
-dest_files=["res://.godot/imported/wheat.png-979765fc313c3729b904c40d5d1c58cb.ctex"]
+source_file="res://sprites/tilemap_packed.png"
+dest_files=["res://.godot/imported/tilemap_packed.png-4c9bdbd02624781be861e74e46f9d602.ctex"]
 
 [params]
 
@@ -19,16 +19,16 @@ compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=2
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

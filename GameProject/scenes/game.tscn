@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c57b16nj7p50k"]
+[gd_scene load_steps=17 format=3 uid="uid://c57b16nj7p50k"]
 
 [ext_resource type="Material" uid="uid://cvpuwyeb06dcg" path="res://materials/mat_ground.tres" id="1_8p8rk"]
 [ext_resource type="PackedScene" uid="uid://cwycwp30gjjet" path="res://scenes/character.tscn" id="1_yoqlc"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c7mckeqrkh8i5" path="res://player/Character.glb" id="8_eyvro"]
 [ext_resource type="PackedScene" uid="uid://c3of2gdyvnmj3" path="res://models/CottageBlockout.glb" id="8_rdlc8"]
 [ext_resource type="PackedScene" uid="uid://de6ylbmhipclc" path="res://player/Walking.glb" id="9_5w106"]
+[ext_resource type="PackedScene" uid="uid://btc5eljbycubc" path="res://scenes/campfire.tscn" id="10_kpare"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xurpc"]
 
@@ -95,3 +96,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.09062, 0.120803, -0.191341)
 
 [node name="AuxScene" parent="." instance=ExtResource("9_5w106")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2772, 0.120803, 2.81541)
+
+[node name="Area3D" parent="." instance=ExtResource("10_kpare")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.16062, 0.120803, -5.2813)

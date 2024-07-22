@@ -20,6 +20,8 @@ var current_rotation_y: float = 0;
 @export var inventory: Inventory;
 @export var interaction_range: Area3D;
 
+var current_triggers: Array[Area3D];
+
 func _init():
 	Manager.instance.player = self;
 	
@@ -41,6 +43,9 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("open_inventory"):
 		SceneManager.instance.set_active_scene("inventory", SceneConfig.new())
+		
+	if Input.is_action_just_pressed(("interact")):
+		interact();
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -50,12 +55,36 @@ func _physics_process(delta):
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
 		
-		var target_rotation_y = atan2(-input_dir.x, input_dir.y)
+		var target_rotation_y = atan2(-direction.x, -direction.z)
 		current_rotation_y = lerp_angle(current_rotation_y, target_rotation_y, rotation_speed * delta)
 		rotation.y = current_rotation_y
-		
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
 
 	move_and_slide()
+
+func _ready():
+	interaction_range.area_entered.connect(_on_enter);
+	interaction_range.area_exited.connect(_on_leave);
+	
+func interact():
+	if current_triggers.size() != 0:
+		if current_triggers[0].has_method("on_interact"):
+			current_triggers[0].on_interact();
+		
+	
+func sort_areas_by_distance():
+	current_triggers.sort_custom(func(a, b): return position.distance_squared_to(a) > position.distance_squared_to(b));
+
+func _on_enter(body: Area3D):
+	if !current_triggers.has(body):
+		current_triggers.push_back(body);
+		sort_areas_by_distance();
+		if body.has_method("on_area_enter"):
+			body.on_area_enter();
+	
+func _on_leave(body: Area3D):
+	current_triggers.erase(body);
+	if body.has_method("on_area_leave"):
+		body.on_area_leave();

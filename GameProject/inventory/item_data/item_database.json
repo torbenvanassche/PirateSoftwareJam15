@@ -1,10 +1,17 @@
 {
-	"wheat": {
-		"name": "Wheat",
-		"description": "Raw wheat farmed in a field.",
-		"stack_size": 5,
-		"random_weight": 5,
-		"grow_time": 5,
-		"yield": 1
+	"mercury": {
+		"name": "Vial of Mercury",
+		"description": "",
+		"stack_size": 10
+	},
+	"moss": {
+		"name": "Clump of Moss",
+		"description": "",
+		"stack_size": 10
+	},
+	"sulfur": {
+		"name": "Pile of sulfur",
+		"description": "",
+		"stack_size": 10
 	}
 }
