@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d3optmiouv8mm"
-path="res://.godot/imported/Roof 1.glb-4daa49c2a8e300ce3d9dc032c24cfee0.scn"
+uid="uid://eklpol8mbbw3"
+path="res://.godot/imported/Roof 3 side trim.glb-e151aca7b152e6ee6e0e4ad090ce2a3f.scn"
 
 [deps]
 
-source_file="res://models/Walls/Roof 1.glb"
-dest_files=["res://.godot/imported/Roof 1.glb-4daa49c2a8e300ce3d9dc032c24cfee0.scn"]
+source_file="res://models/Walls/Roof 3 side trim.glb"
+dest_files=["res://.godot/imported/Roof 3 side trim.glb-e151aca7b152e6ee6e0e4ad090ce2a3f.scn"]
 
 [params]
 

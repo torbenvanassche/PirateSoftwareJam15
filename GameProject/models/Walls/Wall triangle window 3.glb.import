@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d3optmiouv8mm"
-path="res://.godot/imported/Roof 1.glb-4daa49c2a8e300ce3d9dc032c24cfee0.scn"
+uid="uid://bosv6blu5mqhx"
+path="res://.godot/imported/Wall triangle window 3.glb-282fca53a54d7b9c519463934504ff17.scn"
 
 [deps]
 
-source_file="res://models/Walls/Roof 1.glb"
-dest_files=["res://.godot/imported/Roof 1.glb-4daa49c2a8e300ce3d9dc032c24cfee0.scn"]
+source_file="res://models/Walls/Wall triangle window 3.glb"
+dest_files=["res://.godot/imported/Wall triangle window 3.glb-282fca53a54d7b9c519463934504ff17.scn"]
 
 [params]
 
