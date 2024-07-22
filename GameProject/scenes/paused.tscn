@@ -6,6 +6,7 @@
 
 [node name="Window" node_paths=PackedStringArray("sub_elements") instance=ExtResource("1_v7d3o")]
 process_mode = 3
+anchors_preset = 15
 mouse_filter = 1
 texture = null
 display_mode = "none"

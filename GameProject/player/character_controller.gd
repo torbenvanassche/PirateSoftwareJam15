@@ -37,7 +37,7 @@ func _physics_process(delta):
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
 		
-		var target_rotation_y = atan2(input_dir.x, input_dir.y)
+		var target_rotation_y = atan2(-input_dir.x, input_dir.y)
 		current_rotation_y = lerp_angle(current_rotation_y, target_rotation_y, rotation_speed * delta)
 		rotation.y = current_rotation_y
 		
