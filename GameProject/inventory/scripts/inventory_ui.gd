@@ -16,9 +16,9 @@ func _ready():
 	on_enable.call_deferred()
 	
 func _control_size():
-	var size_constraint = min((size.x / columns) - get_theme_constant("h_separation"), (size.y / (controller.data.size() / columns)) - get_theme_constant("v_separation"));
-	var container_size = clamp((size.x / columns) - get_theme_constant("h_separation"), slot_size_constraints.x, slot_size_constraints.y);
-	print(container_size, size)
+	var size_constraint = min((size.x / float(columns)) - get_theme_constant("h_separation"), 
+	(size.y / (controller.data.size() / float(columns))) - get_theme_constant("v_separation"));
+	var container_size = clamp(size_constraint, slot_size_constraints.x, slot_size_constraints.y);
 	
 	for e: Control in get_children():
 		e.custom_minimum_size.x = container_size;

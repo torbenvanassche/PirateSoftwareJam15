@@ -9,5 +9,4 @@ func on_enter():
 	pixelation_slider.value = Settings.camera_pixelation_ratio;
 
 func set_pixelation(_b: bool):
-	print(pixelation_slider.value)
-	Settings.camera_pixelation_ratio = pixelation_slider.value
+	Settings.camera_pixelation_ratio = int(pixelation_slider.value)

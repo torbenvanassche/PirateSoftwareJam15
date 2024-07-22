@@ -62,8 +62,3 @@ func _notification(what):
 			if !is_drag_successful():
 				on_drag_end.emit(self)
 				redraw()
-				
-func _gui_input(_event):
-	if _event is InputEventMouseButton and _event.is_pressed() and _event.button_index == MOUSE_BUTTON_RIGHT && !slot_data.is_empty() && slot_data.item.count > 1:
-		var mouse_position = get_global_mouse_position();
-	pass

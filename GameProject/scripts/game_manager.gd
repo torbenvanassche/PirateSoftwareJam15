@@ -21,7 +21,7 @@ func pause(pause_game = !get_tree().paused):
 	if pause_game:
 		SceneManager.instance.set_active_scene("paused", SceneConfig.new(false));
 		
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("jump"):
 		var btn = get_viewport().gui_get_focus_owner();
 		if btn is Button:
