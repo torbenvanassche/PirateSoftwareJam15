@@ -13,6 +13,7 @@ radius = 1.94349
 [node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("inventory")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11559, 0)
 script = ExtResource("1_70u55")
+jump_height = 8.0
 inventory = NodePath("inventory")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -27,7 +28,7 @@ max_slots = 16
 [node name="Character" parent="." instance=ExtResource("3_q4ok2")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -1.11559, 0)
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="collision_range" type="Area3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="collision_range"]
 shape = SubResource("SphereShape3D_ecd27")
