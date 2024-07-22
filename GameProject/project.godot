@@ -21,6 +21,10 @@ Settings="*res://scripts/utils/settings.gd"
 ItemManager="*res://inventory/scripts/item_manager.gd"
 Debug="*res://scripts/utils/debug.gd"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/snappy/plugin.cfg")
+
 [filesystem]
 
 import/blender/enabled=false
