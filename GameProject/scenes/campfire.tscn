@@ -1,20 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://btc5eljbycubc"]
+[gd_scene load_steps=9 format=3 uid="uid://btc5eljbycubc"]
 
 [ext_resource type="Script" path="res://scripts/triggers/campfire.gd" id="1_18f5m"]
+[ext_resource type="PackedScene" uid="uid://bcybejolk48no" path="res://models/props/campfire.glb" id="2_lmpfi"]
+[ext_resource type="PackedScene" uid="uid://b1lk3k14vmem4" path="res://models/props/tripod.glb" id="3_r3yab"]
+[ext_resource type="PackedScene" uid="uid://3p4yk8mo2hd7" path="res://models/props/stone_ring.glb" id="4_kq4su"]
+[ext_resource type="PackedScene" uid="uid://bruhax6px1mtk" path="res://models/props/camping_ground.glb" id="5_rk4qn"]
+[ext_resource type="PackedScene" uid="uid://dka4ewg12ndqh" path="res://models/props/tree_stump.glb" id="6_lpc1b"]
+[ext_resource type="PackedScene" uid="uid://dd7i2b8p3uf5q" path="res://models/props/log.glb" id="7_j86in"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d5q2q"]
-size = Vector3(3, 1, 3)
+size = Vector3(2.5, 1, 2.5)
 
-[sub_resource type="BoxMesh" id="BoxMesh_ocexi"]
-
-[node name="Area3D" type="Area3D"]
+[node name="campfire_area" type="Area3D"]
 script = ExtResource("1_18f5m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.117676, 0.5, 0.131714)
 shape = SubResource("BoxShape3D_d5q2q")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_ocexi")
-skeleton = NodePath("")
+[node name="campfire" parent="." instance=ExtResource("2_lmpfi")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.0580227, 0)
+
+[node name="tripod" parent="." instance=ExtResource("3_r3yab")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.101489, 0)
+
+[node name="stone_ring" parent="." instance=ExtResource("4_kq4su")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.0580227, 0)
+
+[node name="camping_ground" parent="." instance=ExtResource("5_rk4qn")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.000375032, 0, 0)
+
+[node name="tree_stump2" parent="." instance=ExtResource("6_lpc1b")]
+transform = Transform3D(0.99879, 0.0488378, -0.00580021, -0.0491533, 0.995217, -0.0844222, 0.00164948, 0.0846051, 0.996413, -0.434663, -0.165022, 1.78325)
+
+[node name="log" parent="." instance=ExtResource("7_j86in")]
+transform = Transform3D(0.978491, 0, 0.20629, 0, 1, 0, -0.20629, 0, 0.978491, 1.88938, -0.0946962, -0.0186923)
+
+[node name="log2" parent="." instance=ExtResource("7_j86in")]
+transform = Transform3D(0.837766, 0, -0.546029, 0, 1, 0, 0.546029, 0, 0.837766, -2.11062, -0.0946962, -0.983192)

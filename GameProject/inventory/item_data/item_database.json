@@ -13,5 +13,20 @@
 		"name": "Pile of sulfur",
 		"description": "",
 		"stack_size": 10
+	},
+	"water": {
+		"name": "a bottle of water",
+		"description": "",
+		"stack_size": 1
+	},
+	"potion_shadow_control": {
+		"name": "Potion: Shadow control",
+		"description": "",
+		"stack_size": 10,
+		"components": [
+			"sulfur",
+			"mercury",
+			"water"
+		]
 	}
 }

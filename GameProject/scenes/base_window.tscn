@@ -6,12 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://dg5kk1tb4fk75" path="res://sprites/Cross1.png" id="3_d657o"]
 
 [node name="Window" type="NinePatchRect"]
+process_mode = 3
 texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme = ExtResource("1_kpacs")
 texture = ExtResource("1_ka8yf")
 region_rect = Rect2(0, 0, 16, 16)
@@ -68,3 +70,4 @@ expand_icon = true
 [node name="content" type="Control" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 1

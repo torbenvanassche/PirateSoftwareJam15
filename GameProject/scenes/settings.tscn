@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/settings_menu.gd" id="2_t53yf"]
 
 [node name="Window" node_paths=PackedStringArray("sub_elements") instance=ExtResource("1_bsqw3")]
-anchors_preset = 15
+process_priority = 1
 offset_right = -230.4
 offset_bottom = -129.6
 size_preset = "custom"

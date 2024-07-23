@@ -1,17 +1,17 @@
-[gd_scene load_steps=17 format=3 uid="uid://c57b16nj7p50k"]
+[gd_scene load_steps=15 format=3 uid="uid://c57b16nj7p50k"]
 
-[ext_resource type="Material" uid="uid://cvpuwyeb06dcg" path="res://materials/mat_ground.tres" id="1_8p8rk"]
 [ext_resource type="PackedScene" uid="uid://cwycwp30gjjet" path="res://scenes/character.tscn" id="1_yoqlc"]
 [ext_resource type="PackedScene" uid="uid://cuqpjlp4i7pkb" path="res://scenes/camera.tscn" id="3_o5mjl"]
 [ext_resource type="Shader" path="res://shaders/outline.gdshader" id="4_r3k4d"]
 [ext_resource type="PackedScene" uid="uid://c8wfajmm63ptd" path="res://models/Field.glb" id="6_7gvnk"]
 [ext_resource type="PackedScene" uid="uid://cyo64je0nkbjc" path="res://models/CanyonPieces.glb" id="7_tp6ph"]
-[ext_resource type="PackedScene" uid="uid://c7mckeqrkh8i5" path="res://player/Character.glb" id="8_eyvro"]
 [ext_resource type="PackedScene" uid="uid://c3of2gdyvnmj3" path="res://models/CottageBlockout.glb" id="8_rdlc8"]
-[ext_resource type="PackedScene" uid="uid://de6ylbmhipclc" path="res://player/Walking.glb" id="9_5w106"]
 [ext_resource type="PackedScene" uid="uid://btc5eljbycubc" path="res://scenes/campfire.tscn" id="10_kpare"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xurpc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uha02"]
+albedo_color = Color(0.74558, 0.74558, 0.74558, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_limok"]
 size = Vector3(5.43903, 1, 1)
@@ -43,7 +43,7 @@ tonemap_mode = 1
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(90.7137, 0, 0, 0, 0.209518, 0, 0, 0, 84.8325, -1.02947, 0.0160441, -2.98874)
 mesh = SubResource("BoxMesh_xurpc")
-surface_material_override/0 = ExtResource("1_8p8rk")
+surface_material_override/0 = SubResource("StandardMaterial3D_uha02")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
 
@@ -91,11 +91,5 @@ shadow_bias = 0.05
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hc04y")
 
-[node name="Character" parent="." instance=ExtResource("8_eyvro")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.09062, 0.120803, -0.191341)
-
-[node name="AuxScene" parent="." instance=ExtResource("9_5w106")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2772, 0.120803, 2.81541)
-
 [node name="Area3D" parent="." instance=ExtResource("10_kpare")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.16062, 0.120803, -5.2813)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.16062, 0.731188, -5.2813)

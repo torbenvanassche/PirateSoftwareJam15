@@ -5,18 +5,25 @@
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_u5guc"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8leax"]
+width = 128
+height = 128
 seamless = true
+seamless_blend_skirt = 1.0
 noise = SubResource("FastNoiseLite_u5guc")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_u4uvv"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ipnxd"]
+width = 128
+height = 128
 seamless = true
 noise = SubResource("FastNoiseLite_u4uvv")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_qwqtx"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6qcdj"]
+width = 64
+height = 64
 seamless = true
 as_normal_map = true
 noise = SubResource("FastNoiseLite_qwqtx")
@@ -29,13 +36,13 @@ shader_parameter/color = Color(0.247059, 0.541176, 0.611765, 1)
 shader_parameter/deep_water = Color(0.180392, 0.352941, 0.603922, 1)
 shader_parameter/beer_law_factor = 2.0
 shader_parameter/_distance = -0.833
-shader_parameter/edge_color = Color(0.359069, 0.359069, 0.359069, 0)
+shader_parameter/edge_color = Color(0.175947, 0.388224, 0.479345, 0)
 shader_parameter/edge_scale = 0.25
 shader_parameter/near = 0.1
 shader_parameter/far = 100.0
-shader_parameter/wave_strength = Vector2(0.07, 0)
-shader_parameter/wave_frequ = Vector2(2, 2)
-shader_parameter/time_factor = Vector2(0.5, 0.5)
+shader_parameter/wave_strength = Vector2(0.05, 0.1)
+shader_parameter/wave_frequ = Vector2(1, 1)
+shader_parameter/time_factor = Vector2(0.1, 0.1)
 shader_parameter/noise1 = SubResource("NoiseTexture2D_8leax")
 shader_parameter/noise2 = SubResource("NoiseTexture2D_ipnxd")
 shader_parameter/normalmap = SubResource("NoiseTexture2D_6qcdj")

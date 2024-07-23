@@ -19,10 +19,18 @@ func get_item(id: String, as_copy: bool = false) -> Dictionary:
 func get_items() -> Dictionary:
 	return _items;
 	
-func get_by_property(prop: String, value: Variant, dict: Dictionary = _items) -> Dictionary:
+func get_by_property_value(prop: String, value: Variant = null, dict: Dictionary = _items) -> Dictionary:
 	var a_items: Dictionary = {};
 	for entry in dict.keys():
 		if dict[entry].has(prop) && dict[entry][prop] == value:
+			a_items[entry] = dict[entry];
+			a_items[entry].id = entry;
+	return a_items;
+	
+func get_by_property(prop: String, dict: Dictionary = _items) -> Dictionary:
+	var a_items: Dictionary = {};
+	for entry in dict.keys():
+		if dict[entry].has(prop):
 			a_items[entry] = dict[entry];
 			a_items[entry].id = entry;
 	return a_items;
@@ -60,7 +68,7 @@ func get_components(item: Dictionary) -> Array[Dictionary]:
 		result.append(get_item(component))
 	return result
 	
-func get_craftables(components: Array[String]) -> Dictionary:
-	var options: Dictionary = get_by_property("available", true);
-	options = get_by_property("components", components, options)
-	return options;
+func is_craftable(item: Dictionary):
+	var items_with_components = get_by_property("components")
+	if items_with_components.has(item.id) && items_with_components[item.id].components != []:
+		return true;

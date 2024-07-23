@@ -1,0 +1,47 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://b1lk3k14vmem4"
+path="res://.godot/imported/tripod.glb-d1999f306c3beb65cbb46acdd6d0328a.scn"
+
+[deps]
+
+source_file="res://models/props/tripod.glb"
+dest_files=["res://.godot/imported/tripod.glb-d1999f306c3beb65cbb46acdd6d0328a.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"Material": {
+"use_external/enabled": true,
+"use_external/path": "res://materials/mat_synty_meadow.tres"
+}
+},
+"nodes": {
+"PATH:SM_Prop_Camp_Fire_Tripod_01": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

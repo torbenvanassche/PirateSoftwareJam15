@@ -11,6 +11,7 @@
 [node name="main" type="Node"]
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
+process_mode = 3
 
 [node name="scene_manager" type="Node" parent="." node_paths=PackedStringArray("ui_root")]
 script = ExtResource("2_puta8")
