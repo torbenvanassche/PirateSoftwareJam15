@@ -7,7 +7,7 @@ func on_area_enter():
 	
 func on_area_leave():
 	Manager.instance.camera_controller.camera.make_current();
-	Manager.instance.player.do_processing = false;
+	Manager.instance.player.do_processing = true;
 	
 func on_interact():
 	SceneManager.instance.set_active_scene("brewing", SceneConfig.new())
