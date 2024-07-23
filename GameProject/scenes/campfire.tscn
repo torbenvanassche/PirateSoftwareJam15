@@ -38,3 +38,6 @@ transform = Transform3D(0.978491, 0, 0.20629, 0, 1, 0, -0.20629, 0, 0.978491, 1.
 
 [node name="log2" parent="." instance=ExtResource("7_j86in")]
 transform = Transform3D(0.837766, 0, -0.546029, 0, 1, 0, 0.546029, 0, 0.837766, -2.11062, -0.0946962, -0.983192)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.832902, 0.250367, -0.49355, 0, 0.891816, 0.452398, 0.553421, -0.376803, 0.742795, -0.290481, 2.25463, 1.75149)

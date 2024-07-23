@@ -40,6 +40,9 @@ func _ready():
 				close_requested.connect(n.on_disable)
 	
 func on_enable(_options: Dictionary = {}):
+	if visible:
+		return;
+	
 	visible = true;
 		
 	match display_mode:

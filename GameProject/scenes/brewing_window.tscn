@@ -2,11 +2,20 @@
 
 [ext_resource type="PackedScene" uid="uid://dny1dqcanlco0" path="res://scenes/base_window.tscn" id="1_qx0y4"]
 [ext_resource type="Script" path="res://scripts/brewing_ui.gd" id="2_m77vo"]
-[ext_resource type="Script" path="res://inventory/scripts/item_slot_ui.gd" id="3_n3774"]
+[ext_resource type="PackedScene" uid="uid://c5ocjw6joaemy" path="res://inventory/scenes/slot_ui.tscn" id="3_afswd"]
 
 [node name="Window" node_paths=PackedStringArray("sub_elements") instance=ExtResource("1_qx0y4")]
-offset_right = -847.0
-offset_bottom = -462.0
+custom_minimum_size = Vector2(250, 120)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_bottom = 0.0
+offset_left = -260.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 130.0
+grow_horizontal = 0
+grow_vertical = 1
+size_preset = "custom"
 sub_elements = [NodePath("VBoxContainer/content")]
 
 [node name="Title" parent="VBoxContainer/topbar/HBoxContainer/MarginContainer" index="0"]
@@ -30,10 +39,9 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 alignment = 1
 
-[node name="ItemSlotUI" type="Button" parent="VBoxContainer/content/MarginContainer/HBoxContainer" index="0"]
-custom_minimum_size = Vector2(75, 75)
+[node name="Item" parent="VBoxContainer/content/MarginContainer/HBoxContainer" index="0" instance=ExtResource("3_afswd")]
 layout_mode = 2
-script = ExtResource("3_n3774")
+show_amount = false
 
 [node name="Button" type="Button" parent="VBoxContainer/content/MarginContainer/HBoxContainer" index="1"]
 layout_mode = 2

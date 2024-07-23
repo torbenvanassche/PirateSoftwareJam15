@@ -98,10 +98,6 @@ func to_previous_scene(hide_current: bool = false, stop_processing_current: bool
 	if scene_stack.size() != 0:
 		scene_stack.pop_back();
 		set_active_scene(scene_stack[scene_stack.size() - 1].id, SceneConfig.new(hide_current, stop_processing_current, remove_current), false);
-		var s = "";
-		for sc in scene_stack:
-			s += sc.id + "|"
-		print(s)
 		
 func ui_is_open(exceptions: Array[String] = ["pause"]) -> bool:
 	return get_children().all(func(x: Node): return node_to_info(x).is_ui && x.visible && !exceptions.has(node_to_info(x).id));

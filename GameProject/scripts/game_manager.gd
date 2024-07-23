@@ -13,7 +13,7 @@ func _init():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
 func _unhandled_input(event):
-	if event.is_action_pressed("cancel") && (SceneManager.instance.scene_stack[SceneManager.instance.scene_stack.size() - 1].id == "paused" || get_tree().paused == false):
+	if event.is_action_pressed("cancel") && SceneManager.instance.node_to_info(SceneManager.instance.active_scene).id == "main_game":
 		get_viewport().set_input_as_handled()
 		pause();
 		

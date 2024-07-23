@@ -21,6 +21,7 @@ var current_rotation_y: float = 0;
 @export var interaction_range: Area3D;
 
 var current_triggers: Array[Area3D];
+var do_processing: bool = true;
 
 func _init():
 	Manager.instance.player = self;
@@ -29,7 +30,13 @@ func get_gravity() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity
 
 func _physics_process(delta):
-	if not Manager.instance.camera_controller:
+	if Input.is_action_just_pressed("open_inventory"):
+		SceneManager.instance.set_active_scene("inventory", SceneConfig.new())
+		
+	if Input.is_action_just_pressed(("interact")):
+		interact();
+	
+	if not Manager.instance.camera_controller || !do_processing:
 		return;
 		
 	velocity.y += get_gravity() * delta;
@@ -40,12 +47,6 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity;
-		
-	if Input.is_action_just_pressed("open_inventory"):
-		SceneManager.instance.set_active_scene("inventory", SceneConfig.new())
-		
-	if Input.is_action_just_pressed(("interact")):
-		interact();
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
