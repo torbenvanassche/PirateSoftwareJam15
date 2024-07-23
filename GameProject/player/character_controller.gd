@@ -67,7 +67,7 @@ func _physics_process(delta):
 func _ready():
 	interaction_range.area_entered.connect(_on_enter);
 	interaction_range.area_exited.connect(_on_leave);
-	ItemManager.is_craftable(ItemManager.get_item("potion_shadow_control"))
+	var s = ItemManager.get_components(ItemManager.get_item("potion_shadow_control"))
 	
 func interact():
 	if current_triggers.size() != 0:

@@ -1,8 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpilnec81ompb"]
+[gd_scene load_steps=4 format=3 uid="uid://bpilnec81ompb"]
 
 [ext_resource type="PackedScene" uid="uid://dny1dqcanlco0" path="res://scenes/base_window.tscn" id="1_qx0y4"]
+[ext_resource type="Script" path="res://scripts/brewing_ui.gd" id="2_m77vo"]
+[ext_resource type="Script" path="res://inventory/scripts/item_slot_ui.gd" id="3_n3774"]
 
-[node name="Window" instance=ExtResource("1_qx0y4")]
+[node name="Window" node_paths=PackedStringArray("sub_elements") instance=ExtResource("1_qx0y4")]
+offset_right = -847.0
+offset_bottom = -462.0
+sub_elements = [NodePath("VBoxContainer/content")]
 
 [node name="Title" parent="VBoxContainer/topbar/HBoxContainer/MarginContainer" index="0"]
 text = "Brewing"
+
+[node name="content" parent="VBoxContainer" index="1"]
+script = ExtResource("2_m77vo")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/content" index="0"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/content/MarginContainer" index="0"]
+layout_mode = 2
+alignment = 1
+
+[node name="ItemSlotUI" type="Button" parent="VBoxContainer/content/MarginContainer/HBoxContainer" index="0"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+script = ExtResource("3_n3774")
+
+[node name="Button" type="Button" parent="VBoxContainer/content/MarginContainer/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Add to brew"

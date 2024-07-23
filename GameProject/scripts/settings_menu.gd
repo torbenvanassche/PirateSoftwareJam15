@@ -2,6 +2,8 @@ extends Node
 
 @onready var pixelation_slider: HSlider = $MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/HSlider;
 
+var window_controller: DraggableControl;
+
 func _ready():
 	pixelation_slider.drag_ended.connect(set_pixelation)
 	

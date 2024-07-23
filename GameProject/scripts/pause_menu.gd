@@ -23,4 +23,4 @@ func resume():
 	window_controller.close_requested.emit()
 	
 func settings():
-	SceneManager.instance.set_active_scene("settings", SceneConfig.new(true))
+	SceneManager.instance.set_active_scene("settings", SceneConfig.new())

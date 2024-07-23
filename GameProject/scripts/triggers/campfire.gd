@@ -7,4 +7,4 @@ func on_area_leave():
 	print("leave");
 	
 func on_interact():
-	print("interact");
+	SceneManager.instance.set_active_scene("brewing", SceneConfig.new())
