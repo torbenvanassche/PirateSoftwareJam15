@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwycwp30gjjet"]
+[gd_scene load_steps=10 format=3 uid="uid://cwycwp30gjjet"]
 
 [ext_resource type="Script" path="res://player/character_controller.gd" id="1_70u55"]
 [ext_resource type="Script" path="res://inventory/scripts/inventory.gd" id="2_pnb6b"]
@@ -10,6 +10,16 @@ height = 2.576
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ecd27"]
 radius = 1.94349
+
+[sub_resource type="SphereMesh" id="SphereMesh_ch1pj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmbk2"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71ym1"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ll7ek"]
 
 [node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("inventory", "interaction_range")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11559, 0)
@@ -34,3 +44,21 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -1.
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="trigger_range"]
 shape = SubResource("SphereShape3D_ecd27")
+
+[node name="shadow_form" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, -1.118, 0)
+mesh = SubResource("SphereMesh_ch1pj")
+surface_material_override/0 = SubResource("StandardMaterial3D_jmbk2")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="shadow_form"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_71ym1")
+amount = 25
+lifetime = 0.2
+speed_scale = 0.3
+mesh = SubResource("BoxMesh_ll7ek")
+emission_shape = 2
+emission_sphere_radius = 0.4
+gravity = Vector3(0, 9.8, 0)
+scale_amount_min = 0.01
+scale_amount_max = 0.05
