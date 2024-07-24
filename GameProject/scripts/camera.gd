@@ -44,6 +44,9 @@ func _process(delta):
 	pitch_input = 0.0
 
 func _unhandled_input(event):
+	if !Manager.instance.player.do_processing:
+		return;
+	
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and can_rotate:
 		twist_input = -event.relative.x
 		pitch_input = -event.relative.y

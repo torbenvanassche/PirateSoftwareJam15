@@ -14,6 +14,9 @@ func _ready():
 	
 	if OS.get_name() == "Web":
 		quit_button.visible = false;
+		
+func on_enable(dict: Dictionary):
+	SceneManager.instance.scene_stack.clear();
 	
 func _play_game():
 	SceneManager.instance.set_active_scene("main_game", SceneConfig.new(false, true, true))
