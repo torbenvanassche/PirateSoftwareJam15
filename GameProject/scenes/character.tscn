@@ -47,6 +47,7 @@ shape = SubResource("SphereShape3D_ecd27")
 
 [node name="shadow_form" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, -1.118, 0)
+visible = false
 mesh = SubResource("SphereMesh_ch1pj")
 surface_material_override/0 = SubResource("StandardMaterial3D_jmbk2")
 
