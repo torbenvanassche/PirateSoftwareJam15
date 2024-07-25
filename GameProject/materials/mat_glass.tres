@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cd6xs7plt7drt"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3q2f5"]
+load_path = "res://.godot/imported/Cottage_PolygonFantasyKingdom_Texture_Glass_Crossed.png-355a31d087f09485457e92f66dfdc4fe.s3tc.ctex"
+
+[resource]
+albedo_texture = SubResource("CompressedTexture2D_3q2f5")

@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dlvt83uokxr23"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jaub0"]
+load_path = "res://.godot/imported/Cottage_Roof_Tiles_02_A.png-90f4c63ae9741b4162b4a1533e8b2492.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3hr6p"]
+load_path = "res://.godot/imported/Cottage_Roof_Tiles_01_Normals.png-65e0ed6b14c44ff2864b8fd554fb4853.s3tc.ctex"
+
+[resource]
+albedo_texture = SubResource("CompressedTexture2D_jaub0")
+normal_enabled = true
+normal_texture = SubResource("CompressedTexture2D_3hr6p")

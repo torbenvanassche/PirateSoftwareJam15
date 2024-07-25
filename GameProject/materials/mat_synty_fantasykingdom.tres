@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://da8mx1ley7eex"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oce3n"]
+load_path = "res://.godot/imported/Cottage_PolygonFantasyKingdom_Texture_03_B.png-676d81583b304e84fb056576d6186377.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gifr3"]
+load_path = "res://.godot/imported/Cottage_PolygonFantasyKingdom_Texture_Normal_01.png-a41b3a71af546b75e73fdf41f76e9d42.s3tc.ctex"
+
+[resource]
+albedo_texture = SubResource("CompressedTexture2D_oce3n")
+normal_enabled = true
+normal_texture = SubResource("CompressedTexture2D_gifr3")

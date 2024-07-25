@@ -1,6 +1,5 @@
-[gd_scene load_steps=13 format=3 uid="uid://c57b16nj7p50k"]
+[gd_scene load_steps=14 format=3 uid="uid://c57b16nj7p50k"]
 
-[ext_resource type="PackedScene" uid="uid://cwycwp30gjjet" path="res://scenes/character.tscn" id="1_yoqlc"]
 [ext_resource type="PackedScene" uid="uid://cuqpjlp4i7pkb" path="res://scenes/camera.tscn" id="3_o5mjl"]
 [ext_resource type="Shader" path="res://shaders/outline.gdshader" id="4_r3k4d"]
 [ext_resource type="PackedScene" uid="uid://fjthfaw7y0rj" path="res://models/env/groundplane.glb" id="4_typib"]
@@ -8,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cjookd7f5kqrj" path="res://models/env/rockwall.glb" id="6_r3iyf"]
 [ext_resource type="PackedScene" uid="uid://btc5eljbycubc" path="res://scenes/campfire.tscn" id="7_v3iri"]
 [ext_resource type="PackedScene" uid="uid://c7irtng82ik3d" path="res://models/env/grass.glb" id="8_edu3c"]
+[ext_resource type="PackedScene" uid="uid://c68os6cnjx62" path="res://models/Cottage.glb" id="8_l5dyg"]
+[ext_resource type="PackedScene" uid="uid://c7mckeqrkh8i5" path="res://player/Character.glb" id="9_sj8ce"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_shc8u"]
 render_priority = 0
@@ -33,20 +34,14 @@ tonemap_mode = 1
 
 [node name="Node3D" type="Node3D"]
 
-[node name="CameraRoot" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_o5mjl")]
+[node name="CameraRoot" parent="." instance=ExtResource("3_o5mjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3216, 9.90298, -21.8712)
-target = NodePath("../CharacterBody3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CameraRoot"]
 material_override = SubResource("ShaderMaterial_shc8u")
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_ga03j")
 skeleton = NodePath("../../..")
-
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_yoqlc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2572, 7.29294, -23.1442)
-speed = 10.0
-rotation_speed = 25.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0.471864, 6.52125, 0.0470721)
@@ -66,4 +61,12 @@ environment = SubResource("Environment_hc04y")
 transform = Transform3D(0.998753, -0.0499306, 0, 0.0499306, 0.998753, 0, 0, 0, 1, -26.205, 6.5981, -20.7586)
 
 [node name="grass" parent="." instance=ExtResource("8_edu3c")]
-visible = false
+
+[node name="Cottage" parent="." instance=ExtResource("8_l5dyg")]
+transform = Transform3D(1.17896, 0, -0.547779, 0, 1.3, 0, 0.547779, 0, 1.17896, -17.3227, 6.1379, -12.224)
+
+[node name="Character" parent="." instance=ExtResource("9_sj8ce")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4499, 6.17976, -15.9658)
+
+[node name="Cottage2" parent="." instance=ExtResource("8_l5dyg")]
+transform = Transform3D(0.837309, 0, 0.994442, 0, 1.3, 0, -0.994442, 0, 0.837309, 0.101305, 10.1215, -5.11172)

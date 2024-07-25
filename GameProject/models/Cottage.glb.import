@@ -1,0 +1,53 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://c68os6cnjx62"
+path="res://.godot/imported/Cottage.glb-a09319087db559783f66d8017ecf8995.scn"
+
+[deps]
+
+source_file="res://models/Cottage.glb"
+dest_files=["res://.godot/imported/Cottage.glb-a09319087db559783f66d8017ecf8995.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"Glass": {
+"use_external/enabled": true,
+"use_external/path": "res://materials/mat_glass.tres"
+},
+"Roof": {
+"use_external/enabled": true,
+"use_external/path": "res://materials/mat_roof.tres"
+},
+"Stonewall": {
+"use_external/enabled": true,
+"use_external/path": "res://materials/mat_stonewall.tres"
+},
+"Tex": {
+"use_external/enabled": true,
+"use_external/path": "res://materials/mat_synty_fantasykingdom.tres"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1
