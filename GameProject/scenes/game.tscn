@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c57b16nj7p50k"]
+[gd_scene load_steps=13 format=3 uid="uid://c57b16nj7p50k"]
 
 [ext_resource type="PackedScene" uid="uid://cwycwp30gjjet" path="res://scenes/character.tscn" id="1_yoqlc"]
 [ext_resource type="PackedScene" uid="uid://cuqpjlp4i7pkb" path="res://scenes/camera.tscn" id="3_o5mjl"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://eybvp4b45810" path="res://models/env/river.glb" id="5_072mw"]
 [ext_resource type="PackedScene" uid="uid://cjookd7f5kqrj" path="res://models/env/rockwall.glb" id="6_r3iyf"]
 [ext_resource type="PackedScene" uid="uid://btc5eljbycubc" path="res://scenes/campfire.tscn" id="7_v3iri"]
+[ext_resource type="PackedScene" uid="uid://c7irtng82ik3d" path="res://models/env/grass.glb" id="8_edu3c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_shc8u"]
 render_priority = 0
@@ -63,3 +64,6 @@ environment = SubResource("Environment_hc04y")
 
 [node name="campfire_area" parent="." instance=ExtResource("7_v3iri")]
 transform = Transform3D(0.998753, -0.0499306, 0, 0.0499306, 0.998753, 0, 0, 0, 1, -26.205, 6.5981, -20.7586)
+
+[node name="grass" parent="." instance=ExtResource("8_edu3c")]
+visible = false

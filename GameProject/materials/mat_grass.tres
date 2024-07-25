@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bi5lu7xpjvl08"]
+
+[ext_resource type="Texture2D" uid="uid://cgbnuf8ygalve" path="res://textures/Grass_01.png" id="1_f26a3"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.3
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_f26a3")
