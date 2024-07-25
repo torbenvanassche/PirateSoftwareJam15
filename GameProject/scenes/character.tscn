@@ -1,12 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwycwp30gjjet"]
+[gd_scene load_steps=11 format=3 uid="uid://cwycwp30gjjet"]
 
 [ext_resource type="Script" path="res://player/character_controller.gd" id="1_70u55"]
+[ext_resource type="Shape3D" uid="uid://554us50hmwt6" path="res://player/human_collider.tres" id="2_bnnvk"]
 [ext_resource type="Script" path="res://inventory/scripts/inventory.gd" id="2_pnb6b"]
+[ext_resource type="Shape3D" uid="uid://bt3e84w73waou" path="res://player/shadow_collider.tres" id="3_fsfid"]
 [ext_resource type="PackedScene" uid="uid://c7mckeqrkh8i5" path="res://player/Character.glb" id="3_q4ok2"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_42esf"]
-radius = 0.464
-height = 2.576
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ecd27"]
 radius = 1.94349
@@ -21,16 +19,23 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ll7ek"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("inventory", "interaction_range")]
+[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("inventory", "interaction_range", "collision_control", "human_model", "shadow_model")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11559, 0)
 script = ExtResource("1_70u55")
 jump_height = 8.0
 inventory = NodePath("inventory")
 interaction_range = NodePath("trigger_range")
+human_collision = ExtResource("2_bnnvk")
+human_collision_position = Vector3(0, 0.0764624, 0.0620835)
+shadow_collision = ExtResource("3_fsfid")
+shadow_collision_position = Vector3(0, -0.986995, 0.062)
+collision_control = NodePath("CollisionShape3D")
+human_model = NodePath("Character")
+shadow_model = NodePath("shadow_form")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.932612, 0, 0, 0, 0.932612, 0, 0, 0, 0.932612, 0, 0.0764624, 0.0620835)
-shape = SubResource("CapsuleShape3D_42esf")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.986995, 0.062)
+shape = ExtResource("3_fsfid")
 
 [node name="inventory" type="Node" parent="."]
 script = ExtResource("2_pnb6b")

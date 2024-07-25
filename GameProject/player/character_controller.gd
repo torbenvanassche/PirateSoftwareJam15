@@ -23,8 +23,31 @@ var current_rotation_y: float = 0;
 var current_triggers: Array[Area3D];
 var do_processing: bool = true;
 
+@export var human_collision: Shape3D;
+@export var human_collision_position: Vector3;
+@export var shadow_collision: Shape3D;
+@export var shadow_collision_position: Vector3;
+@export var collision_control: CollisionShape3D;
+
+@export var human_model: Node;
+@export var shadow_model: Node;
+
+var is_human: bool = true;
+
 func _init():
 	Manager.instance.player = self;
+	
+func toggle_shape():
+	if is_human:
+		collision_control.shape = human_collision;
+		collision_control.position = human_collision_position;
+	else:
+		collision_control.shape = shadow_collision;
+		collision_control.position = shadow_collision_position;
+		
+	human_model.visible = is_human;
+	shadow_model.visible = !is_human;
+		
 	
 func get_gravity() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity
@@ -68,6 +91,7 @@ func _physics_process(delta):
 func _ready():
 	interaction_range.area_entered.connect(_on_enter);
 	interaction_range.area_exited.connect(_on_leave);
+	toggle_shape();
 	
 func interact():
 	if current_triggers.size() != 0:
