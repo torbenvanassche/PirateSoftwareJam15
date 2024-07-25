@@ -33,6 +33,7 @@ tonemap_mode = 1
 [node name="Node3D" type="Node3D"]
 
 [node name="CameraRoot" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_o5mjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3216, 9.90298, -21.8712)
 target = NodePath("../CharacterBody3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CameraRoot"]
