@@ -30,6 +30,12 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
+"materials": {
+"BASEMATERIAL": {
+"use_external/enabled": true,
+"use_external/path": "res://materials/mat_synty_meadow.tres"
+}
+},
 "nodes": {
 "PATH:SM_Env_Rock_Cliff_03_006": {
 "generate/physics": true,
