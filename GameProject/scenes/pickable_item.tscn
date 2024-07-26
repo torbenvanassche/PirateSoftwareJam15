@@ -1,7 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://bx6gsl1k6otws"]
+[gd_scene load_steps=4 format=3 uid="uid://bx6gsl1k6otws"]
 
 [ext_resource type="Script" path="res://inventory/scripts/pickable_item.gd" id="1_bh3x1"]
+[ext_resource type="PackedScene" uid="uid://d4vc2e46xuiq" path="res://inventory/item_data/scenes/SM_Env_Flowers_15.glb" id="2_rvgth"]
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_vh0qt"]
+
+[node name="Node3D" type="Area3D"]
 script = ExtResource("1_bh3x1")
 item_id = "lavender"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_vh0qt")
+
+[node name="SM_Env_Flowers_152" parent="." instance=ExtResource("2_rvgth")]

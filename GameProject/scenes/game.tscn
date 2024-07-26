@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c57b16nj7p50k"]
+[gd_scene load_steps=30 format=3 uid="uid://c57b16nj7p50k"]
 
 [ext_resource type="PackedScene" uid="uid://cuqpjlp4i7pkb" path="res://scenes/camera.tscn" id="3_o5mjl"]
 [ext_resource type="Shader" path="res://shaders/outline.gdshader" id="4_r3k4d"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://eybvp4b45810" path="res://models/env/river.glb" id="5_072mw"]
 [ext_resource type="PackedScene" uid="uid://cjookd7f5kqrj" path="res://models/env/rockwall.glb" id="6_r3iyf"]
 [ext_resource type="PackedScene" uid="uid://btc5eljbycubc" path="res://scenes/campfire.tscn" id="7_v3iri"]
-[ext_resource type="PackedScene" uid="uid://c7irtng82ik3d" path="res://models/env/grass.glb" id="8_edu3c"]
 [ext_resource type="PackedScene" uid="uid://c68os6cnjx62" path="res://models/Cottage.glb" id="8_l5dyg"]
 [ext_resource type="PackedScene" uid="uid://b36ddsdbnkdw4" path="res://models/props/SM_Prop_Meadow_Fence_01.glb" id="10_2g8be"]
 [ext_resource type="PackedScene" uid="uid://bodtsih535a4t" path="res://models/props/props 2/SM_Prop_Meadow_Fence_Post_01.glb" id="11_24xjg"]
@@ -46,49 +45,6 @@ material = SubResource("ShaderMaterial_ye7d4")
 flip_faces = true
 size = Vector2(2, 2)
 
-[sub_resource type="Gradient" id="Gradient_q1by4"]
-offsets = PackedFloat32Array(0, 0.321234, 0.825771, 1)
-colors = PackedColorArray(0.0414092, 0.336274, 0.449871, 1, 0.128857, 0.128857, 0.128857, 1, 0.876912, 0.82224, 0.780733, 1, 0.86, 0.761387, 0.1204, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_5fauo"]
-gradient = SubResource("Gradient_q1by4")
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xh8mq"]
-sky_top_color = Color(0.566304, 0.758999, 0.76163, 1)
-
-[sub_resource type="Sky" id="Sky_7ce1h"]
-sky_material = SubResource("ProceduralSkyMaterial_xh8mq")
-
-[sub_resource type="Environment" id="Environment_hc04y"]
-background_mode = 2
-background_energy_multiplier = 1.1
-sky = SubResource("Sky_7ce1h")
-ambient_light_source = 3
-ambient_light_color = Color(0.453441, 0.603405, 0.705811, 1)
-ambient_light_sky_contribution = 0.25
-tonemap_mode = 2
-ssao_enabled = true
-ssao_radius = 1.11
-fog_enabled = true
-fog_light_color = Color(0.568036, 0.550591, 0.490584, 1)
-fog_sun_scatter = 0.54
-fog_density = 0.005
-fog_aerial_perspective = 0.412
-fog_sky_affect = 0.389
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.01
-volumetric_fog_albedo = Color(0.00879999, 0.88, 0.63316, 1)
-volumetric_fog_emission = Color(0.844476, 0.607241, 0.62306, 1)
-volumetric_fog_emission_energy = 17.3
-volumetric_fog_anisotropy = 0.13
-volumetric_fog_length = 12.5
-volumetric_fog_sky_affect = 0.165
-adjustment_enabled = true
-adjustment_brightness = 0.73
-adjustment_contrast = 1.2
-adjustment_saturation = 1.08
-adjustment_color_correction = SubResource("GradientTexture1D_5fauo")
-
 [node name="Node3D" type="Node3D"]
 
 [node name="CameraRoot" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_o5mjl")]
@@ -103,7 +59,6 @@ mesh = SubResource("QuadMesh_ga03j")
 skeleton = NodePath("../../..")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_hc04y")
 
 [node name="groundplane" parent="." instance=ExtResource("4_typib")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000405312, 0.000554085, -0.000209808)
@@ -114,9 +69,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000405312, 0.000554085, -0.
 
 [node name="campfire_area" parent="." instance=ExtResource("7_v3iri")]
 transform = Transform3D(0.998753, -0.0499306, 0, 0.0499306, 0.998753, 0, 0, 0, 1, -26.205, 6.5981, -20.7586)
-
-[node name="grass" parent="." instance=ExtResource("8_edu3c")]
-visible = false
 
 [node name="Cottage2" parent="." instance=ExtResource("8_l5dyg")]
 transform = Transform3D(0.837309, 0, 0.994442, 0, 1.3, 0, -0.994442, 0, 0.837309, 0.101305, 9.57273, -5.11172)
