@@ -1,12 +1,9 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bo2cxwy86trof"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wufd1"]
-load_path = "res://.godot/imported/Cottage_Sttonewall_Texture_01.png-33380e4ef4046c3b8d1018f8c42cb2d6.s3tc.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uy8ur"]
-load_path = "res://.godot/imported/Cottage_Stonewall_Normals_01.png-4e8a0a94896e78260846f11303854005.s3tc.ctex"
+[ext_resource type="Texture2D" uid="uid://dm3eti2fjmswu" path="res://textures/Sttonewall_Texture_01.png" id="1_bhhqj"]
+[ext_resource type="Texture2D" uid="uid://bfc0rp1lrn58e" path="res://textures/Stonewall_Normals_01.png" id="2_3tr02"]
 
 [resource]
-albedo_texture = SubResource("CompressedTexture2D_wufd1")
+albedo_texture = ExtResource("1_bhhqj")
 normal_enabled = true
-normal_texture = SubResource("CompressedTexture2D_uy8ur")
+normal_texture = ExtResource("2_3tr02")
