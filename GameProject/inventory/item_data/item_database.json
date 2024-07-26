@@ -1,8 +1,9 @@
 {
-	"mercury": {
-		"name": "Vial of Mercury",
+	"lavender": {
+		"name": "Bunch of lavender",
 		"description": "",
-		"stack_size": 10
+		"stack_size": 10,
+		"mesh_path": "SM_Env_Flowers_15"
 	},
 	"moss": {
 		"name": "Clump of Moss",

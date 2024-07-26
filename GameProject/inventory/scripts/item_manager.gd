@@ -36,7 +36,7 @@ func get_by_property(prop: String, dict: Dictionary = _items) -> Dictionary:
 	return a_items;
 
 func get_scene(item: Dictionary) -> PackedScene:
-	var path = "res://inventory/item_data/scenes/" + item.id + ".glb"
+	var path = "res://inventory/item_data/scenes/" + item.mesh_path + ".glb"
 	if ResourceLoader.exists(path):
 		return load(path)
 	else:

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx6gsl1k6otws"]
+
+[ext_resource type="Script" path="res://inventory/scripts/pickable_item.gd" id="1_bh3x1"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_bh3x1")
+item_id = "lavender"

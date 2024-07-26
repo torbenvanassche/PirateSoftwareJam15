@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://btc5eljbycubc" path="res://scenes/campfire.tscn" id="7_v3iri"]
 [ext_resource type="PackedScene" uid="uid://c7irtng82ik3d" path="res://models/env/grass.glb" id="8_edu3c"]
 [ext_resource type="PackedScene" uid="uid://c68os6cnjx62" path="res://models/Cottage.glb" id="8_l5dyg"]
-[ext_resource type="PackedScene" uid="uid://c7mckeqrkh8i5" path="res://player/Character.glb" id="9_sj8ce"]
 [ext_resource type="PackedScene" uid="uid://b36ddsdbnkdw4" path="res://models/props/SM_Prop_Meadow_Fence_01.glb" id="10_2g8be"]
 [ext_resource type="PackedScene" uid="uid://bodtsih535a4t" path="res://models/props/props 2/SM_Prop_Meadow_Fence_Post_01.glb" id="11_24xjg"]
 [ext_resource type="PackedScene" uid="uid://w4f6rjthf1xq" path="res://models/props/props 2/SM_Env_Rock_Pile_07.glb" id="12_r2rnu"]
@@ -27,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://cj6j4fhrbal1u" path="res://models/props/props 3/SM_Env_Bush_Cluster_01.glb" id="25_w1fjc"]
 [ext_resource type="PackedScene" uid="uid://c0iurm5hclif0" path="res://models/props/props 3/SM_Env_Bush_Cluster_02.glb" id="26_4h01b"]
 [ext_resource type="PackedScene" uid="uid://cdqnl361gsuj2" path="res://models/props/props 3/SM_Env_Bush_Small_02.glb" id="27_270re"]
+[ext_resource type="PackedScene" uid="uid://cwycwp30gjjet" path="res://scenes/character.tscn" id="27_lh2d5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_shc8u"]
 render_priority = 0
@@ -82,8 +82,9 @@ adjustment_saturation = 1.08
 
 [node name="Node3D" type="Node3D"]
 
-[node name="CameraRoot" parent="." instance=ExtResource("3_o5mjl")]
+[node name="CameraRoot" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_o5mjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3216, 9.90298, -21.8712)
+target = NodePath("../CharacterBody3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CameraRoot"]
 transform = Transform3D(1, -0.000296706, 0, 0.000296706, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -107,9 +108,6 @@ transform = Transform3D(0.998753, -0.0499306, 0, 0.0499306, 0.998753, 0, 0, 0, 1
 
 [node name="grass" parent="." instance=ExtResource("8_edu3c")]
 visible = false
-
-[node name="Character" parent="." instance=ExtResource("9_sj8ce")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4499, 6.17976, -15.9658)
 
 [node name="Cottage2" parent="." instance=ExtResource("8_l5dyg")]
 transform = Transform3D(0.837309, 0, 0.994442, 0, 1.3, 0, -0.994442, 0, 0.837309, 0.101305, 9.57273, -5.11172)
@@ -228,3 +226,6 @@ light_color = Color(0.96, 0.6656, 0.192, 1)
 light_energy = 2.094
 light_angular_distance = 0.2
 shadow_enabled = true
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("27_lh2d5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0263, 7.31009, -14.7456)
