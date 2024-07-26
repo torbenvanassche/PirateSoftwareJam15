@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c57b16nj7p50k"]
+[gd_scene load_steps=34 format=3 uid="uid://c57b16nj7p50k"]
 
 [ext_resource type="PackedScene" uid="uid://cuqpjlp4i7pkb" path="res://scenes/camera.tscn" id="3_o5mjl"]
 [ext_resource type="Shader" path="res://shaders/outline.gdshader" id="4_r3k4d"]
@@ -9,6 +9,24 @@
 [ext_resource type="PackedScene" uid="uid://c7irtng82ik3d" path="res://models/env/grass.glb" id="8_edu3c"]
 [ext_resource type="PackedScene" uid="uid://c68os6cnjx62" path="res://models/Cottage.glb" id="8_l5dyg"]
 [ext_resource type="PackedScene" uid="uid://c7mckeqrkh8i5" path="res://player/Character.glb" id="9_sj8ce"]
+[ext_resource type="PackedScene" uid="uid://b36ddsdbnkdw4" path="res://models/props/SM_Prop_Meadow_Fence_01.glb" id="10_2g8be"]
+[ext_resource type="PackedScene" uid="uid://bodtsih535a4t" path="res://models/props/props 2/SM_Prop_Meadow_Fence_Post_01.glb" id="11_24xjg"]
+[ext_resource type="PackedScene" uid="uid://w4f6rjthf1xq" path="res://models/props/props 2/SM_Env_Rock_Pile_07.glb" id="12_r2rnu"]
+[ext_resource type="PackedScene" uid="uid://cviw7r7ve4fjh" path="res://models/props/props 2/SM_Prop_Bridge_01.glb" id="13_v45le"]
+[ext_resource type="PackedScene" uid="uid://cc5ul3ngb6iju" path="res://models/props/props 2/SM_Prop_Wagon_Broken_01.glb" id="14_1i6cn"]
+[ext_resource type="PackedScene" uid="uid://ulx1lvm86f65" path="res://models/props/props 2/SM_Prop_Well_01.glb" id="15_w84jh"]
+[ext_resource type="PackedScene" uid="uid://dcdbvjiw3egq7" path="res://models/props/props 3/SM_Env_Tree_Burnt_02.glb" id="16_fxy68"]
+[ext_resource type="PackedScene" uid="uid://41hfmw7eyhpx" path="res://models/props/props 3/SM_Env_Tree_Dead_04.glb" id="17_l7vry"]
+[ext_resource type="PackedScene" uid="uid://dka4ewg12ndqh" path="res://models/props/tree_stump.glb" id="18_d0n35"]
+[ext_resource type="PackedScene" uid="uid://bm1w7rsdcoxyw" path="res://models/props/props 3/SM_Env_Tree_Large_01.glb" id="19_tsr2l"]
+[ext_resource type="PackedScene" uid="uid://5cfvmdv48ghc" path="res://models/props/props 3/SM_Env_Tree_Large_02.glb" id="20_bt5sy"]
+[ext_resource type="PackedScene" uid="uid://hqfsa7bgo504" path="res://models/props/props 3/SM_Env_Tree_Round_01.glb" id="21_enkpu"]
+[ext_resource type="PackedScene" uid="uid://cblprjas2q35r" path="res://models/props/props 3/SM_Env_Tree_Round_02.glb" id="22_rllul"]
+[ext_resource type="PackedScene" uid="uid://cxuri3ycq3vq4" path="res://models/props/props 3/SM_Env_Tree_Round_03.glb" id="23_5fv3u"]
+[ext_resource type="PackedScene" uid="uid://dwvej8p6y5ms3" path="res://models/props/props 3/SM_Env_Bush_Small_01.glb" id="24_07osn"]
+[ext_resource type="PackedScene" uid="uid://cj6j4fhrbal1u" path="res://models/props/props 3/SM_Env_Bush_Cluster_01.glb" id="25_w1fjc"]
+[ext_resource type="PackedScene" uid="uid://c0iurm5hclif0" path="res://models/props/props 3/SM_Env_Bush_Cluster_02.glb" id="26_4h01b"]
+[ext_resource type="PackedScene" uid="uid://cdqnl361gsuj2" path="res://models/props/props 3/SM_Env_Bush_Small_02.glb" id="27_270re"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_shc8u"]
 render_priority = 0
@@ -28,9 +46,39 @@ material = SubResource("ShaderMaterial_ye7d4")
 flip_faces = true
 size = Vector2(2, 2)
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xh8mq"]
+sky_top_color = Color(0.566304, 0.758999, 0.76163, 1)
+
+[sub_resource type="Sky" id="Sky_7ce1h"]
+sky_material = SubResource("ProceduralSkyMaterial_xh8mq")
+
 [sub_resource type="Environment" id="Environment_hc04y"]
-ambient_light_color = Color(1, 1, 1, 1)
-tonemap_mode = 1
+background_mode = 2
+background_energy_multiplier = 1.1
+sky = SubResource("Sky_7ce1h")
+ambient_light_source = 3
+ambient_light_color = Color(0.453441, 0.603405, 0.705811, 1)
+ambient_light_sky_contribution = 0.25
+tonemap_mode = 2
+ssao_enabled = true
+ssao_radius = 1.11
+fog_enabled = true
+fog_light_color = Color(0.568036, 0.550591, 0.490584, 1)
+fog_sun_scatter = 0.54
+fog_density = 0.005
+fog_aerial_perspective = 0.412
+fog_sky_affect = 0.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_albedo = Color(0.00879999, 0.88, 0.63316, 1)
+volumetric_fog_emission = Color(0.844476, 0.607241, 0.62306, 1)
+volumetric_fog_emission_energy = 17.9
+volumetric_fog_ambient_inject = 3.83
+volumetric_fog_sky_affect = 0.0
+adjustment_enabled = true
+adjustment_brightness = 0.73
+adjustment_contrast = 1.39
+adjustment_saturation = 1.08
 
 [node name="Node3D" type="Node3D"]
 
@@ -38,20 +86,17 @@ tonemap_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3216, 9.90298, -21.8712)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CameraRoot"]
+transform = Transform3D(1, -0.000296706, 0, 0.000296706, 1, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_shc8u")
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_ga03j")
 skeleton = NodePath("../../..")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0.471864, 6.52125, 0.0470721)
-shadow_enabled = true
-shadow_bias = 0.05
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hc04y")
 
 [node name="groundplane" parent="." instance=ExtResource("4_typib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000405312, 0.000554085, -0.000209808)
 
 [node name="river" parent="." instance=ExtResource("5_072mw")]
 
@@ -61,12 +106,125 @@ environment = SubResource("Environment_hc04y")
 transform = Transform3D(0.998753, -0.0499306, 0, 0.0499306, 0.998753, 0, 0, 0, 1, -26.205, 6.5981, -20.7586)
 
 [node name="grass" parent="." instance=ExtResource("8_edu3c")]
-
-[node name="Cottage" parent="." instance=ExtResource("8_l5dyg")]
-transform = Transform3D(1.17896, 0, -0.547779, 0, 1.3, 0, 0.547779, 0, 1.17896, -17.3227, 6.1379, -12.224)
+visible = false
 
 [node name="Character" parent="." instance=ExtResource("9_sj8ce")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4499, 6.17976, -15.9658)
 
 [node name="Cottage2" parent="." instance=ExtResource("8_l5dyg")]
-transform = Transform3D(0.837309, 0, 0.994442, 0, 1.3, 0, -0.994442, 0, 0.837309, 0.101305, 10.1215, -5.11172)
+transform = Transform3D(0.837309, 0, 0.994442, 0, 1.3, 0, -0.994442, 0, 0.837309, 0.101305, 9.57273, -5.11172)
+
+[node name="SM_Prop_Meadow_Fence_012" parent="." instance=ExtResource("10_2g8be")]
+transform = Transform3D(-0.956671, 0.00219414, 0.291163, 0.0021484, 0.999998, -0.00047679, -0.291164, 0.000169405, -0.956673, -1.45454, 9.98034, 3.57336)
+
+[node name="SM_Prop_Meadow_Fence_020" parent="." instance=ExtResource("10_2g8be")]
+transform = Transform3D(-0.727296, 0.00188976, 0.686321, 0.0021484, 0.999997, -0.00047679, -0.68632, 0.00112773, -0.727298, -3.23982, 9.98034, 1.91149)
+
+[node name="SM_Prop_Meadow_Fence_021" parent="." instance=ExtResource("10_2g8be")]
+transform = Transform3D(-0.476104, 0.00144215, 0.879388, -0.0494876, 0.99837, -0.0284301, -0.877995, -0.0570544, -0.475257, -4.43745, 9.68273, -0.215144)
+
+[node name="SM_Prop_Meadow_Fence_022" parent="." instance=ExtResource("10_2g8be")]
+transform = Transform3D(-0.197201, 0.00089108, 0.980363, -0.0453856, 0.998919, -0.0100373, -0.979312, -0.0464737, -0.196947, -4.939, 9.31874, -2.60607)
+
+[node name="SM_Prop_Meadow_Fence_013" parent="." instance=ExtResource("10_2g8be")]
+transform = Transform3D(-0.999748, 0, -0.0224431, 0, 1, 0, 0.0224431, 0, -0.999748, 0.947568, 9.79855, 4.24615)
+
+[node name="SM_Prop_Meadow_Fence_014" parent="." instance=ExtResource("10_2g8be")]
+transform = Transform3D(-0.562574, 0, -0.826747, 0, 1, 0, 0.826747, 0, -0.562574, 3.41494, 9.65416, 4.1852)
+
+[node name="SM_Prop_Meadow_Fence_015" parent="." instance=ExtResource("10_2g8be")]
+transform = Transform3D(-0.278572, 0, -0.960415, 0, 1, 0, 0.960415, 0, -0.278572, 4.79555, 9.6868, 2.06202)
+
+[node name="SM_Prop_Meadow_Fence_016" parent="." instance=ExtResource("10_2g8be")]
+transform = Transform3D(0.458479, 0, -0.888705, 0, 1, 0, 0.888705, 0, 0.458479, 5.47575, 9.57377, -0.270193)
+
+[node name="SM_Prop_Meadow_Fence_017" parent="." instance=ExtResource("10_2g8be")]
+transform = Transform3D(0.637679, 0, -0.770302, 0, 1, 0, 0.770302, 0, 0.637679, 4.3053, 9.57377, -2.48524)
+
+[node name="SM_Prop_Meadow_Fence_018" parent="." instance=ExtResource("10_2g8be")]
+transform = Transform3D(0.950878, 0, -0.309565, 0, 1, 0, 0.309565, 0, 0.950878, 2.7249, 9.5537, -4.47412)
+
+[node name="SM_Prop_Meadow_Fence_019" parent="." instance=ExtResource("10_2g8be")]
+transform = Transform3D(1, 0, 0.000157028, 0, 1, 0, -0.000157028, 0, 1, 0.340528, 9.58374, -5.29547)
+
+[node name="SM_Prop_Meadow_Fence_Post_012" parent="." instance=ExtResource("11_24xjg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11058, 9.48766, -5.25036)
+
+[node name="SM_Env_Rock_Pile_072" parent="." instance=ExtResource("12_r2rnu")]
+transform = Transform3D(-1.00251, 0, -0.709105, 0, 1.22795, 0, 0.709105, 0, -1.00251, 0.963754, 3.33239, -36.7185)
+
+[node name="SM_Prop_Bridge_012" parent="." instance=ExtResource("13_v45le")]
+transform = Transform3D(0.164393, 0, -0.986395, 0, 1, 0, 0.986395, 0, 0.164393, 6.45563, 3.92641, -27.2017)
+
+[node name="SM_Prop_Bridge_013" parent="." instance=ExtResource("13_v45le")]
+transform = Transform3D(-0.923049, 0, 0.384682, 0, 1, 0, -0.384682, 0, -0.923049, 24.6203, 4.07956, -40.0681)
+
+[node name="SM_Prop_Wagon_Broken_012" parent="." instance=ExtResource("14_1i6cn")]
+transform = Transform3D(-0.138758, 0, 0.990326, -0.157891, 0.987209, -0.0221227, -0.977659, -0.159433, -0.136983, 1.09227, 6.91537, -9.36584)
+
+[node name="SM_Prop_Well_012" parent="." instance=ExtResource("15_w84jh")]
+transform = Transform3D(-0.92719, 0, -0.37459, 0, 1, 0, 0.37459, 0, -0.92719, -9.1879, 8.44455, -5.05538)
+
+[node name="SM_Env_Tree_Burnt_022" parent="." instance=ExtResource("16_fxy68")]
+transform = Transform3D(2.77047, 0, 0, 0, 2.77047, 0, 0, 0, 2.77047, -12.2306, 5.57351, -30.9676)
+
+[node name="SM_Env_Tree_Dead_042" parent="." instance=ExtResource("17_l7vry")]
+transform = Transform3D(0.836542, 0.04444, -0.546097, -0.54728, 0.0202888, -0.836703, -0.0261035, 0.998806, 0.0412936, 0.958114, 5.64483, -29.072)
+
+[node name="tree_stump2" parent="." instance=ExtResource("18_d0n35")]
+transform = Transform3D(-0.892746, 0, -1.71744, 0, 1.93561, 0, 1.71744, 0, -0.892746, -6.80203, 5.13973, -19.0886)
+
+[node name="tree_stump3" parent="." instance=ExtResource("18_d0n35")]
+transform = Transform3D(0.471541, 0, -2.26643, 0, 2.31496, 0, 2.26643, 0, 0.471541, -13.1368, 5.68337, -23.3136)
+
+[node name="tree_stump4" parent="." instance=ExtResource("18_d0n35")]
+transform = Transform3D(1.42811, 0, 1.46472, 0, 2.04571, 0, -1.46472, 0, 1.42811, -8.65335, 4.89267, -25.809)
+
+[node name="SM_Env_Tree_Large_012" parent="." instance=ExtResource("19_tsr2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.6737, 6.51683, -28.3017)
+
+[node name="SM_Env_Tree_Large_013" parent="." instance=ExtResource("19_tsr2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19076, 10.467, 2.16401)
+
+[node name="SM_Env_Tree_Large_014" parent="." instance=ExtResource("19_tsr2l")]
+transform = Transform3D(-0.686552, 0, 0.131911, 0, 0.699109, 0, -0.131911, 0, -0.686552, 2.77982, 7.53102, -8.30599)
+
+[node name="SM_Env_Tree_Large_022" parent="." instance=ExtResource("20_bt5sy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.4899, 6.70747, -9.84672)
+
+[node name="SM_Env_Tree_Round_012" parent="." instance=ExtResource("21_enkpu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.2038, 5.9373, -24.0534)
+
+[node name="SM_Env_Tree_Round_022" parent="." instance=ExtResource("22_rllul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4048, 7.71613, -1.54698)
+
+[node name="SM_Env_Tree_Round_032" parent="." instance=ExtResource("23_5fv3u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.763, 5.49557, -20.2481)
+
+[node name="SM_Env_Bush_Small_012" parent="." instance=ExtResource("24_07osn")]
+transform = Transform3D(2.20999, 0, 0, 0, 2.20999, 0, 0, 0, 2.20999, -21.6496, 5.81752, -26.3446)
+
+[node name="SM_Env_Bush_Cluster_012" parent="." instance=ExtResource("25_w1fjc")]
+transform = Transform3D(0.74818, 0, 0.663495, 0, 1, 0, -0.663495, 0, 0.74818, -26.0846, 6.03449, -14.4509)
+
+[node name="SM_Env_Bush_Cluster_022" parent="." instance=ExtResource("26_4h01b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.7085, 4.56359, -35.4074)
+
+[node name="SM_Env_Bush_Small_022" parent="." instance=ExtResource("27_270re")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.32518, 7.51851, -7.14598)
+
+[node name="SM_Env_Bush_Small_023" parent="." instance=ExtResource("27_270re")]
+transform = Transform3D(0.626081, 0, -1.20044, 0, 1.35389, 0, 1.20044, 0, 0.626081, -0.028162, 7.63637, -7.53908)
+
+[node name="SM_Env_Bush_Small_013" parent="." instance=ExtResource("24_07osn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.25117, 8.44, -4.29907)
+
+[node name="SM_Env_Bush_Cluster_013" parent="." instance=ExtResource("25_w1fjc")]
+transform = Transform3D(-0.319191, 0, 0.60239, 0, 0.681731, 0, -0.60239, 0, -0.319191, 5.09726, 6.90855, -5.85131)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.232154, -0.730477, -0.642268, -0.32929, -0.562295, 0.758546, -0.915245, 0.387592, -0.109999, 0, 0, 0)
+light_color = Color(0.96, 0.6656, 0.192, 1)
+light_energy = 2.094
+light_angular_distance = 0.2
+shadow_enabled = true

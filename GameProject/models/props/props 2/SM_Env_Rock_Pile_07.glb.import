@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c68os6cnjx62"
-path="res://.godot/imported/Cottage.glb-a09319087db559783f66d8017ecf8995.scn"
+uid="uid://w4f6rjthf1xq"
+path="res://.godot/imported/SM_Env_Rock_Pile_07.glb-e7fc74f160287172c2c7b6780557da01.scn"
 
 [deps]
 
-source_file="res://models/Cottage.glb"
-dest_files=["res://.godot/imported/Cottage.glb-a09319087db559783f66d8017ecf8995.scn"]
+source_file="res://models/props/props 2/SM_Env_Rock_Pile_07.glb"
+dest_files=["res://.godot/imported/SM_Env_Rock_Pile_07.glb-e7fc74f160287172c2c7b6780557da01.scn"]
 
 [params]
 
@@ -31,21 +31,15 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "materials": {
-"Glass": {
+"placeholder": {
 "use_external/enabled": true,
-"use_external/path": "res://materials/mat_glass.tres"
+"use_external/path": "res://materials/mat_synty_meadow.tres"
+}
 },
-"Roof": {
-"use_external/enabled": true,
-"use_external/path": "res://materials/mat_roof.tres"
-},
-"Stonewall": {
-"use_external/enabled": true,
-"use_external/path": "res://materials/mat_roof.tres"
-},
-"Tex": {
-"use_external/enabled": true,
-"use_external/path": "res://materials/mat_synty_fantasykingdom.tres"
+"nodes": {
+"PATH:SM_Env_Rock_Pile_07": {
+"generate/physics": true,
+"physics/shape_type": 1
 }
 }
 }
