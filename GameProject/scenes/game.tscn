@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://c57b16nj7p50k"]
+[gd_scene load_steps=36 format=3 uid="uid://c57b16nj7p50k"]
 
 [ext_resource type="PackedScene" uid="uid://cuqpjlp4i7pkb" path="res://scenes/camera.tscn" id="3_o5mjl"]
 [ext_resource type="Shader" path="res://shaders/outline.gdshader" id="4_r3k4d"]
@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://cj6j4fhrbal1u" path="res://models/props/props 3/SM_Env_Bush_Cluster_01.glb" id="25_w1fjc"]
 [ext_resource type="PackedScene" uid="uid://c0iurm5hclif0" path="res://models/props/props 3/SM_Env_Bush_Cluster_02.glb" id="26_4h01b"]
 [ext_resource type="PackedScene" uid="uid://cdqnl361gsuj2" path="res://models/props/props 3/SM_Env_Bush_Small_02.glb" id="27_270re"]
-[ext_resource type="PackedScene" uid="uid://cwycwp30gjjet" path="res://scenes/character.tscn" id="27_lh2d5"]
+[ext_resource type="PackedScene" uid="uid://cwycwp30gjjet" path="res://scenes/character.tscn" id="27_f6hob"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_shc8u"]
 render_priority = 0
@@ -45,6 +45,13 @@ shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 material = SubResource("ShaderMaterial_ye7d4")
 flip_faces = true
 size = Vector2(2, 2)
+
+[sub_resource type="Gradient" id="Gradient_q1by4"]
+offsets = PackedFloat32Array(0, 0.321234, 0.825771, 1)
+colors = PackedColorArray(0.0414092, 0.336274, 0.449871, 1, 0.128857, 0.128857, 0.128857, 1, 0.876912, 0.82224, 0.780733, 1, 0.86, 0.761387, 0.1204, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5fauo"]
+gradient = SubResource("Gradient_q1by4")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xh8mq"]
 sky_top_color = Color(0.566304, 0.758999, 0.76163, 1)
@@ -67,18 +74,20 @@ fog_light_color = Color(0.568036, 0.550591, 0.490584, 1)
 fog_sun_scatter = 0.54
 fog_density = 0.005
 fog_aerial_perspective = 0.412
-fog_sky_affect = 0.0
+fog_sky_affect = 0.389
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.01
 volumetric_fog_albedo = Color(0.00879999, 0.88, 0.63316, 1)
 volumetric_fog_emission = Color(0.844476, 0.607241, 0.62306, 1)
-volumetric_fog_emission_energy = 17.9
-volumetric_fog_ambient_inject = 3.83
-volumetric_fog_sky_affect = 0.0
+volumetric_fog_emission_energy = 17.3
+volumetric_fog_anisotropy = 0.13
+volumetric_fog_length = 12.5
+volumetric_fog_sky_affect = 0.165
 adjustment_enabled = true
 adjustment_brightness = 0.73
-adjustment_contrast = 1.39
+adjustment_contrast = 1.2
 adjustment_saturation = 1.08
+adjustment_color_correction = SubResource("GradientTexture1D_5fauo")
 
 [node name="Node3D" type="Node3D"]
 
@@ -227,5 +236,5 @@ light_energy = 2.094
 light_angular_distance = 0.2
 shadow_enabled = true
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("27_lh2d5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0263, 7.31009, -14.7456)
+[node name="CharacterBody3D" parent="." instance=ExtResource("27_f6hob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3288, 7.45379, -15.6403)
