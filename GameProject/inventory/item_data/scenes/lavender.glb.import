@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d4vc2e46xuiq"
-path="res://.godot/imported/SM_Env_Flowers_15.glb-55ac12bbb38ff26ecd24c7512b43a848.scn"
+path="res://.godot/imported/lavender.glb-e9ff869fdee6917ad6c0a6542f8b834a.scn"
 
 [deps]
 
-source_file="res://inventory/item_data/scenes/SM_Env_Flowers_15.glb"
-dest_files=["res://.godot/imported/SM_Env_Flowers_15.glb-55ac12bbb38ff26ecd24c7512b43a848.scn"]
+source_file="res://inventory/item_data/scenes/lavender.glb"
+dest_files=["res://.godot/imported/lavender.glb-e9ff869fdee6917ad6c0a6542f8b834a.scn"]
 
 [params]
 

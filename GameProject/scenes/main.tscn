@@ -1,5 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1ouaj32dec6i"]
+[gd_scene load_steps=12 format=3 uid="uid://c1ouaj32dec6i"]
 
+[ext_resource type="Script" path="res://scripts/world_space_emulator.gd" id="1_x0338"]
+[ext_resource type="Texture2D" uid="uid://dim2ylw7ggq76" path="res://sprites/tilemap_packed.png" id="2_lumny"]
 [ext_resource type="Script" path="res://scripts/scene_management/scene_manager.gd" id="2_puta8"]
 [ext_resource type="Resource" uid="uid://caedrsqk0vks7" path="res://scene_infos/game_scene_info.tres" id="3_codhc"]
 [ext_resource type="Resource" uid="uid://c2g2ogo7ujhge" path="res://scene_infos/inventory_scene_info.tres" id="3_nm585"]
@@ -9,10 +11,41 @@
 [ext_resource type="Resource" uid="uid://dig0ksooi7581" path="res://scene_infos/settings_scene_info.tres" id="6_u5u2w"]
 [ext_resource type="Resource" uid="uid://bd0vbxvqw04rq" path="res://scene_infos/brewing_scene_info.tres" id="7_7xtkw"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5ao0"]
+atlas = ExtResource("2_lumny")
+region = Rect2(305, 33, 13, 14)
+
 [node name="main" type="Node"]
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
 process_mode = 3
+
+[node name="WorldSpaceDrawer" type="Control" parent="UserInterface" node_paths=PackedStringArray("element")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_x0338")
+element = NodePath("prompt")
+
+[node name="prompt" type="TextureRect" parent="UserInterface/WorldSpaceDrawer"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_m5ao0")
 
 [node name="scene_manager" type="Node" parent="." node_paths=PackedStringArray("ui_root")]
 script = ExtResource("2_puta8")
@@ -20,5 +53,6 @@ scenes = Array[Resource("res://scripts/scene_management/scene_info.gd")]([ExtRes
 initial_scene = ExtResource("4_vvdig")
 ui_root = NodePath("../UserInterface")
 
-[node name="game_manager" type="Node" parent="."]
+[node name="game_manager" type="Node" parent="." node_paths=PackedStringArray("world_space_drawer")]
 script = ExtResource("5_clf4u")
+world_space_drawer = NodePath("../UserInterface/WorldSpaceDrawer")

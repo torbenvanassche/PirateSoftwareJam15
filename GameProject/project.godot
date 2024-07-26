@@ -21,6 +21,10 @@ Settings="*res://scripts/utils/settings.gd"
 ItemManager="*res://inventory/scripts/item_manager.gd"
 Debug="*res://scripts/utils/debug.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/snappy/plugin.cfg")
