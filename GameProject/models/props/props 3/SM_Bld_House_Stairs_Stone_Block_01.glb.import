@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://5y7gp4plvp2j"
-path="res://.godot/imported/Village house 1.glb-24b2dac26e4c59c6aaf0ffcb96d67e85.scn"
+uid="uid://cwc8r7223ms13"
+path="res://.godot/imported/SM_Bld_House_Stairs_Stone_Block_01.glb-41142c2c278a101d8cd5997e0ff1b60a.scn"
 
 [deps]
 
-source_file="res://models/Village house 1.glb"
-dest_files=["res://.godot/imported/Village house 1.glb-24b2dac26e4c59c6aaf0ffcb96d67e85.scn"]
+source_file="res://models/props/props 3/SM_Bld_House_Stairs_Stone_Block_01.glb"
+dest_files=["res://.godot/imported/SM_Bld_House_Stairs_Stone_Block_01.glb-41142c2c278a101d8cd5997e0ff1b60a.scn"]
 
 [params]
 
@@ -31,17 +31,9 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "materials": {
-"Brickwall": {
+"CastleSHD122": {
 "use_external/enabled": true,
 "use_external/path": "res://materials/mat_brickwall.tres"
-},
-"Roof": {
-"use_external/enabled": true,
-"use_external/path": "res://materials/mat_roofvillage.tres"
-},
-"Tex": {
-"use_external/enabled": true,
-"use_external/path": "res://environment.tres"
 }
 }
 }
