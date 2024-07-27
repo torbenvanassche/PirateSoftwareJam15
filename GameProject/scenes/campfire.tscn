@@ -11,8 +11,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_d5q2q"]
 size = Vector3(5, 2, 5)
 
-[node name="campfire_area" type="Area3D"]
+[node name="campfire_area" type="Area3D" node_paths=PackedStringArray("sprite_position")]
 script = ExtResource("1_18f5m")
+sprite_position = NodePath("Node3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.622803, 0.5, 0.131714)
@@ -41,3 +42,6 @@ transform = Transform3D(0.837766, 0, -0.546029, 0, 1, 0, 0.546029, 0, 0.837766, 
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.832902, 0.250367, -0.49355, 0, 0.891816, 0.452398, 0.553421, -0.376803, 0.742795, -0.290481, 2.25463, 1.75149)
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.54556, 0)

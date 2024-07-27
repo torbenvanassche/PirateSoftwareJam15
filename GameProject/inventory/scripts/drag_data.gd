@@ -2,12 +2,10 @@ class_name DragData
 extends Node
 
 var item: Dictionary;
-var item_slots: Array[ItemSlotUI];
+var item_slot: ItemSlotUI;
 var origin_window: String;
-var shape: Array
 
-func _init(it: Dictionary, window: String, current_shape: Array =  [], slots: Array[ItemSlotUI] = []):
+func _init(it: Dictionary, window: String, slot: ItemSlotUI):
 	item = it;
-	item_slots = slots;
+	item_slot = slot;
 	origin_window = window;
-	shape = current_shape;

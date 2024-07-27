@@ -6,3 +6,6 @@ func _ready():
 	
 func _on_settings_changed():
 	stretch_shrink = Settings.camera_pixelation_ratio;
+	
+func on_enter():
+	SceneManager.instance.clear_stack();

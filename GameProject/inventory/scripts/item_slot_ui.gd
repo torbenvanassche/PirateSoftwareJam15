@@ -3,19 +3,25 @@ extends Button
 
 @onready var textureRect: TextureRect = $MarginContainer/ItemSprite;
 @onready var counter: Label = $Count;
-var slot_data: ItemSlot;
+var slot_data: ItemSlot = ItemSlot.new();
 
 @export var default_color = Color(Color.WHITE)
 @export var dragging_color = Color(Color.WHITE, 0.3);
 
+@export var window_id: String = "inventory";
+
 @export var show_amount: bool = true:
 	set(value):
-		counter.visible = value;
+		if counter:
+			counter.visible = value;
 		show_amount = value;
 	
 func as_blank():
 	textureRect.modulate = dragging_color;
 	counter.visible = false;
+	
+func _ready():
+	counter.visible = show_amount;
 	
 func redraw():
 	var sprite = null;
@@ -31,7 +37,7 @@ func redraw():
 	textureRect.set_texture(sprite);
 	
 func set_reference(data: ItemSlot):
-	if slot_data:
+	if slot_data && slot_data.has_changed.is_connected(redraw):
 		slot_data.has_changed.disconnect(redraw);
 	slot_data = data;
 	slot_data.has_changed.connect(redraw);
@@ -42,7 +48,7 @@ signal on_drag_end(b: ItemSlotUI);
 func _get_drag_data(_at_position):
 	if slot_data.item != {}:
 		as_blank();
-		return DragData.new(slot_data.item, "inventory", [], [self]);
+		return DragData.new(slot_data.item, window_id, self);
 	return null;
 	
 func _can_drop_data(_at_position, data):
@@ -52,9 +58,14 @@ func _can_drop_data(_at_position, data):
 	
 func _drop_data(_at_position, data):
 	var count_removed = data.item.count;
-	data.item_slots[0].slot_data.remove(data.item.count);
+	if window_id == "brewing":
+		count_removed = 1;
+	
+	var typed_data = data as DragData;
+	data.item_slot.slot_data.remove(data.item.count);
 	slot_data.add(data.item, count_removed);
 	on_drag_end.emit(self)
+	redraw();
 	
 func _notification(what):
 	match what:

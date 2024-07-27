@@ -105,7 +105,7 @@ func ui_is_open(exceptions: Array[String] = ["pause"]) -> bool:
 func remove_ui():
 	for scene_info in scenes:
 		if scene_info.is_ui && scene_info.node != null:
-			scene_info.node.queue_free()
+			scene_info.node.visible = false;
 			
 func is_active(scene_name: String):
 	for sceneInfo in scenes:

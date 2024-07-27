@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhtdny1ri76xk"]
+
+[ext_resource type="Shape3D" uid="uid://drjfxefpjppgy" path="res://player/colliders/shadow_collider.tres" id="1_014bq"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ch1pj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmbk2"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="shadow_collision" type="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.758779, 0.0586356)
+shape = ExtResource("1_014bq")
+
+[node name="shadow_form" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, -0.340545, -0.0633039)
+mesh = SubResource("SphereMesh_ch1pj")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_jmbk2")

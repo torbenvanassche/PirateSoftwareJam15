@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhngq0tbbbjxe"]
+
+[ext_resource type="Shape3D" uid="uid://554us50hmwt6" path="res://player/colliders/human_collider.tres" id="1_jnoie"]
+[ext_resource type="PackedScene" uid="uid://c7mckeqrkh8i5" path="res://player/Character.glb" id="2_ornmn"]
+
+[node name="player_collision" type="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0384783, 0.062)
+shape = ExtResource("1_jnoie")
+
+[node name="Character" parent="." instance=ExtResource("2_ornmn")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -1.15407, -0.062)

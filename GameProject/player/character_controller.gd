@@ -22,35 +22,33 @@ var current_rotation_y: float = 0;
 
 var current_triggers: Array[Area3D];
 var do_processing: bool = true;
+var can_transform: bool = true;
 
-@export var human_collision: Shape3D;
-@export var human_collision_position: Vector3;
-@export var shadow_collision: Shape3D;
-@export var shadow_collision_position: Vector3;
-@export var collision_control: CollisionShape3D;
+@export var human_model: PackedScene;
+@export var shadow_model: PackedScene;
+var current_instance: Node3D;
 
-@export var human_model: Node;
-@export var shadow_model: Node;
-
-var is_human: bool = true;
+var is_human: bool = true:
+	set(value):
+		if value != is_human:
+			current_instance.queue_free();
+		is_human = value;
+		if is_human:
+			current_instance = human_model.instantiate();
+		else:
+			current_instance = shadow_model.instantiate();
+		add_child(current_instance)
 
 func _init():
 	Manager.instance.player = self;
 	
-func toggle_shape():
-	if is_human:
-		collision_control.shape = human_collision;
-		collision_control.position = human_collision_position;
-	else:
-		collision_control.shape = shadow_collision;
-		collision_control.position = shadow_collision_position;
-		
-	human_model.visible = is_human;
-	shadow_model.visible = !is_human;
-		
-	
 func get_gravity() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity
+	
+func _ready():
+	interaction_range.area_entered.connect(_on_enter);
+	interaction_range.area_exited.connect(_on_leave);
+	is_human = true;
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("open_inventory"):
@@ -58,6 +56,9 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed(("interact")):
 		interact();
+		
+	if Input.is_action_just_pressed("change_form") && can_transform:
+			is_human = !is_human;
 	
 	if not Manager.instance.camera_controller || !do_processing:
 		return;
@@ -87,17 +88,11 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, speed)
 
 	move_and_slide()
-
-func _ready():
-	interaction_range.area_entered.connect(_on_enter);
-	interaction_range.area_exited.connect(_on_leave);
-	toggle_shape();
 	
 func interact():
 	if current_triggers.size() != 0:
 		if current_triggers[0].has_method("on_interact"):
 			current_triggers[0].on_interact();
-		
 	
 func sort_areas_by_distance():
 	current_triggers.sort_custom(func(a, b): return position.distance_squared_to(a) > position.distance_squared_to(b));

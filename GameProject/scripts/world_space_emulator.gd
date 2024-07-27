@@ -14,7 +14,7 @@ func _process(_delta: float):
 	else:
 		element.visible = false;
 
-func show_rect(target: Node3D):
+func show_rect(target: Node3D = null):
 	_target = target;
 	element.visible = true;
 

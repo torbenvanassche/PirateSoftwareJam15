@@ -11,5 +11,5 @@ func _init(hide: bool = false, disable_process: bool = false, free: bool = false
 	remove_all_other_scenes = remove_other;
 	disable_processing = disable_process;
 	custom_parameters = custom_params;
-	hide_current = hide;
-	free_current = free;
+	hide_current = hide || free;
+	free_current = false;
