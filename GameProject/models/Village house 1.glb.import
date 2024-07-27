@@ -33,15 +33,23 @@ _subresources={
 "materials": {
 "Brickwall": {
 "use_external/enabled": true,
-"use_external/path": "res://materials/mat_brickwall.tres"
+"use_external/path": "res://models/materials/mat_brickwall.tres"
+},
+"Glass": {
+"use_external/enabled": true,
+"use_external/path": "res://models/materials/mat_glass.tres"
 },
 "Roof": {
 "use_external/enabled": true,
-"use_external/path": "res://materials/mat_roofvillage.tres"
+"use_external/path": "res://models/materials/mat_roofvillage.tres"
+},
+"Stonewall": {
+"use_external/enabled": true,
+"use_external/path": "res://models/materials/mat_stonewall.tres"
 },
 "Tex": {
 "use_external/enabled": true,
-"use_external/path": "res://environment.tres"
+"use_external/path": "res://models/materials/mat_synty_fantasykingdom.tres"
 }
 }
 }

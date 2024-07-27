@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://drseva47awncv"]
-
-[ext_resource type="Texture2D" uid="uid://bj8wlesrs3n3n" path="res://textures/PolygonFantasyKingdon_Texture_Wall_Brick_01.png" id="1_ecqu2"]
-[ext_resource type="Texture2D" uid="uid://dprto030va51p" path="res://textures/PolygonFantasyKingdon_Texture_Wall_Brick_Normal.png" id="2_lwasl"]
-
-[resource]
-albedo_texture = ExtResource("1_ecqu2")
-normal_enabled = true
-normal_texture = ExtResource("2_lwasl")
