@@ -12,7 +12,7 @@
 [sub_resource type="Environment" id="Environment_gmmi5"]
 background_mode = 2
 fog_enabled = true
-fog_light_energy = 0.43
+fog_light_energy = 0.23
 fog_density = 0.005
 
 [node name="PuzzleRoom1Cave" type="Node3D"]
@@ -238,10 +238,13 @@ spot_angle_attenuation = 0.812249
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.990254, -0.131927, 0.044647, -0.0712635, -0.204519, 0.976265, -0.119664, -0.969932, -0.211928, -12.2518, 11.3933, -0.760033)
-light_color = Color(0.298039, 0.321569, 0.756863, 1)
-light_energy = 0.93
-light_indirect_energy = 2.808
+light_color = Color(0.265762, 0.284123, 0.699509, 1)
+light_energy = 1.934
+light_indirect_energy = 3.009
 shadow_enabled = true
+shadow_bias = 0.728
+shadow_normal_bias = 5.054
+shadow_blur = 1.085
 
 [node name="puzzle_room_floorpiece" parent="." instance=ExtResource("8_5566c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.48, 0.139449, -13.8967)
