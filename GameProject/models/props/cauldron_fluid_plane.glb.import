@@ -3,17 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<< Updated upstream
-uid="uid://bo0dmlssb5lg8"
-=======
-uid="uid://ddxetdrt0hvk7"
->>>>>>> Stashed changes
-path="res://.godot/imported/cauldron fluid plane.glb-6e934870d7338f874157368edeefacbc.scn"
+uid="uid://b48svieb7mjdu"
+path="res://.godot/imported/cauldron_fluid_plane.glb-349307df871a353664419abb50a73b6a.scn"
 
 [deps]
 
-source_file="res://models/props/cauldron fluid plane.glb"
-dest_files=["res://.godot/imported/cauldron fluid plane.glb-6e934870d7338f874157368edeefacbc.scn"]
+source_file="res://models/props/cauldron_fluid_plane.glb"
+dest_files=["res://.godot/imported/cauldron_fluid_plane.glb-349307df871a353664419abb50a73b6a.scn"]
 
 [params]
 

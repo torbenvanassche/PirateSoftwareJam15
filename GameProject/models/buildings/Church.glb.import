@@ -3,11 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<< Updated upstream
-uid="uid://canpgwgvhsnf7"
-=======
-uid="uid://ctn7ldlaiq0pu"
->>>>>>> Stashed changes
+uid="uid://n88p3vyyshe"
 path="res://.godot/imported/Church.glb-a17d1a860e6de9c1eb5f1280b1777a30.scn"
 
 [deps]

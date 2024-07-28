@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://bcybejolk48no" path="res://models/props/campfire.glb" id="2_lmpfi"]
 [ext_resource type="PackedScene" uid="uid://b1lk3k14vmem4" path="res://models/props/tripod.glb" id="3_r3yab"]
 [ext_resource type="PackedScene" uid="uid://3p4yk8mo2hd7" path="res://models/props/stone_ring.glb" id="4_kq4su"]
+[ext_resource type="PackedScene" uid="uid://b48svieb7mjdu" path="res://models/props/cauldron_fluid_plane.glb" id="4_offwm"]
 [ext_resource type="PackedScene" uid="uid://bruhax6px1mtk" path="res://models/props/camping_ground.glb" id="5_rk4qn"]
 [ext_resource type="PackedScene" uid="uid://dka4ewg12ndqh" path="res://models/props/tree_stump.glb" id="6_lpc1b"]
 [ext_resource type="PackedScene" uid="uid://dd7i2b8p3uf5q" path="res://models/props/log.glb" id="7_j86in"]
-[ext_resource type="PackedScene" uid="uid://ddxetdrt0hvk7" path="res://models/props/cauldron fluid plane.glb" id="8_t8xmv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d5q2q"]
 size = Vector3(5, 2, 5)
@@ -25,6 +25,8 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.0580227, 0)
 
 [node name="tripod" parent="." instance=ExtResource("3_r3yab")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.101489, 0)
+
+[node name="cauldron_fluid_plane" parent="tripod" instance=ExtResource("4_offwm")]
 
 [node name="stone_ring" parent="." instance=ExtResource("4_kq4su")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.0580227, 0)
@@ -46,6 +48,3 @@ transform = Transform3D(0.832902, 0.250367, -0.49355, 0, 0.891816, 0.452398, 0.5
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.54556, 0)
-
-[node name="cauldron fluid plane" parent="." instance=ExtResource("8_t8xmv")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.101, 0)

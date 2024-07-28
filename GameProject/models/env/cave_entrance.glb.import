@@ -3,11 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<< Updated upstream
-uid="uid://bg846xgdljyj0"
-=======
-uid="uid://ddfdjabiqn1s7"
->>>>>>> Stashed changes
+uid="uid://b2ji7cs41tri6"
 path="res://.godot/imported/cave_entrance.glb-60ffd47a211327caa357db674e6a7488.scn"
 
 [deps]
