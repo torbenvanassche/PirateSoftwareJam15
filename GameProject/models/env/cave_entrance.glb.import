@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://w4f6rjthf1xq"
-path="res://.godot/imported/SM_Env_Rock_Pile_07.glb-e7fc74f160287172c2c7b6780557da01.scn"
+uid="uid://1hm4ibpqp0dr"
+path="res://.godot/imported/cave_entrance.glb-60ffd47a211327caa357db674e6a7488.scn"
 
 [deps]
 
-source_file="res://models/props/props 2/SM_Env_Rock_Pile_07.glb"
-dest_files=["res://.godot/imported/SM_Env_Rock_Pile_07.glb-e7fc74f160287172c2c7b6780557da01.scn"]
+source_file="res://models/env/cave_entrance.glb"
+dest_files=["res://.godot/imported/cave_entrance.glb-60ffd47a211327caa357db674e6a7488.scn"]
 
 [params]
 
@@ -31,15 +31,9 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "materials": {
-"placeholder": {
+"lambert1.001": {
 "use_external/enabled": true,
-"use_external/path": "res://models/materials/mat_synty_fantasy.tres"
-}
-},
-"nodes": {
-"PATH:SM_Env_Rock_Pile_07": {
-"generate/physics": true,
-"physics/shape_type": 1
+"use_external/path": "res://models/materials/mat_synty_nature.tres"
 }
 }
 }

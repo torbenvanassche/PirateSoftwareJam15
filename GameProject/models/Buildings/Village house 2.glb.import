@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://5y7gp4plvp2j"
-path="res://.godot/imported/Village house 1.glb-24b2dac26e4c59c6aaf0ffcb96d67e85.scn"
+uid="uid://br8pmn8rmb2ki"
+path="res://.godot/imported/Village house 2.glb-84be6502b92cd20381e452101a662c73.scn"
 
 [deps]
 
-source_file="res://models/Village house 1.glb"
-dest_files=["res://.godot/imported/Village house 1.glb-24b2dac26e4c59c6aaf0ffcb96d67e85.scn"]
+source_file="res://models/Buildings/Village house 2.glb"
+dest_files=["res://.godot/imported/Village house 2.glb-84be6502b92cd20381e452101a662c73.scn"]
 
 [params]
 
@@ -31,29 +31,29 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "materials": {
-"Brickwall": {
+"Brickwall.001": {
 "use_external/enabled": true,
 "use_external/path": "res://models/materials/mat_brickwall.tres"
 },
-"Glass": {
+"Glass.001": {
 "use_external/enabled": true,
 "use_external/path": "res://models/materials/mat_glass.tres"
 },
-"Roof": {
+"Roof.001": {
 "use_external/enabled": true,
 "use_external/path": "res://models/materials/mat_roofvillage.tres"
 },
-"Stonewall": {
+"Stonewall.001": {
 "use_external/enabled": true,
 "use_external/path": "res://models/materials/mat_stonewall.tres"
 },
-"Tex": {
+"Tex.001": {
 "use_external/enabled": true,
 "use_external/path": "res://models/materials/mat_synty_fantasykingdom.tres"
 }
 },
 "nodes": {
-"PATH:House_1": {
+"PATH:House_2": {
 "generate/physics": true
 }
 }

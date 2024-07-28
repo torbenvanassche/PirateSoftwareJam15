@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://w4f6rjthf1xq"
-path="res://.godot/imported/SM_Env_Rock_Pile_07.glb-e7fc74f160287172c2c7b6780557da01.scn"
+uid="uid://b8wdu8gst8mv5"
+path="res://.godot/imported/Church.glb-16bdc5aa5294be00ab439c32c2da3f84.scn"
 
 [deps]
 
-source_file="res://models/props/props 2/SM_Env_Rock_Pile_07.glb"
-dest_files=["res://.godot/imported/SM_Env_Rock_Pile_07.glb-e7fc74f160287172c2c7b6780557da01.scn"]
+source_file="res://models/Buildings/Church.glb"
+dest_files=["res://.godot/imported/Church.glb-16bdc5aa5294be00ab439c32c2da3f84.scn"]
 
 [params]
 
@@ -31,15 +31,9 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "materials": {
-"placeholder": {
+"lambert35": {
 "use_external/enabled": true,
-"use_external/path": "res://models/materials/mat_synty_fantasy.tres"
-}
-},
-"nodes": {
-"PATH:SM_Env_Rock_Pile_07": {
-"generate/physics": true,
-"physics/shape_type": 1
+"use_external/path": "res://models/materials/mat_synty_town.tres"
 }
 }
 }
