@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://c57b16nj7p50k"]
+[gd_scene load_steps=44 format=3 uid="uid://c57b16nj7p50k"]
 
 [ext_resource type="PackedScene" uid="uid://cuqpjlp4i7pkb" path="res://scenes/camera.tscn" id="3_o5mjl"]
 [ext_resource type="Shader" path="res://shaders/outline.gdshader" id="4_r3k4d"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://eybvp4b45810" path="res://models/env/river.glb" id="5_072mw"]
 [ext_resource type="PackedScene" uid="uid://cjookd7f5kqrj" path="res://models/env/rockwall.glb" id="6_r3iyf"]
 [ext_resource type="PackedScene" uid="uid://btc5eljbycubc" path="res://scenes/campfire.tscn" id="7_v3iri"]
-[ext_resource type="PackedScene" uid="uid://c68os6cnjx62" path="res://models/Cottage.glb" id="8_l5dyg"]
+[ext_resource type="PackedScene" uid="uid://c68os6cnjx62" path="res://models/buildings/Cottage.glb" id="8_l5dyg"]
 [ext_resource type="PackedScene" uid="uid://b36ddsdbnkdw4" path="res://models/props/SM_Prop_Meadow_Fence_01.glb" id="10_2g8be"]
 [ext_resource type="PackedScene" uid="uid://bodtsih535a4t" path="res://models/props/props 2/SM_Prop_Meadow_Fence_Post_01.glb" id="11_24xjg"]
 [ext_resource type="PackedScene" uid="uid://w4f6rjthf1xq" path="res://models/props/props 2/SM_Env_Rock_Pile_07.glb" id="12_r2rnu"]
@@ -33,11 +33,13 @@
 [ext_resource type="PackedScene" uid="uid://c3myglujgjihm" path="res://models/props/props 3/SM_Env_Flowers_01.glb" id="31_yx6jr"]
 [ext_resource type="PackedScene" uid="uid://cqqk6cif4sljv" path="res://models/props/props 3/SM_Env_Flowers_02.glb" id="32_8eth5"]
 [ext_resource type="PackedScene" uid="uid://bqbundet71ukq" path="res://models/props/props 3/SM_Env_Big_Tree_01.glb" id="33_dp17g"]
-[ext_resource type="PackedScene" uid="uid://5y7gp4plvp2j" path="res://models/Village house 1.glb" id="34_k13mp"]
+[ext_resource type="PackedScene" uid="uid://5y7gp4plvp2j" path="res://models/buildings/Village house 1.glb" id="34_k13mp"]
 [ext_resource type="PackedScene" uid="uid://cabissdsw8rsc" path="res://models/props/props 3/SM_Bld_House_Stairs_Stone_02.glb" id="35_fkilg"]
 [ext_resource type="PackedScene" uid="uid://k1gfdhd80rfm" path="res://models/props/props 2/SM_Prop_Stonewall_Pillar_01.glb" id="36_csggv"]
-[ext_resource type="PackedScene" uid="uid://br8pmn8rmb2ki" path="res://models/Village house 2.glb" id="37_nvjfd"]
+[ext_resource type="PackedScene" uid="uid://br8pmn8rmb2ki" path="res://models/buildings/Village house 2.glb" id="37_nvjfd"]
 [ext_resource type="PackedScene" uid="uid://cwc8r7223ms13" path="res://models/props/props 3/SM_Bld_House_Stairs_Stone_Block_01.glb" id="38_lkjly"]
+[ext_resource type="PackedScene" uid="uid://n88p3vyyshe" path="res://models/buildings/Church.glb" id="39_3hn73"]
+[ext_resource type="PackedScene" uid="uid://b2ji7cs41tri6" path="res://models/env/cave_entrance.glb" id="40_385g3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_shc8u"]
 render_priority = 0
@@ -598,3 +600,9 @@ transform = Transform3D(0.263671, 0, -0.964613, 0, 1, 0, 0.964613, 0, 0.263671, 
 
 [node name="SM_Env_Big_Tree_012" parent="." instance=ExtResource("33_dp17g")]
 transform = Transform3D(2.17434, 0, -4.6506, 0, 5.13379, 0, 4.6506, 0, 2.17434, 30.6174, 12.0017, 33.4416)
+
+[node name="Church" parent="." instance=ExtResource("39_3hn73")]
+transform = Transform3D(0.609633, 0, -0.792683, 0, 1, 0, 0.792683, 0, 0.609633, 59.3936, 0.537521, -47.0701)
+
+[node name="cave_entrance" parent="." instance=ExtResource("40_385g3")]
+transform = Transform3D(0.440315, 0, 0.897843, 0, 1, 0, -0.897843, 0, 0.440315, 86.8387, -1.39128, 8.00599)
