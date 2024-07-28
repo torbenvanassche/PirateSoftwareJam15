@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8lomr232tcq7"]
+[gd_scene load_steps=10 format=3 uid="uid://b8lomr232tcq7"]
 
 [ext_resource type="PackedScene" uid="uid://0e41g1onvw1t" path="res://models/puzzle_room_assets/puzzle_room_layout.glb" id="1_opkgr"]
 [ext_resource type="PackedScene" uid="uid://7wbhd6or8ldv" path="res://models/puzzle_room_assets/puzzle_room_box.glb" id="2_4jd0g"]
@@ -7,6 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://bx8wvrgt8l5jw" path="res://models/puzzle_room_assets/puzzle_room_lightslider.glb" id="5_hi16g"]
 [ext_resource type="PackedScene" uid="uid://ba0k8q5q788uu" path="res://models/puzzle_room_assets/puzzle_room_door.glb" id="6_d8pnw"]
 [ext_resource type="PackedScene" uid="uid://didt5psrgnuib" path="res://models/puzzle_room_assets/puzzle_room_pressureplate.glb" id="7_82o88"]
+[ext_resource type="PackedScene" uid="uid://d1tbiykht0w2y" path="res://models/puzzle_room_assets/puzzle_room_floorpiece.glb" id="8_5566c"]
+
+[sub_resource type="Environment" id="Environment_gmmi5"]
+background_mode = 2
+fog_enabled = true
+fog_light_energy = 0.43
+fog_density = 0.005
 
 [node name="PuzzleRoom1Cave" type="Node3D"]
 
@@ -14,25 +21,25 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.62379, 0)
 
 [node name="puzzle_room_box" parent="." instance=ExtResource("2_4jd0g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.88114, 0.694465, 5.29952)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.64555, 1.14144, 5.01576)
 
 [node name="puzzle_room_box2" parent="." instance=ExtResource("2_4jd0g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.833977, 0.694463, -11.0208)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.833977, 1.15288, -11.0208)
 
 [node name="puzzle_room_box3" parent="." instance=ExtResource("2_4jd0g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.999, 0.694463, 0.283172)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.999, 1.23814, 0.283172)
 
 [node name="puzzle_room_box4" parent="." instance=ExtResource("2_4jd0g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3555, 0.694463, -13.7323)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.8631, 1.09309, -13.7323)
 
 [node name="puzzle_room_box5" parent="." instance=ExtResource("2_4jd0g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.2192, 0.694463, 5.87762)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.576, 1.21513, 5.23289)
 
 [node name="puzzle_room_box6" parent="." instance=ExtResource("2_4jd0g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.5999, 0.694463, -3.78442)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.4819, 1.13235, -3.75703)
 
 [node name="puzzle_room_table" parent="." instance=ExtResource("3_jkanj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.228327, 0.758543, 5.98096)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.228327, 1.31194, 5.98096)
 
 [node name="puzzle_room_table2" parent="." instance=ExtResource("3_jkanj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.428, 0.758543, -18.6196)
@@ -41,7 +48,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.428, 0.758543, -18.6196)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.47208, 1.40045, -6.20007)
 
 [node name="puzzle_room_lightslider" parent="." instance=ExtResource("5_hi16g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4129, 0.709805, 2.65409)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2887, 1.74772, 2.34991)
+
+[node name="SpotLight3D14" type="SpotLight3D" parent="puzzle_room_lightslider"]
+transform = Transform3D(-4.37114e-08, 0.0475772, 0.998868, 0, 0.998868, -0.0475772, -1, -2.07966e-09, -4.36619e-08, -0.238725, 0.521689, 0.0353942)
+light_color = Color(1, 0.87451, 0.701961, 1)
+light_energy = 7.317
+light_indirect_energy = 1.521
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 8.087
+spot_attenuation = 0.901248
+spot_angle = 1.65
+spot_angle_attenuation = 0.210223
 
 [node name="puzzle_room_door" parent="." instance=ExtResource("6_d8pnw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3449, 0.936321, 4.18708)
@@ -50,4 +70,178 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3449, 0.936321, 4.18708)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1132, 0.936321, -11.0453)
 
 [node name="puzzle_room_pressureplate" parent="." instance=ExtResource("7_82o88")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4098, 0, -13.6432)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3655, 0.30259, -14.0457)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gmmi5")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.298358, 0.954454, 0, -0.954454, -0.298358, 1.09365, 5.07556, -6.90126)
+light_color = Color(1, 0.87451, 0.701961, 1)
+light_energy = 9.995
+light_indirect_energy = 4.741
+shadow_enabled = true
+spot_range = 6.731
+spot_attenuation = 0.707105
+spot_angle = 31.56
+spot_angle_attenuation = 0.435274
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.4667, 5.13251, -3.69049)
+light_color = Color(1, 0.87451, 0.701961, 1)
+light_energy = 9.995
+light_indirect_energy = 4.741
+shadow_enabled = true
+spot_range = 7.943
+spot_attenuation = 0.93303
+spot_angle = 20.81
+spot_angle_attenuation = 0.812249
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.83642, 5.13251, 1.1212)
+light_color = Color(1, 0.87451, 0.701961, 1)
+light_energy = 9.995
+light_indirect_energy = 4.741
+shadow_enabled = true
+spot_range = 7.943
+spot_attenuation = 0.93303
+spot_angle = 20.81
+spot_angle_attenuation = 0.812249
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="."]
+transform = Transform3D(-1, 3.82137e-15, -8.74228e-08, 8.74228e-08, 4.37114e-08, -1, 0, -1, -4.37114e-08, -27.3662, -1.95614, -6.98279)
+light_color = Color(1, 0.87451, 0.701961, 1)
+light_energy = 6.225
+light_indirect_energy = 4.741
+shadow_enabled = true
+spot_range = 7.308
+spot_attenuation = 0.0192366
+spot_angle = 55.34
+spot_angle_attenuation = 0.812249
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.998868, -0.0475772, 0, 0.0475772, 0.998868, 3.47718, 0.782138, 5.68154)
+light_color = Color(1, 0.87451, 0.701961, 1)
+light_energy = 7.317
+light_indirect_energy = 1.521
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 21.444
+spot_attenuation = 0.870548
+spot_angle = 5.75
+spot_angle_attenuation = 0.812249
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.998868, -0.0475772, 0, 0.0475772, 0.998868, -6.53662, 1.09802, -7.13578)
+light_color = Color(1, 0.87451, 0.701961, 1)
+light_energy = 7.317
+light_indirect_energy = 1.521
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 6.236
+spot_attenuation = 0.901248
+spot_angle = 8.6
+spot_angle_attenuation = 0.812249
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.998868, -0.0475772, 0, 0.0475772, 0.998868, -7.96882, 1.09802, -7.13578)
+light_color = Color(1, 0.87451, 0.701961, 1)
+light_energy = 7.317
+light_indirect_energy = 1.521
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 6.236
+spot_attenuation = 0.901248
+spot_angle = 8.6
+spot_angle_attenuation = 0.812249
+
+[node name="SpotLight3D9" type="SpotLight3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0.0475772, 0.998868, 0, 0.998868, -0.0475772, -1, -2.07966e-09, -4.36619e-08, -20.5627, 1.09802, -1.6752)
+light_color = Color(1, 0.87451, 0.701961, 1)
+light_energy = 7.317
+light_indirect_energy = 1.521
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 4.4291
+spot_attenuation = 0.901248
+spot_angle = 8.6
+spot_angle_attenuation = 0.812249
+
+[node name="SpotLight3D10" type="SpotLight3D" parent="."]
+transform = Transform3D(1, -2.21793e-16, 1.05643e-17, 2.22045e-16, 0.998868, -0.0475772, 0, 0.0475772, 0.998868, -29.8499, 1.09802, -12.211)
+light_color = Color(1, 0.87451, 0.701961, 1)
+light_energy = 15.886
+light_indirect_energy = 1.521
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 10.084
+spot_attenuation = 0.901248
+spot_angle = 7.85
+spot_angle_attenuation = 0.812249
+
+[node name="SpotLight3D12" type="SpotLight3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0.0475772, 0.998868, 2.22045e-16, 0.998868, -0.0475772, -1, -2.07966e-09, -4.36619e-08, -25.0124, 1.09802, -16.0351)
+light_color = Color(1, 0.87451, 0.701961, 1)
+light_energy = 15.886
+light_indirect_energy = 1.521
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 17.6472
+spot_attenuation = 0.901248
+spot_angle = 5.59
+spot_angle_attenuation = 0.812249
+
+[node name="SpotLight3D11" type="SpotLight3D" parent="."]
+transform = Transform3D(1, -2.21793e-16, 1.05643e-17, 2.22045e-16, 0.998868, -0.0475772, 0, 0.0475772, 0.998868, -34.0528, 1.09802, -13.2526)
+light_color = Color(1, 0.87451, 0.701961, 1)
+light_energy = 15.886
+light_indirect_energy = 1.521
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 10.084
+spot_attenuation = 0.901248
+spot_angle = 7.85
+spot_angle_attenuation = 0.812249
+
+[node name="SpotLight3D13" type="SpotLight3D" parent="."]
+transform = Transform3D(-1, 4.15933e-09, 8.73238e-08, 2.22045e-16, 0.998868, -0.0475772, -8.74228e-08, -0.0475772, -0.998868, -37.72, 1.09802, -19.8375)
+light_color = Color(1, 0.87451, 0.701961, 1)
+light_energy = 20.006
+light_indirect_energy = 1.521
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 34.865
+spot_attenuation = 0.901248
+spot_angle = 4.7
+spot_angle_attenuation = 0.812249
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.998868, -0.0475772, 0, 0.0475772, 0.998868, -9.48794, 1.09802, -7.37484)
+light_color = Color(1, 0.87451, 0.701961, 1)
+light_energy = 7.317
+light_indirect_energy = 1.521
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 4.9732
+spot_attenuation = 0.901248
+spot_angle = 8.6
+spot_angle_attenuation = 0.812249
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.990254, -0.131927, 0.044647, -0.0712635, -0.204519, 0.976265, -0.119664, -0.969932, -0.211928, -12.2518, 11.3933, -0.760033)
+light_color = Color(0.298039, 0.321569, 0.756863, 1)
+light_energy = 0.93
+light_indirect_energy = 2.808
+shadow_enabled = true
+
+[node name="puzzle_room_floorpiece" parent="." instance=ExtResource("8_5566c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.48, 0.139449, -13.8967)
