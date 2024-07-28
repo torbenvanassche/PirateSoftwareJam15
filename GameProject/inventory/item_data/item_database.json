@@ -5,10 +5,10 @@
 		"stack_size": 10,
 		"asset_path": "mystilavender"
 	},
-	"moss": {
-		"name": "Clump of Moonshadow moss",
+	"bluemoon_mushroom": {
+		"name": "A bunch of blue moon mushrooms",
 		"description": "",
-		"asset_path": "",
+		"asset_path": "bluemoon_mushroom",
 		"stack_size": 10
 	},
 	"water": {
@@ -22,9 +22,9 @@
 		"description": "A potion created to allow the user to sink into their shadow.",
 		"stack_size": 10,
 		"components": [
-			"lavender",
-			"mercury",
-			"water"
+			"mystilavender",
+			"water",
+			"bluemoon_mushroom"
 		]
 	}
 }
