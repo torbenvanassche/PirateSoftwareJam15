@@ -31,15 +31,13 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "materials": {
-"Material": {
+"Cauldron": {
 "use_external/enabled": true,
-"use_external/path": "res://materials/mat_synty_meadow.tres"
-}
+"use_external/path": "res://models/materials/mat_synty_fantasy.tres"
 },
-"nodes": {
-"PATH:SM_Prop_Camp_Fire_Tripod_01": {
-"generate/physics": true,
-"physics/shape_type": 1
+"Tripod": {
+"use_external/enabled": true,
+"use_external/path": "res://models/materials/mat_synty_meadow.tres"
 }
 }
 }
