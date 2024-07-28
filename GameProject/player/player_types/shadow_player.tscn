@@ -8,11 +8,11 @@
 albedo_color = Color(0, 0, 0, 1)
 
 [node name="shadow_collision" type="CollisionShape3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.758779, 0.0586356)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.435931, 0.0586356)
 shape = ExtResource("1_014bq")
 
 [node name="shadow_form" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, -0.340545, -0.0633039)
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, -0.391609, -0.063)
 mesh = SubResource("SphereMesh_ch1pj")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_jmbk2")

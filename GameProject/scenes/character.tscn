@@ -11,7 +11,7 @@ radius = 1.94349
 [node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("inventory", "interaction_range")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11559, 0)
 script = ExtResource("1_70u55")
-speed = 12.0
+speed = 6.0
 rotation_speed = 10.0
 jump_height = 8.0
 inventory = NodePath("inventory")
