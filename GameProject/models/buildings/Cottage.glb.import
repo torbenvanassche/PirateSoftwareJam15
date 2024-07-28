@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c68os6cnjx62"
-path="res://.godot/imported/Cottage.glb-a09319087db559783f66d8017ecf8995.scn"
+path="res://.godot/imported/Cottage.glb-cbb78eefbb3146f871a640e449a32e64.scn"
 
 [deps]
 
-source_file="res://models/Cottage.glb"
-dest_files=["res://.godot/imported/Cottage.glb-a09319087db559783f66d8017ecf8995.scn"]
+source_file="res://models/buildings/Cottage.glb"
+dest_files=["res://.godot/imported/Cottage.glb-cbb78eefbb3146f871a640e449a32e64.scn"]
 
 [params]
 

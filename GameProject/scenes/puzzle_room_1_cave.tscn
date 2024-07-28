@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8lomr232tcq7"]
+
+[ext_resource type="PackedScene" uid="uid://0e41g1onvw1t" path="res://models/puzzle_room_assets/puzzle_room_layout.glb" id="1_opkgr"]
+[ext_resource type="PackedScene" uid="uid://7wbhd6or8ldv" path="res://models/puzzle_room_assets/puzzle_room_box.glb" id="2_4jd0g"]
+[ext_resource type="PackedScene" uid="uid://hk8tvb1ockq" path="res://models/puzzle_room_assets/puzzle_room_table.glb" id="3_jkanj"]
+[ext_resource type="PackedScene" uid="uid://daw3iof4r17gf" path="res://models/puzzle_room_assets/puzzle_room_button.glb" id="4_maa2q"]
+[ext_resource type="PackedScene" uid="uid://bx8wvrgt8l5jw" path="res://models/puzzle_room_assets/puzzle_room_lightslider.glb" id="5_hi16g"]
+[ext_resource type="PackedScene" uid="uid://ba0k8q5q788uu" path="res://models/puzzle_room_assets/puzzle_room_door.glb" id="6_d8pnw"]
+[ext_resource type="PackedScene" uid="uid://didt5psrgnuib" path="res://models/puzzle_room_assets/puzzle_room_pressureplate.glb" id="7_82o88"]
+
+[node name="PuzzleRoom1Cave" type="Node3D"]
+
+[node name="puzzle_room_layout" parent="." instance=ExtResource("1_opkgr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.72141, 0)
+
+[node name="puzzle_room_box" parent="." instance=ExtResource("2_4jd0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.88114, 0.694465, 5.29952)
+
+[node name="puzzle_room_box2" parent="." instance=ExtResource("2_4jd0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.833977, 0.694463, -11.0208)
+
+[node name="puzzle_room_box3" parent="." instance=ExtResource("2_4jd0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.999, 0.694463, 0.283172)
+
+[node name="puzzle_room_box4" parent="." instance=ExtResource("2_4jd0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3555, 0.694463, -13.7323)
+
+[node name="puzzle_room_box5" parent="." instance=ExtResource("2_4jd0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.2192, 0.694463, 5.87762)
+
+[node name="puzzle_room_box6" parent="." instance=ExtResource("2_4jd0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.5999, 0.694463, -3.78442)
+
+[node name="puzzle_room_table" parent="." instance=ExtResource("3_jkanj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.228327, 0.758543, 5.98096)
+
+[node name="puzzle_room_table2" parent="." instance=ExtResource("3_jkanj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.428, 0.758543, -18.6196)
+
+[node name="puzzle_room_button" parent="." instance=ExtResource("4_maa2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.47208, 1.40045, -6.20007)
+
+[node name="puzzle_room_lightslider" parent="." instance=ExtResource("5_hi16g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4129, 0.709805, 2.65409)
+
+[node name="puzzle_room_door" parent="." instance=ExtResource("6_d8pnw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3449, 0.936321, 4.18708)
+
+[node name="puzzle_room_door2" parent="." instance=ExtResource("6_d8pnw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1132, 0.936321, -11.0453)
+
+[node name="puzzle_room_pressureplate" parent="." instance=ExtResource("7_82o88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4098, 0, -13.6432)
