@@ -33,7 +33,7 @@ _subresources={
 "materials": {
 "CastleSHD122": {
 "use_external/enabled": true,
-"use_external/path": "res://materials/mat_brickwall.tres"
+"use_external/path": "res://models/materials/mat_stonewall.tres"
 }
 }
 }

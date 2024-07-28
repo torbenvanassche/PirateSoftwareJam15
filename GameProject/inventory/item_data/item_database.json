@@ -1,31 +1,28 @@
 {
-	"lavender": {
-		"name": "Bunch of lavender",
-		"description": "",
+	"mystilavender": {
+		"name": "Bunch of Mystilavender",
+		"description": "It looks like lavender, but it can do so much more!",
 		"stack_size": 10,
-		"asset_path": "lavender"
+		"asset_path": "mystilavender"
 	},
 	"moss": {
-		"name": "Clump of Moss",
+		"name": "Clump of Moonshadow moss",
 		"description": "",
-		"stack_size": 10
-	},
-	"sulfur": {
-		"name": "Pile of sulfur",
-		"description": "",
+		"asset_path": "",
 		"stack_size": 10
 	},
 	"water": {
 		"name": "a bottle of water",
-		"description": "",
+		"description": "A bottle of water, gathered from a river.",
+		"asset_path": "",
 		"stack_size": 1
 	},
-	"potion_shadow_control": {
-		"name": "Potion: Shadow control",
-		"description": "",
+	"potion_shadow_form": {
+		"name": "Potion of Shadow shifting",
+		"description": "A potion created to allow the user to sink into their shadow.",
 		"stack_size": 10,
 		"components": [
-			"sulfur",
+			"lavender",
 			"mercury",
 			"water"
 		]

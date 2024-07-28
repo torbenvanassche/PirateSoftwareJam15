@@ -10,8 +10,9 @@ var mesh_instance: Node3D;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var item_data = ItemManager.get_item(item_id);
-	mesh_instance = ItemManager.get_scene(item_data).instantiate();
-	add_child(mesh_instance);
+	if item_data != {}:
+		mesh_instance = ItemManager.get_scene(item_data).instantiate();
+		add_child(mesh_instance);
 
 func on_interact():
 	Manager.instance.player.inventory.add_item_by_id(item_id, 1);

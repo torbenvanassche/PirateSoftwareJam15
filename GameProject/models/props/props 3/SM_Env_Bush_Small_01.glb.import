@@ -33,7 +33,7 @@ _subresources={
 "materials": {
 "lambert999": {
 "use_external/enabled": true,
-"use_external/path": "res://materials/mat_synty_fantasy.tres"
+"use_external/path": "res://models/materials/mat_synty_fantasy.tres"
 }
 }
 }
