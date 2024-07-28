@@ -59,7 +59,9 @@ func animation_ended(animation_name: String):
 	if animation_name == "shadow_in":
 		current_instance.queue_free()
 		current_instance = shadow_model.instantiate();
-	add_child(current_instance)
+		add_child(current_instance)
+	elif animation_name == "shadow_out":
+		add_child(current_instance)
 	can_transform = true;
 		
 func animate(delta):
@@ -103,11 +105,12 @@ func _physics_process(delta):
 
 	if is_on_floor():
 		velocity.y = 0;
+		player_state = IDLE;
 		
 	if do_processing:
 		if Input.is_action_just_pressed("jump") and is_on_floor():
-			#velocity.y = jump_velocity;
-			#player_state = JUMP;
+			animation_tree.set("parameters/jump/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+			velocity.y = jump_velocity;
 			pass
 		
 		# Get the input direction and handle the movement/deceleration.
@@ -125,9 +128,6 @@ func _physics_process(delta):
 		else:
 			velocity.x = move_toward(velocity.x, 0, speed)
 			velocity.z = move_toward(velocity.z, 0, speed)
-			if player_state != JUMP:
-				player_state = IDLE;
-
 		move_and_slide()
 	animate(delta)
 	
