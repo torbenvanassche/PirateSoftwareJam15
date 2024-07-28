@@ -11,7 +11,7 @@
 [node name="PuzzleRoom1Cave" type="Node3D"]
 
 [node name="puzzle_room_layout" parent="." instance=ExtResource("1_opkgr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.72141, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.62379, 0)
 
 [node name="puzzle_room_box" parent="." instance=ExtResource("2_4jd0g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.88114, 0.694465, 5.29952)
