@@ -7,13 +7,16 @@ extends Area3D
 var mesh_instance: Node3D;
 @onready var sprite: Node3D = $Sprite3D;
 
+@export var cooldown_timer: float = 20;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var item_data = ItemManager.get_item(item_id);
 	if item_data != {}:
 		mesh_instance = ItemManager.get_scene(item_data).instantiate();
 		add_child(mesh_instance);
-
+	timer.wait_time = cooldown_timer;
+	
 func on_interact():
 	Manager.instance.player.inventory.add_item_by_id(item_id, 1);
 	collision_shape.disabled = true;

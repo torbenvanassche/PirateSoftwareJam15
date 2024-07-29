@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlhmaqbqhyxlo"]
+
+[ext_resource type="Script" path="res://inventory/scripts/pickable_item.gd" id="1_pm5s3"]
+[ext_resource type="PackedScene" uid="uid://ulx1lvm86f65" path="res://models/props/props 2/SM_Prop_Well_01.glb" id="2_1we42"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fv8d0"]
+custom_solver_bias = 1.0
+size = Vector3(3.5, 3.5, 3.5)
+
+[node name="Area3D" type="Area3D"]
+script = ExtResource("1_pm5s3")
+item_id = "water"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77846, 0)
+shape = SubResource("BoxShape3D_fv8d0")
+
+[node name="SM_Prop_Well_012" parent="." instance=ExtResource("2_1we42")]
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.25233, 0)
