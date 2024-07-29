@@ -72,7 +72,7 @@ func is_craftable(item: Dictionary):
 	var items_with_components = get_by_property("components")
 	return items_with_components.has(item.id) && items_with_components[item.id].components != []
 	
-func _match_components(components: Array[String], item: Dictionary):
+func _match_components(components: Array, item: Dictionary):
 	if item.components.size() != components.size(): 
 		return false
 	for entry in item.components:
@@ -82,6 +82,8 @@ func _match_components(components: Array[String], item: Dictionary):
 	
 func find_item_with_components(components: Array) -> Dictionary:
 	for item in _items:
-		if _match_components(components, item):
-			return item;
+		var item_data = _items[item]
+		if item_data.has("components") && item_data.components.size() != 0:
+			if _match_components(components, item_data):
+				return item_data;
 	return {};
