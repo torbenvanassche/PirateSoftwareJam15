@@ -269,6 +269,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0173, 7.26647, -15.6403)
 
 [node name="harvestable_item" parent="." instance=ExtResource("27_7juq0")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -16.5562, 6.14511, -12.5017)
+item_id = "mystilavender"
 
 [node name="vegetation" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13828, 9.88268, -3.50433)

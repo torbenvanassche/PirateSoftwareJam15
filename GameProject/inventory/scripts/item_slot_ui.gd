@@ -62,7 +62,7 @@ func _drop_data(_at_position, data):
 		count_removed = 1;
 	
 	var typed_data = data as DragData;
-	data.item_slot.slot_data.remove(data.item.count);
+	data.item_slot.slot_data.remove(count_removed);
 	slot_data.add(data.item, count_removed);
 	on_drag_end.emit(self)
 	redraw();

@@ -1,12 +1,12 @@
 {
 	"mystilavender": {
-		"name": "Bunch of Mystilavender",
+		"name": "Mystilavender",
 		"description": "It looks like lavender, but it can do so much more!",
 		"stack_size": 10,
 		"asset_path": "mystilavender"
 	},
 	"bluemoon_mushroom": {
-		"name": "A bunch of blue moon mushrooms",
+		"name": "Bluemoon mushroom",
 		"description": "",
 		"asset_path": "bluemoon_mushroom",
 		"stack_size": 10

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b5ootv3quba1l"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+expand_mode = 2
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "item_name"
+vertical_alignment = 1
+text_overrun_behavior = 1
