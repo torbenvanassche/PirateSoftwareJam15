@@ -65,6 +65,7 @@ func _drop_data(_at_position, data):
 	data.item_slot.slot_data.remove(count_removed);
 	slot_data.add(data.item, count_removed);
 	on_drag_end.emit(self)
+	typed_data.item_slot.redraw()
 	redraw();
 	
 func _notification(what):

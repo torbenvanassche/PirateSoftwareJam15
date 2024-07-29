@@ -85,6 +85,9 @@ func on_enable(_options: Dictionary = {}):
 
 func _change_title(s: String):
 	title.text = s;
+	
+func _process(delta):
+	size = $VBoxContainer.size;
 
 func handle_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
