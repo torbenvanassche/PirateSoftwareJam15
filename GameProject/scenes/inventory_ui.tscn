@@ -8,19 +8,11 @@ offset_right = -888.0
 offset_bottom = -367.0
 size_preset = "custom"
 
+[node name="content" parent="VBoxContainer" index="1"]
+size_flags_horizontal = 4
+
 [node name="InventoryUI" type="GridContainer" parent="VBoxContainer/content" index="0"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -106.0
-offset_top = -106.0
-offset_right = 106.0
-offset_bottom = 106.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 columns = 4
 script = ExtResource("2_vmqag")
 slot_size_constraints = Vector2i(40, 55)
