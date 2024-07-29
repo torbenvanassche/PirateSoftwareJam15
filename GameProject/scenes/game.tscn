@@ -190,7 +190,7 @@ transform = Transform3D(0.00285803, 0.0275736, -1.22764, 0.435757, -1.14776, -0.
 transform = Transform3D(0.164393, 0, -0.986395, 0, 1, 0, 0.986395, 0, 0.164393, 6.45563, 3.92641, -27.2017)
 
 [node name="SM_Prop_Bridge_013" parent="static_environment" instance=ExtResource("13_v45le")]
-transform = Transform3D(-0.923049, 0, 0.384682, 0, 1, 0, -0.384682, 0, -0.923049, 24.6203, 4.07956, -40.0681)
+transform = Transform3D(-0.991641, 0.0184466, 0.1277, 0.00788963, 0.996544, -0.0826869, -0.128784, -0.0809882, -0.98836, 24.6203, 3.9486, -40.0681)
 
 [node name="SM_Prop_Wagon_Broken_012" parent="static_environment" instance=ExtResource("14_1i6cn")]
 transform = Transform3D(-0.138758, 0, 0.990326, -0.157891, 0.987209, -0.0221227, -0.977659, -0.159433, -0.136983, 1.09227, 6.91537, -9.36584)
