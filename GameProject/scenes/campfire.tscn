@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://btc5eljbycubc"]
+[gd_scene load_steps=13 format=3 uid="uid://btc5eljbycubc"]
 
 [ext_resource type="Script" path="res://scripts/triggers/campfire.gd" id="1_18f5m"]
 [ext_resource type="PackedScene" uid="uid://bcybejolk48no" path="res://models/props/campfire.glb" id="2_lmpfi"]
@@ -7,7 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://bruhax6px1mtk" path="res://models/props/camping_ground.glb" id="5_rk4qn"]
 [ext_resource type="PackedScene" uid="uid://dka4ewg12ndqh" path="res://models/props/tree_stump.glb" id="6_lpc1b"]
 [ext_resource type="PackedScene" uid="uid://dd7i2b8p3uf5q" path="res://models/props/log.glb" id="7_j86in"]
-[ext_resource type="PackedScene" path="res://scenes/fire_particle.tscn" id="8_1vtxp"]
+[ext_resource type="PackedScene" uid="uid://c6y6ayjgt0u52" path="res://scenes/fire_particle.tscn" id="8_1vtxp"]
+[ext_resource type="PackedScene" uid="uid://ytcevimjam4v" path="res://scenes/smoke.tscn" id="9_pmyna"]
+[ext_resource type="PackedScene" uid="uid://b48svieb7mjdu" path="res://models/props/cauldron_fluid_plane.glb" id="10_ji3l3"]
+[ext_resource type="PackedScene" uid="uid://bm364i6gcdrof" path="res://scenes/bubbles.tscn" id="11_byk2s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d5q2q"]
 size = Vector3(5, 2, 5)
@@ -48,3 +51,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.54556, 0)
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.101489, 0)
 
 [node name="FireParticle" parent="." instance=ExtResource("8_1vtxp")]
+
+[node name="Smoke" parent="." instance=ExtResource("9_pmyna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06432, 0)
+
+[node name="cauldron_fluid_plane" parent="." instance=ExtResource("10_ji3l3")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.101738, 0)
+
+[node name="Bubbles" parent="." instance=ExtResource("11_byk2s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.784061, 0)
