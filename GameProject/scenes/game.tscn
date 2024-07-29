@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://c57b16nj7p50k"]
+[gd_scene load_steps=52 format=3 uid="uid://c57b16nj7p50k"]
 
 [ext_resource type="PackedScene" uid="uid://cuqpjlp4i7pkb" path="res://scenes/camera.tscn" id="3_o5mjl"]
 [ext_resource type="Shader" path="res://shaders/outline.gdshader" id="4_r3k4d"]
@@ -40,6 +40,12 @@
 [ext_resource type="PackedScene" uid="uid://cwc8r7223ms13" path="res://models/props/props 3/SM_Bld_House_Stairs_Stone_Block_01.glb" id="38_lkjly"]
 [ext_resource type="PackedScene" uid="uid://n88p3vyyshe" path="res://models/buildings/Church.glb" id="39_3hn73"]
 [ext_resource type="PackedScene" uid="uid://b2ji7cs41tri6" path="res://models/env/cave_entrance.glb" id="40_385g3"]
+[ext_resource type="PackedScene" uid="uid://bfueppb4pyn5x" path="res://models/props/props 2/SM_Prop_Mushroom_Group_04.glb" id="41_6jdg1"]
+[ext_resource type="PackedScene" uid="uid://cpfjrh16hbm6e" path="res://models/props/props 2/SM_Prop_Mushroom_Sparse_02.glb" id="42_io4t0"]
+[ext_resource type="PackedScene" uid="uid://bvhej18ixgcb0" path="res://models/props/props 2/SM_Env_Rock_Cliff_04.glb" id="43_bw1m0"]
+[ext_resource type="PackedScene" uid="uid://cmaukaccuf624" path="res://models/props/props 2/SM_Env_Rock_Cliff_02.glb" id="44_qjjpu"]
+[ext_resource type="PackedScene" uid="uid://bojyukytykgrs" path="res://models/props/props 2/SM_Env_Rock_Cliff_01.glb" id="45_7fmlw"]
+[ext_resource type="PackedScene" uid="uid://bsvmeixxq30no" path="res://models/props/props 2/SM_Env_Rock_Cliff_03.glb" id="46_h51cg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_shc8u"]
 render_priority = 0
@@ -58,6 +64,11 @@ shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 material = SubResource("ShaderMaterial_ye7d4")
 flip_faces = true
 size = Vector2(2, 2)
+
+[sub_resource type="QuadMesh" id="QuadMesh_u6j8n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vi1yy"]
+albedo_color = Color(0, 0, 0, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -79,6 +90,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142393, 0.000554085, -0.0
 [node name="river" parent="." instance=ExtResource("5_072mw")]
 
 [node name="rockwall" parent="." instance=ExtResource("6_r3iyf")]
+
+[node name="SM_Env_Rock_Small_Pile_022" parent="rockwall" instance=ExtResource("30_7feg1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.8361, 2.1347, -27.9538)
+
+[node name="SM_Env_Rock_Cliff_042" parent="rockwall" instance=ExtResource("43_bw1m0")]
+transform = Transform3D(-3.92487e-08, -0.897905, -0.44019, 1, -4.37114e-08, 0, -1.92413e-08, -0.44019, 0.897905, 44.2913, 3.36191, -23.7463)
+
+[node name="SM_Env_Rock_Cliff_022" parent="rockwall" instance=ExtResource("44_qjjpu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.6637, -0.881516, -37.6351)
+
+[node name="SM_Env_Rock_Cliff_043" parent="rockwall" instance=ExtResource("43_bw1m0")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 45.5194, 3.08079, -47.6895)
+
+[node name="SM_Env_Rock_Cliff_012" parent="rockwall" instance=ExtResource("45_7fmlw")]
+transform = Transform3D(0.798657, 0, -0.601787, 0, 1, 0, 0.601787, 0, 0.798657, 40.3295, 10.2004, 14.6158)
+
+[node name="SM_Env_Rock_Cliff_044" parent="rockwall" instance=ExtResource("43_bw1m0")]
+transform = Transform3D(-4.25313e-08, -0.973002, -0.230797, 1, -4.37114e-08, 0, -1.00885e-08, -0.230797, 0.973002, 44.437, 15.0818, 5.54379)
+
+[node name="SM_Env_Rock_Cliff_032" parent="rockwall" instance=ExtResource("46_h51cg")]
+transform = Transform3D(0.781891, 0, 0.623416, 0, 1, 0, -0.623416, 0, 0.781891, 42.6241, 8.19096, -5.37884)
+
+[node name="SM_Env_Rock_Cliff_013" parent="rockwall" instance=ExtResource("45_7fmlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0474, 3.26832, -12.9446)
+
+[node name="SM_Env_Rock_Cliff_033" parent="rockwall" instance=ExtResource("46_h51cg")]
+transform = Transform3D(0.800752, 0, 0.598996, 0, 1, 0, -0.598996, 0, 0.800752, 43.0632, 17.9119, 20.7472)
 
 [node name="campfire_area" parent="." instance=ExtResource("7_v3iri")]
 transform = Transform3D(0.998753, -0.0499306, 0, 0.0499306, 0.998753, 0, 0, 0, 1, -26.205, 6.5981, -20.7586)
@@ -130,7 +168,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19076, 10.467, 2.16401)
 transform = Transform3D(0.492256, 0, -0.87045, 0, 1, 0, 0.87045, 0, 0.492256, -0.856353, 14.1718, 34.606)
 
 [node name="SM_Env_Tree_Large_014" parent="static_environment/house_on_platform" instance=ExtResource("19_tsr2l")]
-transform = Transform3D(0.5758, 0, -0.494078, 0, 0.758722, 0, 0.494078, 0, 0.5758, 40.0253, 11.7504, 9.42463)
+transform = Transform3D(0.5758, 0, -0.494078, 0, 0.758722, 0, 0.494078, 0, 0.5758, 33.6879, 6.42662, -5.09718)
 
 [node name="SM_Prop_Meadow_Fence_Post_012" parent="static_environment/house_on_platform" instance=ExtResource("11_24xjg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11058, 9.48766, -5.25036)
@@ -208,7 +246,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.25117, 8.44, -4.29907)
 transform = Transform3D(-0.319191, 0, 0.60239, 0, 0.681731, 0, -0.60239, 0, -0.319191, 5.09726, 6.90855, -5.85131)
 
 [node name="SM_Env_Bush_Cluster_014" parent="static_environment" instance=ExtResource("25_w1fjc")]
-transform = Transform3D(-0.319191, 0, 0.60239, 0, 0.681731, 0, -0.60239, 0, -0.319191, 41.8553, 6.90855, -3.96867)
+transform = Transform3D(-0.660581, 0, -0.16849, 0, 0.681731, 0, 0.16849, 0, -0.660581, 23.1646, 3.94226, -54.8365)
 
 [node name="SM_Env_Rock_Small_Pile_022" parent="static_environment" instance=ExtResource("30_7feg1")]
 transform = Transform3D(-20.0114, 0, -3.94204, 0, 20.396, 0, 3.94204, 0, -20.0114, -3.83398, 3.70746, -32.6656)
@@ -467,7 +505,7 @@ transform = Transform3D(1.2644, 0, 0, 0, 1.2644, 0, 0, 0, 1.2644, 20.0392, -1.55
 transform = Transform3D(0.998619, 0, 0, 0, 0.998619, 0, 0, 0, 0.998619, 31.1418, -0.0674295, 13.797)
 
 [node name="SM_Env_Fern_059" parent="vegetation" instance=ExtResource("28_2t30s")]
-transform = Transform3D(1.71689, 0, 0, 0, 1.71689, 0, 0, 0, 1.71689, 41.2533, -1.66166, -0.11675)
+transform = Transform3D(1.71689, 0, 0, 0, 1.67469, 0.378299, 0, -0.378299, 1.67469, 36.0481, -3.25667, -2.73549)
 
 [node name="SM_Env_Fern_060" parent="vegetation" instance=ExtResource("29_2t0gp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.422, 7.62542, 29.0762)
@@ -602,7 +640,20 @@ transform = Transform3D(0.263671, 0, -0.964613, 0, 1, 0, 0.964613, 0, 0.263671, 
 transform = Transform3D(2.17434, 0, -4.6506, 0, 5.13379, 0, 4.6506, 0, 2.17434, 30.6174, 12.0017, 33.4416)
 
 [node name="Church" parent="." instance=ExtResource("39_3hn73")]
-transform = Transform3D(0.129436, 0, 0.991587, 0, 1, 0, -0.991587, 0, 0.129436, 10.439, 4.04767, -50.3958)
+transform = Transform3D(0.343069, 0, 0.939309, 0, 1, 0, -0.939309, 0, 0.343069, 6.23849, 3.88779, -50.9274)
 
 [node name="cave_entrance" parent="." instance=ExtResource("40_385g3")]
-transform = Transform3D(0.440315, 0, 0.897843, 0, 1, 0, -0.897843, 0, 0.440315, 86.8387, -1.39128, 8.00599)
+transform = Transform3D(0.440315, 0, 0.897843, 0, 1, 0, -0.897843, 0, 0.440315, 37.4367, 0.670996, -21.9927)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="cave_entrance"]
+transform = Transform3D(-4.93886, 0, 0.779498, 0, 5, 0, -0.779499, 0, -4.93886, -0.241173, 2.54349, -0.0874023)
+mesh = SubResource("QuadMesh_u6j8n")
+surface_material_override/0 = SubResource("StandardMaterial3D_vi1yy")
+
+[node name="Veg" type="Node3D" parent="."]
+
+[node name="SM_Prop_Mushroom_Group_042" parent="Veg" instance=ExtResource("41_6jdg1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.4159, 3.50117, -14.545)
+
+[node name="SM_Prop_Mushroom_Sparse_022" parent="Veg" instance=ExtResource("42_io4t0")]
+transform = Transform3D(1, 0, 0, 0, 0.868606, 0.495504, 0, -0.495504, 0.868606, 32.214, 5.17923, -8.0176)
