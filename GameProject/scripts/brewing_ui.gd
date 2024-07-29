@@ -33,5 +33,7 @@ func _remove_item(n: Node, item: Dictionary):
 	n.queue_free();
 	
 func _on_brew():
-	var item = ItemManager.find_item_with_components(component_array.map(func(x): return x.id));
+	var item_names = component_array.map(func(x): return x.id);
+	print(item_names)
+	var item = ItemManager.find_item_with_components(item_names);
 	print(item)

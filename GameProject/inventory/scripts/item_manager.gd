@@ -80,7 +80,7 @@ func _match_components(components: Array[String], item: Dictionary):
 			return false
 	return true
 	
-func find_item_with_components(components: Array[String]) -> Dictionary:
+func find_item_with_components(components: Array) -> Dictionary:
 	for item in _items:
 		if _match_components(components, item):
 			return item;

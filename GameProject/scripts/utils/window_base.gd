@@ -64,13 +64,7 @@ func on_enable(_options: Dictionary = {}):
 			size = get_viewport_rect().size;
 		"half_size":
 			size =  get_viewport_rect().size / 2;
-		"custom":
-			if override_size != Vector2.ZERO:
-				self.set_deferred("size", override_size)
-				top_bar.custom_minimum_size = Vector2(override_size.x, 50)
-				content_panel.custom_minimum_size = Vector2(override_size.x, override_size.y - top_bar.size.y)
 		
-	
 	match position_options:
 		"mouse":
 			initial_position = get_tree().root.get_viewport().get_mouse_position();

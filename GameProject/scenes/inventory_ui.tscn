@@ -4,8 +4,10 @@
 [ext_resource type="Script" path="res://inventory/scripts/inventory_ui.gd" id="2_vmqag"]
 
 [node name="Control" instance=ExtResource("1_l0w1b")]
-offset_right = -888.0
-offset_bottom = -367.0
+offset_left = 3.0
+offset_top = -4.0
+offset_right = -908.0
+offset_bottom = -380.0
 size_preset = "custom"
 
 [node name="content" parent="VBoxContainer" index="1"]
