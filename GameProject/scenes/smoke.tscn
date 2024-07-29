@@ -41,10 +41,12 @@ scale_curve = SubResource("CurveTexture_13jh5")
 color_ramp = SubResource("GradientTexture1D_j77iq")
 
 [sub_resource type="QuadMesh" id="QuadMesh_4jmqi"]
+lightmap_size_hint = Vector2i(7, 7)
 
 [node name="Smoke" type="Node3D"]
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+sorting_use_aabb_center = false
 material_override = SubResource("StandardMaterial3D_c2rbp")
 amount = 10
 lifetime = 2.5
