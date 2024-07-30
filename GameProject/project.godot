@@ -23,7 +23,6 @@ Debug="*res://scripts/utils/debug.gd"
 
 [display]
 
-window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
