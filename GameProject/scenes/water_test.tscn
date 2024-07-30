@@ -7,12 +7,14 @@
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ms2e1"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_veo3c"]
+height = 2048
 seamless = true
 noise = SubResource("FastNoiseLite_ms2e1")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_wy7q5"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_r7w5f"]
+height = 2048
 seamless = true
 noise = SubResource("FastNoiseLite_wy7q5")
 
@@ -27,8 +29,8 @@ noise = SubResource("FastNoiseLite_lh4kp")
 render_priority = 0
 shader = ExtResource("1_uycal")
 shader_parameter/speed = 0.1
-shader_parameter/color = Color(0.4316, 0.71048, 0.83, 1)
-shader_parameter/deep_water = Color(0.600686, 0.629081, 0.665738, 1)
+shader_parameter/color = Color(0.203922, 0.356863, 0.415686, 1)
+shader_parameter/deep_water = Color(0.132906, 0.264076, 0.321846, 1)
 shader_parameter/beer_law_factor = 2.0
 shader_parameter/_distance = 0.0
 shader_parameter/edge_color = Color(0.523502, 0.535903, 0.616154, 1)
