@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://c57b16nj7p50k"]
+[gd_scene load_steps=59 format=3 uid="uid://c57b16nj7p50k"]
 
 [ext_resource type="PackedScene" uid="uid://cuqpjlp4i7pkb" path="res://scenes/camera.tscn" id="3_o5mjl"]
 [ext_resource type="Shader" path="res://shaders/outline.gdshader" id="4_r3k4d"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b36ddsdbnkdw4" path="res://models/props/SM_Prop_Meadow_Fence_01.glb" id="10_2g8be"]
 [ext_resource type="PackedScene" uid="uid://bodtsih535a4t" path="res://models/props/props 2/SM_Prop_Meadow_Fence_Post_01.glb" id="11_24xjg"]
 [ext_resource type="PackedScene" uid="uid://w4f6rjthf1xq" path="res://models/props/props 2/SM_Env_Rock_Pile_07.glb" id="12_r2rnu"]
+[ext_resource type="PackedScene" uid="uid://gji5y0r4es2v" path="res://scenes/river_collision.tscn" id="13_ueojl"]
 [ext_resource type="PackedScene" uid="uid://cviw7r7ve4fjh" path="res://models/props/props 2/SM_Prop_Bridge_01.glb" id="13_v45le"]
 [ext_resource type="PackedScene" uid="uid://cc5ul3ngb6iju" path="res://models/props/props 2/SM_Prop_Wagon_Broken_01.glb" id="14_1i6cn"]
 [ext_resource type="PackedScene" uid="uid://dcdbvjiw3egq7" path="res://models/props/props 3/SM_Env_Tree_Burnt_02.glb" id="16_fxy68"]
@@ -49,7 +50,7 @@
 [ext_resource type="PackedScene" uid="uid://dmgvpe2u32ggo" path="res://models/props/props 3/SM_Env_Bush_01.glb" id="47_6bgbo"]
 [ext_resource type="PackedScene" uid="uid://dlhmaqbqhyxlo" path="res://scenes/well.tscn" id="47_iq5yo"]
 [ext_resource type="PackedScene" uid="uid://cey5jkfjmlydv" path="res://scenes/light_wisp_with_movement.tscn" id="48_ko7py"]
-[ext_resource type="PackedScene" uid="uid://1moex47vlnkp" path="res://scenes/waterfall_particle.tscn" id="49_xdxxw"]
+[ext_resource type="PackedScene" path="res://scenes/waterfall_particle.tscn" id="49_xdxxw"]
 [ext_resource type="PackedScene" uid="uid://crjea7bibtxhn" path="res://models/props/props 2/SM_Env_Rock_Cliff_05.glb" id="51_nnu20"]
 [ext_resource type="PackedScene" uid="uid://c3ynovciw5q1e" path="res://models/props/props 2/SM_Env_Rock_Chunk_01.glb" id="52_bk5iq"]
 
@@ -146,6 +147,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39599, 8.01915, 14.836)
 [node name="Waterfall_particle4" parent="Environment/river/Waterfall" instance=ExtResource("49_xdxxw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1707, 8.01915, 14.2512)
 
+[node name="river collision" parent="Environment/river" instance=ExtResource("13_ueojl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.2813, 0)
+
 [node name="Rocks" type="Node3D" parent="Environment"]
 
 [node name="SM_Env_Rock_Pile_072" parent="Environment/Rocks" instance=ExtResource("12_r2rnu")]
@@ -155,7 +159,7 @@ transform = Transform3D(-1.00251, 0, -0.709105, 0, 1.22795, 0, 0.709105, 0, -1.0
 transform = Transform3D(1.00992, 0, 0.698515, 0, 1.22795, 0, -0.698515, 0, 1.00992, 13.55, 3.33239, -34.3124)
 
 [node name="SM_Env_Rock_Pile_074" parent="Environment/Rocks" instance=ExtResource("12_r2rnu")]
-transform = Transform3D(-1.00961, 0.0249389, 0.698515, -0.0303229, -1.22758, 0, 0.698302, -0.0172492, 1.00992, 15.6281, 4.1702, -31.5167)
+transform = Transform3D(-1.00961, 0.0249389, 0.698515, -0.0303229, -1.22758, 0, 0.698302, -0.0172492, 1.00992, 15.6281, 4.1702, -33.9888)
 
 [node name="SM_Env_Rock_Pile_075" parent="Environment/Rocks" instance=ExtResource("12_r2rnu")]
 transform = Transform3D(0.00285803, 0.0275736, -1.22764, 0.435757, -1.14776, -0.0247651, -1.14803, -0.435589, -0.0124563, 32.3544, 3.12707, -10.3326)

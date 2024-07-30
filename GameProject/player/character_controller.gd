@@ -61,7 +61,8 @@ func animation_ended(animation_name: String):
 		current_instance = shadow_model.instantiate();
 		add_child(current_instance)
 	elif animation_name == "shadow_out":
-		add_child(current_instance)
+		if current_instance.get_parent() == null:
+			add_child(current_instance)
 	can_transform = true;
 		
 func animate(delta):
