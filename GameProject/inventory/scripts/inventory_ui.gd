@@ -30,7 +30,9 @@ func on_enable(_options: Dictionary = {}):
 		return;
 	controller = Manager.instance.player.inventory;
 	set_controller(controller);
-	resized.connect(_control_size)
+	
+	if !resized.is_connected(_control_size):
+		resized.connect(_control_size)
 	btn_grp.allow_unpress = true;
 
 func set_controller(con: Inventory):

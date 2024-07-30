@@ -87,8 +87,7 @@ func _ready():
 	animation_tree.animation_finished.connect(animation_ended)
 	add_child(current_instance)
 	
-	inventory.add_item_by_id("water",2);
-	inventory.add_item_by_id("bluemoon_mushroom", 5)
+	inventory.add_item_by_id("potion_shadow_form", 1);
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("open_inventory"):
