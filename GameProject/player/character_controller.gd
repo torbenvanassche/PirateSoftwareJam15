@@ -139,7 +139,7 @@ func interact():
 			current_triggers[0].on_interact();
 	
 func sort_areas_by_distance():
-	current_triggers.sort_custom(func(a, b): return position.distance_squared_to(a) > position.distance_squared_to(b));
+	current_triggers.sort_custom(func(a: Node3D, b: Node3D): return global_position.distance_squared_to(a.global_position) > global_position.distance_squared_to(b.global_position));
 
 func _on_enter(body: Area3D):
 	if !current_triggers.has(body):
