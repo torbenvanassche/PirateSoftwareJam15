@@ -32,7 +32,7 @@ import_script/path=""
 _subresources={
 "materials": {
 "Material_5": {
-"use_external/enabled": true,
+"use_external/enabled": false,
 "use_external/path": "res://models/materials/mat_water_shader.tres"
 }
 }
