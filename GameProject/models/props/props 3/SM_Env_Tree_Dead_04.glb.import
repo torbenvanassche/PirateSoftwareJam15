@@ -38,7 +38,8 @@ _subresources={
 },
 "nodes": {
 "PATH:SM_Env_Tree_Dead_04": {
-"generate/physics": true
+"generate/physics": true,
+"physics/shape_type": 2
 }
 }
 }
