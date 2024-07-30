@@ -2,25 +2,25 @@
 	"mystilavender": {
 		"name": "Mystilavender",
 		"description": "It looks like lavender, but it can do so much more!",
-		"stack_size": 10,
+		"stack_size": 99,
 		"asset_path": "mystilavender"
 	},
 	"bluemoon_mushroom": {
 		"name": "Bluemoon mushroom",
 		"description": "",
 		"asset_path": "bluemoon_mushroom",
-		"stack_size": 10
+		"stack_size": 99
 	},
 	"water": {
 		"name": "water bucket",
 		"description": "A bottle of water, gathered from a river.",
 		"asset_path": "water",
-		"stack_size": 1
+		"stack_size": 99
 	},
 	"potion_shadow_form": {
 		"name": "Potion of Shadow shifting",
 		"description": "A potion created to allow the user to sink into their shadow.",
-		"stack_size": 10,
+		"stack_size": 99,
 		"asset_path": "potion_shadow_form",
 		"components": [
 			"bluemoon_mushroom",

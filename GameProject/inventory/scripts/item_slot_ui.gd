@@ -23,8 +23,16 @@ func as_blank():
 func _ready():
 	counter.visible = show_amount;
 	
+func _make_custom_tooltip(for_text):
+	var label = Label.new();
+	label.text = for_text;
+	label.add_theme_color_override("font_color", Color.WHITE)
+	return label
+	
 func redraw():
 	var sprite = null;
+	if default_color == null:
+		default_color = Color.WHITE
 	textureRect.modulate = default_color
 	counter.visible = false;
 	
@@ -34,6 +42,11 @@ func redraw():
 			slot_data.item.count = 1;
 		counter.set_text(str(slot_data.item.count));
 		counter.visible = show_amount && slot_data.item.count > 0;
+		
+		if slot_data.item.id == "potion_shadow_form":
+			tooltip_text = "Drink (Right click) to acquire power."
+		else:
+			tooltip_text = ""
 	textureRect.set_texture(sprite);
 	
 func set_reference(data: ItemSlot):
@@ -68,9 +81,11 @@ func _drop_data(_at_position, data):
 	typed_data.item_slot.redraw()
 	redraw();
 	
-func _input(event):
-	if event is InputEventMouseButton && (event as InputEventMouseButton).button_index == 2:
-		pass;
+func _gui_input(_event):
+	if _event is InputEventMouseButton and _event.is_pressed() and _event.button_index == MOUSE_BUTTON_RIGHT && !slot_data.is_empty():
+		if slot_data.item.id == "potion_shadow_form":
+			Manager.instance.player.can_transform = true;
+			slot_data.remove(1);
 	
 func _notification(what):
 	match what:
