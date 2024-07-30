@@ -18,6 +18,7 @@ func _ready():
 			mesh_instance = packed_scene.instantiate();
 			add_child(mesh_instance);
 	timer.wait_time = cooldown_timer;
+	timer.timeout.connect(on_timer_end)
 	
 func on_interact():
 	Manager.instance.player.inventory.add_item_by_id(item_id, 1);
