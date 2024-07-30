@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://c57b16nj7p50k"]
+[gd_scene load_steps=56 format=3 uid="uid://c57b16nj7p50k"]
 
 [ext_resource type="PackedScene" uid="uid://cuqpjlp4i7pkb" path="res://scenes/camera.tscn" id="3_o5mjl"]
 [ext_resource type="Shader" path="res://shaders/outline.gdshader" id="4_r3k4d"]
@@ -45,10 +45,11 @@
 [ext_resource type="PackedScene" uid="uid://cmaukaccuf624" path="res://models/props/props 2/SM_Env_Rock_Cliff_02.glb" id="44_qjjpu"]
 [ext_resource type="PackedScene" uid="uid://bojyukytykgrs" path="res://models/props/props 2/SM_Env_Rock_Cliff_01.glb" id="45_7fmlw"]
 [ext_resource type="PackedScene" uid="uid://bsvmeixxq30no" path="res://models/props/props 2/SM_Env_Rock_Cliff_03.glb" id="46_h51cg"]
+[ext_resource type="Script" path="res://scripts/wisp_controller.gd" id="46_pvyrb"]
 [ext_resource type="PackedScene" uid="uid://dmgvpe2u32ggo" path="res://models/props/props 3/SM_Env_Bush_01.glb" id="47_6bgbo"]
 [ext_resource type="PackedScene" uid="uid://dlhmaqbqhyxlo" path="res://scenes/well.tscn" id="47_iq5yo"]
 [ext_resource type="PackedScene" uid="uid://cey5jkfjmlydv" path="res://scenes/light_wisp_with_movement.tscn" id="48_ko7py"]
-[ext_resource type="PackedScene" uid="uid://1moex47vlnkp" path="res://scenes/waterfall_particle.tscn" id="49_xdxxw"]
+[ext_resource type="PackedScene" path="res://scenes/waterfall_particle.tscn" id="49_xdxxw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_shc8u"]
 render_priority = 0
@@ -866,8 +867,10 @@ transform = Transform3D(0.343069, 0, 0.939309, 0, 1, 0, -0.939309, 0, 0.343069, 
 [node name="Shadowtree" parent="Environment" instance=ExtResource("33_dp17g")]
 transform = Transform3D(2.17434, 0, -4.6506, 0, 5.13379, 0, 4.6506, 0, 2.17434, 30.6174, 12.0017, 33.4416)
 
-[node name="Wisps" type="Node3D" parent="Environment/Shadowtree"]
+[node name="Wisps" type="Node3D" parent="Environment/Shadowtree" node_paths=PackedStringArray("wisps")]
 transform = Transform3D(0.0824994, 0, 0.176454, 0, 0.194788, 0, -0.176454, 0, 0.0824994, -8.42683, -2.33779, 2.64366)
+script = ExtResource("46_pvyrb")
+wisps = [NodePath("LightWisp_1"), NodePath("LightWisp_2"), NodePath("LightWisp_3"), NodePath("LightWisp_4"), NodePath("LightWisp_5"), NodePath("LightWisp_6"), NodePath("LightWisp_7")]
 
 [node name="Wisp_1_target" type="Node3D" parent="Environment/Shadowtree/Wisps"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.3407, 7.22185, -3.08494)

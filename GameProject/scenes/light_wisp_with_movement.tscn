@@ -1,7 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://cey5jkfjmlydv"]
+[gd_scene load_steps=7 format=3 uid="uid://cey5jkfjmlydv"]
 
 [ext_resource type="PackedScene" path="res://scenes/light_wisp.tscn" id="1_moevp"]
 [ext_resource type="Script" path="res://scripts/move_to_waypoint.gd" id="2_j7q2r"]
 
+[sub_resource type="Gradient" id="Gradient_wwltu"]
+offsets = PackedFloat32Array(0, 0.486275, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.729412, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7vtwh"]
+gradient = SubResource("Gradient_wwltu")
+
+[sub_resource type="Gradient" id="Gradient_dcyox"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sbchc"]
+gradient = SubResource("Gradient_dcyox")
+
 [node name="LightWisp" instance=ExtResource("1_moevp")]
 script = ExtResource("2_j7q2r")
+gradient_white = SubResource("GradientTexture1D_7vtwh")
+gradient_black = SubResource("GradientTexture1D_sbchc")
