@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c6y6ayjgt0u52" path="res://scenes/fire_particle.tscn" id="8_1vtxp"]
 [ext_resource type="PackedScene" uid="uid://ytcevimjam4v" path="res://scenes/smoke.tscn" id="9_pmyna"]
 [ext_resource type="PackedScene" uid="uid://b48svieb7mjdu" path="res://models/props/cauldron_fluid_plane.glb" id="10_ji3l3"]
-[ext_resource type="PackedScene" path="res://scenes/bubbles.tscn" id="11_byk2s"]
+[ext_resource type="PackedScene" uid="uid://bm364i6gcdrof" path="res://scenes/bubbles.tscn" id="11_byk2s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d5q2q"]
 size = Vector3(5, 2, 5)

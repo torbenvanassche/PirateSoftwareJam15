@@ -49,7 +49,7 @@
 [ext_resource type="PackedScene" uid="uid://dmgvpe2u32ggo" path="res://models/props/props 3/SM_Env_Bush_01.glb" id="47_6bgbo"]
 [ext_resource type="PackedScene" uid="uid://dlhmaqbqhyxlo" path="res://scenes/well.tscn" id="47_iq5yo"]
 [ext_resource type="PackedScene" uid="uid://cey5jkfjmlydv" path="res://scenes/light_wisp_with_movement.tscn" id="48_ko7py"]
-[ext_resource type="PackedScene" path="res://scenes/waterfall_particle.tscn" id="49_xdxxw"]
+[ext_resource type="PackedScene" uid="uid://1moex47vlnkp" path="res://scenes/waterfall_particle.tscn" id="49_xdxxw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_shc8u"]
 render_priority = 0
