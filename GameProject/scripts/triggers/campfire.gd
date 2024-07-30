@@ -1,9 +1,26 @@
-extends Area3D
+class_name Campfire extends Area3D
 
 @onready var camera_brewing: Camera3D = $Camera3D;
 @export var sprite_position: Node3D;
 
+@onready var liquid_material: StandardMaterial3D = preload("res://models/materials/mat_cauldronfluid.tres")
+@export var bubble_particle: GPUParticles3D;
+@export var sparkles_particle: GPUParticles3D;
+
 var player_in_area: bool = true;
+var old_color: Color;
+
+func _ready():
+	Manager.instance.campfire = self;
+
+func reset_color():
+		recolor_fluid(old_color)
+	
+func recolor_fluid(color: Color):
+	old_color = liquid_material.albedo_color;
+	create_tween().tween_property(liquid_material, "albedo_color", color, 0.5)
+	(bubble_particle.process_material as ParticleProcessMaterial).color = color;
+	(sparkles_particle.process_material as ParticleProcessMaterial).color = color;
 	
 func on_interact():
 	SceneManager.instance.set_active_scene("brewing", SceneConfig.new())

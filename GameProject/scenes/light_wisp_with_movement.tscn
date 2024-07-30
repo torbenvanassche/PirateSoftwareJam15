@@ -1,0 +1,117 @@
+[gd_scene load_steps=21 format=3 uid="uid://cey5jkfjmlydv"]
+
+[ext_resource type="Script" path="res://scripts/move_to_waypoint.gd" id="2_j7q2r"]
+[ext_resource type="Texture2D" uid="uid://c1k0wsw0ug2cl" path="res://particles/light_01.png" id="2_smxc5"]
+[ext_resource type="Texture2D" uid="uid://bcyl0c53ff5t6" path="res://particles/flame_03.png" id="3_vxc7i"]
+
+[sub_resource type="Gradient" id="Gradient_wwltu"]
+offsets = PackedFloat32Array(0, 0.486275, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.729412, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7vtwh"]
+gradient = SubResource("Gradient_wwltu")
+
+[sub_resource type="Gradient" id="Gradient_dcyox"]
+colors = PackedColorArray(0.0784314, 0, 0.266667, 1, 0, 0, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sbchc"]
+gradient = SubResource("Gradient_dcyox")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cd448"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_smxc5")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_v7ua1"]
+offsets = PackedFloat32Array(0, 0.486275, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.729412, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0j3q7"]
+gradient = SubResource("Gradient_v7ua1")
+
+[sub_resource type="Curve" id="Curve_0ehfa"]
+_data = [Vector2(0, 0.738129), 0.0, 0.0, 0, 0, Vector2(0.381625, 1), 0.0, 0.0, 0, 0, Vector2(0.639576, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.747482), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_sqqcf"]
+curve = SubResource("Curve_0ehfa")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vecc5"]
+emission_shape = 1
+emission_sphere_radius = 0.08
+angle_max = 360.0
+angular_velocity_min = 1.0
+angular_velocity_max = 15.0
+gravity = Vector3(0, 0, 0)
+scale_min = 1.2
+scale_max = 1.2
+scale_curve = SubResource("CurveTexture_sqqcf")
+color_ramp = SubResource("GradientTexture1D_0j3q7")
+
+[sub_resource type="QuadMesh" id="QuadMesh_vt0l4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l0x7q"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_vxc7i")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_roakk"]
+offsets = PackedFloat32Array(0, 0.517647, 1)
+colors = PackedColorArray(0.913725, 0.870588, 0.121569, 0.705882, 0.901961, 0.862745, 0.121569, 0.352941, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_unaqg"]
+gradient = SubResource("Gradient_roakk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yelpj"]
+angle_max = 360.0
+spread = 180.0
+initial_velocity_min = 0.4
+initial_velocity_max = 0.6
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -0.18
+linear_accel_max = -0.18
+scale_min = 1.3
+scale_max = 1.3
+color_ramp = SubResource("GradientTexture1D_unaqg")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ulgd3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1yghq"]
+size = Vector3(2, 2, 2)
+
+[node name="LightWisp" type="Area3D"]
+script = ExtResource("2_j7q2r")
+gradient_white = SubResource("GradientTexture1D_7vtwh")
+gradient_black = SubResource("GradientTexture1D_sbchc")
+
+[node name="Wisp" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_cd448")
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_vecc5")
+draw_pass_1 = SubResource("QuadMesh_vt0l4")
+
+[node name="Energy" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_l0x7q")
+amount = 5
+lifetime = 2.3
+process_material = SubResource("ParticleProcessMaterial_yelpj")
+draw_pass_1 = SubResource("QuadMesh_ulgd3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_1yghq")
+
+[node name="Sprite3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32474, 0)

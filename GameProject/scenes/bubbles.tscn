@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://bm364i6gcdrof"]
+
+[ext_resource type="Texture2D" uid="uid://cemfttr0pn0jp" path="res://particles/circle_01.png" id="1_ixatr"]
+[ext_resource type="Texture2D" uid="uid://db8p557djhoqw" path="res://particles/magic_04.png" id="2_0qy2g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d3stk"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_ixatr")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_elulg"]
+min_value = 0.5
+_data = [Vector2(0, 0.5), 0.0, 2.02918, 0, 0, Vector2(0.526502, 0.789568), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.444419, 0.0, 1, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_4eqed"]
+curve = SubResource("Curve_elulg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ae0bp"]
+lifetime_randomness = 0.4
+angle_max = 360.0
+direction = Vector3(0, 1, 0)
+spread = 26.419
+initial_velocity_min = 0.1
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.0
+scale_max = 0.15
+scale_curve = SubResource("CurveTexture_4eqed")
+turbulence_enabled = true
+turbulence_noise_strength = 0.63
+turbulence_noise_scale = 5.0
+turbulence_noise_speed = Vector3(0, 1, 0)
+turbulence_noise_speed_random = 1.0
+turbulence_influence_min = 0.05
+
+[sub_resource type="QuadMesh" id="QuadMesh_w23q0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7old"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_texture = ExtResource("2_0qy2g")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_70wu5"]
+angle_max = 360.0
+direction = Vector3(0, 1, 0)
+spread = 50.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.05
+scale_max = 0.1
+
+[sub_resource type="QuadMesh" id="QuadMesh_ymv4t"]
+
+[node name="Bubbles" type="Node3D"]
+
+[node name="Bubbles1" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_d3stk")
+lifetime = 3.0
+process_material = SubResource("ParticleProcessMaterial_ae0bp")
+draw_pass_1 = SubResource("QuadMesh_w23q0")
+
+[node name="Sparkles" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+material_override = SubResource("StandardMaterial3D_w7old")
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_70wu5")
+draw_pass_1 = SubResource("QuadMesh_ymv4t")

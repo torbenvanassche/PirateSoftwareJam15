@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://6w4y2icp4kgf"]
+
+[ext_resource type="Texture2D" uid="uid://b2k5i62o3e0sf" path="res://particles/spark_02.png" id="1_yesn2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mnkpk"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_yesn2")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yib8b"]
+angle_max = 360.0
+angular_velocity_min = 1.0
+angular_velocity_max = 15.0
+gravity = Vector3(0, 0, 0)
+scale_min = 1.2
+scale_max = 1.2
+
+[sub_resource type="QuadMesh" id="QuadMesh_oelli"]
+
+[node name="LightBolt" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_mnkpk")
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_yib8b")
+draw_pass_1 = SubResource("QuadMesh_oelli")

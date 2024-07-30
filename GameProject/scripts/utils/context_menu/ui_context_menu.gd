@@ -1,28 +1,35 @@
 class_name ContextMenu
 extends PopupMenu
 
-var function_mappings: Array
-static var instance
+var menu_items: Array[ContextMenuItem];
 
-func _init(options: Dictionary):
-	var btn_shorthand: int = 0
-	if options.idx < 9 and options.idx > 0:
-		btn_shorthand += 48
-	else:
-		btn_shorthand = KEY_NONE	
-	self.add_item(options.id, options.idx, btn_shorthand)
-	function_mappings.append(options)
+func _ready():
+	close_requested.connect(_on_close)
 
-	self.index_pressed.connect(_on_popup_index_pressed)
+func _init(data: Array[ContextMenuItem]):
+	for index in range(data.size()):
+		var context_item := data[index];
+		add_item(context_item.id, index)
+		set_item_disabled(index, context_item.disabled)
+		context_item.idx = index;
+
+	menu_items = data
+	size.y = 0
 	
-static func show_menu(options: Dictionary, rect: Rect2i, parent: Node) -> ContextMenu:
-	instance = ContextMenu.new(options)
-	parent.add_child(instance)
-	instance.popup(rect)
-	return instance
+	index_pressed.connect(_on_idx)
+	if Settings.close_context_on_mouse_exit:
+		mouse_exited.connect(_on_close)
 	
-static func format_options(display_name: String, idx: int, function: Callable) -> Dictionary:
-	return {"id": display_name, "idx": idx, "function": function}
-	
-func _on_popup_index_pressed(idx):
-	function_mappings[idx].function.call()
+func _on_idx(index):
+	var found_item = menu_items.filter(func(x: ContextMenuItem): return x.idx == index);
+	for item in found_item:
+		item.function.call()
+	close_requested.emit();
+
+func _on_close():
+	queue_free()
+
+func open(rect: Rect2):
+	position = rect.position;
+	size = rect.size;
+	show()

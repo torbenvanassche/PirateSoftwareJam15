@@ -8,7 +8,7 @@
 albedo_color = Color(0, 0, 0, 1)
 
 [node name="shadow_collision" type="CollisionShape3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.435931, 0.0586356)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.242622, 0.0586356)
 shape = ExtResource("1_014bq")
 
 [node name="shadow_form" type="MeshInstance3D" parent="."]

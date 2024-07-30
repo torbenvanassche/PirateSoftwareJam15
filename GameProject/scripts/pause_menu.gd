@@ -12,6 +12,7 @@ func _ready():
 	
 	quit_button.pressed.connect(func(): window_controller.close_requested.emit())
 	quit_button.pressed.connect(SceneManager.instance.reset_to_scene.bind("main_menu"))
+	quit_button.pressed.connect(func(): Manager.instance.wisp_counter.visible = false);
 
 func on_disable():
 	Manager.instance.pause(false)

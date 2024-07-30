@@ -1,20 +1,25 @@
-[gd_scene load_steps=10 format=3 uid="uid://btc5eljbycubc"]
+[gd_scene load_steps=13 format=3 uid="uid://btc5eljbycubc"]
 
 [ext_resource type="Script" path="res://scripts/triggers/campfire.gd" id="1_18f5m"]
 [ext_resource type="PackedScene" uid="uid://bcybejolk48no" path="res://models/props/campfire.glb" id="2_lmpfi"]
 [ext_resource type="PackedScene" uid="uid://b1lk3k14vmem4" path="res://models/props/tripod.glb" id="3_r3yab"]
 [ext_resource type="PackedScene" uid="uid://3p4yk8mo2hd7" path="res://models/props/stone_ring.glb" id="4_kq4su"]
-[ext_resource type="PackedScene" uid="uid://b48svieb7mjdu" path="res://models/props/cauldron_fluid_plane.glb" id="4_offwm"]
 [ext_resource type="PackedScene" uid="uid://bruhax6px1mtk" path="res://models/props/camping_ground.glb" id="5_rk4qn"]
 [ext_resource type="PackedScene" uid="uid://dka4ewg12ndqh" path="res://models/props/tree_stump.glb" id="6_lpc1b"]
 [ext_resource type="PackedScene" uid="uid://dd7i2b8p3uf5q" path="res://models/props/log.glb" id="7_j86in"]
+[ext_resource type="PackedScene" uid="uid://c6y6ayjgt0u52" path="res://scenes/fire_particle.tscn" id="8_1vtxp"]
+[ext_resource type="PackedScene" uid="uid://ytcevimjam4v" path="res://scenes/smoke.tscn" id="9_pmyna"]
+[ext_resource type="PackedScene" uid="uid://b48svieb7mjdu" path="res://models/props/cauldron_fluid_plane.glb" id="10_ji3l3"]
+[ext_resource type="PackedScene" uid="uid://bm364i6gcdrof" path="res://scenes/bubbles.tscn" id="11_byk2s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d5q2q"]
 size = Vector3(5, 2, 5)
 
-[node name="campfire_area" type="Area3D" node_paths=PackedStringArray("sprite_position")]
+[node name="campfire_area" type="Area3D" node_paths=PackedStringArray("sprite_position", "bubble_particle", "sparkles_particle")]
 script = ExtResource("1_18f5m")
 sprite_position = NodePath("Node3D")
+bubble_particle = NodePath("Bubbles/Bubbles1")
+sparkles_particle = NodePath("Bubbles/Sparkles")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.622803, 0.5, 0.131714)
@@ -23,18 +28,13 @@ shape = SubResource("BoxShape3D_d5q2q")
 [node name="campfire" parent="." instance=ExtResource("2_lmpfi")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.0580227, 0)
 
-[node name="tripod" parent="." instance=ExtResource("3_r3yab")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.101489, 0)
-
-[node name="cauldron_fluid_plane" parent="tripod" instance=ExtResource("4_offwm")]
-
 [node name="stone_ring" parent="." instance=ExtResource("4_kq4su")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.0580227, 0)
 
 [node name="camping_ground" parent="." instance=ExtResource("5_rk4qn")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.000375032, 0, 0)
 
-[node name="tree_stump2" parent="." instance=ExtResource("6_lpc1b")]
+[node name="tree_stump" parent="." instance=ExtResource("6_lpc1b")]
 transform = Transform3D(0.99879, 0.0488378, -0.00580021, -0.0491533, 0.995217, -0.0844222, 0.00164948, 0.0846051, 0.996413, -0.434663, -0.165022, 1.78325)
 
 [node name="log" parent="." instance=ExtResource("7_j86in")]
@@ -48,3 +48,19 @@ transform = Transform3D(0.832902, 0.250367, -0.49355, 0, 0.891816, 0.452398, 0.5
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.54556, 0)
+
+[node name="tripod2" parent="." instance=ExtResource("3_r3yab")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.101489, 0)
+
+[node name="FireParticle" parent="." instance=ExtResource("8_1vtxp")]
+
+[node name="Smoke" parent="." instance=ExtResource("9_pmyna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06432, 0)
+
+[node name="cauldron_fluid_plane" parent="." instance=ExtResource("10_ji3l3")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.101738, 0)
+
+[node name="Bubbles" parent="." instance=ExtResource("11_byk2s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.784061, 0)
+
+[editable path="Bubbles"]

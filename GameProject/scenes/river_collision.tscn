@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://gji5y0r4es2v"]
+
+[ext_resource type="PackedScene" uid="uid://036cfl8ke7n6" path="res://models/env/river collision.glb" id="1_1qpcp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ewg6"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[node name="river collision" instance=ExtResource("1_1qpcp")]
+
+[node name="Plane_001" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_4ewg6")

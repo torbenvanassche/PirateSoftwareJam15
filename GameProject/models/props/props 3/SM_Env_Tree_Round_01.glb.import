@@ -33,7 +33,12 @@ _subresources={
 "materials": {
 "lambert1109": {
 "use_external/enabled": true,
-"use_external/path": "res://materials/mat_synty_fantasy.tres"
+"use_external/path": "res://models/materials/mat_synty_fantasy.tres"
+}
+},
+"nodes": {
+"PATH:SM_Env_Tree_Round_01": {
+"generate/physics": true
 }
 }
 }

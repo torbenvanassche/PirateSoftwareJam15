@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://ytcevimjam4v"]
+
+[ext_resource type="Texture2D" uid="uid://bq8ktbr0q4klk" path="res://particles/smoke_07.png" id="1_ktuk8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2rbp"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_ktuk8")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_3ng22"]
+offsets = PackedFloat32Array(0, 0.505882, 1)
+colors = PackedColorArray(0.364706, 0.364706, 0.364706, 0.470588, 0.552941, 0.552941, 0.552941, 0.352941, 0.796078, 0.796078, 0.796078, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_j77iq"]
+gradient = SubResource("Gradient_3ng22")
+
+[sub_resource type="Curve" id="Curve_kmp2t"]
+max_value = 2.0
+_data = [Vector2(0, 0.0546763), 0.0, 4.09673, 0, 1, Vector2(0.40636, 1.71942), 0.0, 0.0, 0, 0, Vector2(0.5053, 1.71942), 0.0, 0.0, 0, 0, Vector2(0.607774, 1.70072), 0.155692, 0.155692, 0, 0, Vector2(1, 2), 0.763031, 0.0, 1, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_13jh5"]
+curve = SubResource("Curve_kmp2t")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sjp4k"]
+angle_max = 360.0
+direction = Vector3(0, 1, 0)
+spread = 15.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.5
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_13jh5")
+color_ramp = SubResource("GradientTexture1D_j77iq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_4jmqi"]
+lightmap_size_hint = Vector2i(7, 7)
+
+[node name="Smoke" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+sorting_use_aabb_center = false
+material_override = SubResource("StandardMaterial3D_c2rbp")
+amount = 10
+lifetime = 2.5
+speed_scale = 0.5
+explosiveness = 0.05
+process_material = SubResource("ParticleProcessMaterial_sjp4k")
+draw_pass_1 = SubResource("QuadMesh_4jmqi")

@@ -25,7 +25,7 @@ var animation_tree: AnimationTree;
 
 var current_triggers: Array[Area3D];
 var do_processing: bool = true;
-var can_transform: bool = true;
+var can_transform: bool = false;
 
 enum {IDLE, WALK, JUMP}
 var player_state = IDLE;
@@ -61,7 +61,8 @@ func animation_ended(animation_name: String):
 		current_instance = shadow_model.instantiate();
 		add_child(current_instance)
 	elif animation_name == "shadow_out":
-		add_child(current_instance)
+		if current_instance.get_parent() == null:
+			add_child(current_instance)
 	can_transform = true;
 		
 func animate(delta):
@@ -86,6 +87,8 @@ func _ready():
 	animation_tree = current_instance.get_node("AnimationTree")
 	animation_tree.animation_finished.connect(animation_ended)
 	add_child(current_instance)
+	
+	Manager.instance.wisp_counter.visible = true;
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("open_inventory"):
@@ -108,7 +111,7 @@ func _physics_process(delta):
 		player_state = IDLE;
 		
 	if do_processing:
-		if Input.is_action_just_pressed("jump") and is_on_floor():
+		if Input.is_action_just_pressed("jump") and is_on_floor() && is_human:
 			animation_tree.set("parameters/jump/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 			velocity.y = jump_velocity;
 			pass
@@ -137,7 +140,7 @@ func interact():
 			current_triggers[0].on_interact();
 	
 func sort_areas_by_distance():
-	current_triggers.sort_custom(func(a, b): return position.distance_squared_to(a) > position.distance_squared_to(b));
+	current_triggers.sort_custom(func(a: Node3D, b: Node3D): return global_position.distance_squared_to(a.global_position) > global_position.distance_squared_to(b.global_position));
 
 func _on_enter(body: Area3D):
 	if !current_triggers.has(body):

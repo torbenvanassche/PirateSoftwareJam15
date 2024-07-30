@@ -1,33 +1,31 @@
 {
-	"lavender": {
-		"name": "Bunch of lavender",
-		"description": "",
-		"stack_size": 10,
-		"asset_path": "lavender"
+	"mystilavender": {
+		"name": "Mystilavender",
+		"description": "It looks like lavender, but it can do so much more!",
+		"stack_size": 99,
+		"asset_path": "mystilavender"
 	},
-	"moss": {
-		"name": "Clump of Moss",
+	"bluemoon_mushroom": {
+		"name": "Bluemoon mushroom",
 		"description": "",
-		"stack_size": 10
-	},
-	"sulfur": {
-		"name": "Pile of sulfur",
-		"description": "",
-		"stack_size": 10
+		"asset_path": "bluemoon_mushroom",
+		"stack_size": 99
 	},
 	"water": {
-		"name": "a bottle of water",
-		"description": "",
-		"stack_size": 1
+		"name": "water bucket",
+		"description": "A bottle of water, gathered from a river.",
+		"asset_path": "water",
+		"stack_size": 99
 	},
-	"potion_shadow_control": {
-		"name": "Potion: Shadow control",
-		"description": "",
-		"stack_size": 10,
+	"potion_shadow_form": {
+		"name": "Potion of Shadow shifting",
+		"description": "A potion created to allow the user to sink into their shadow.",
+		"stack_size": 99,
+		"asset_path": "potion_shadow_form",
 		"components": [
-			"sulfur",
-			"mercury",
+			"bluemoon_mushroom",
 			"water"
-		]
+		],
+		"brew_color": "#4d004d"
 	}
 }

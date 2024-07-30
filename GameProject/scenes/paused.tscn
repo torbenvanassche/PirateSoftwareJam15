@@ -1,14 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://buxo38rshv30v"]
+[gd_scene load_steps=6 format=3 uid="uid://buxo38rshv30v"]
 
 [ext_resource type="PackedScene" uid="uid://dny1dqcanlco0" path="res://scenes/base_window.tscn" id="1_v7d3o"]
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="2_jqdt8"]
 [ext_resource type="Theme" uid="uid://db81p7xt2bkuk" path="res://themes/main_theme.tres" id="3_ctil3"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5phyd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rx0gk"]
+
 [node name="Window" node_paths=PackedStringArray("sub_elements") instance=ExtResource("1_v7d3o")]
-process_mode = 3
-anchors_preset = 15
-mouse_filter = 1
-texture = null
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -43.0
+offset_right = 68.0
+offset_bottom = 43.0
+theme = null
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5phyd")
 display_mode = "none"
 size_preset = "full_size"
 sub_elements = [NodePath("VBoxContainer/content/VBoxContainer")]
@@ -21,21 +32,11 @@ text = ""
 
 [node name="content" parent="VBoxContainer" index="1"]
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rx0gk")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/content" index="0"]
 process_mode = 2
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -100.5
-offset_right = 100.0
-offset_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 script = ExtResource("2_jqdt8")
