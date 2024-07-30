@@ -87,6 +87,8 @@ func _ready():
 	animation_tree = current_instance.get_node("AnimationTree")
 	animation_tree.animation_finished.connect(animation_ended)
 	add_child(current_instance)
+	
+	Manager.instance.wisp_counter.visible = true;
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("open_inventory"):

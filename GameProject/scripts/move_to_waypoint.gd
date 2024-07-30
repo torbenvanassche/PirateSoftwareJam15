@@ -23,6 +23,7 @@ func on_interact():
 
 func back_to_tree():
 	create_tween().tween_property(self, "position", original_position, time_to_destination)
+	Manager.instance.wisp_counter.value += 1;
 	set_color(gradient_black)
 
 func on_area_enter():
