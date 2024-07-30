@@ -4,10 +4,13 @@
 [ext_resource type="Script" path="res://inventory/scripts/inventory_ui.gd" id="2_vmqag"]
 
 [node name="Control" node_paths=PackedStringArray("sub_elements") instance=ExtResource("1_l0w1b")]
-offset_left = 3.0
-offset_top = -4.0
-offset_right = -908.0
-offset_bottom = -380.0
+anchors_preset = -1
+anchor_right = 0.209
+anchor_bottom = 0.42
+offset_right = 0.231995
+offset_bottom = -0.160004
+size_flags_horizontal = 3
+size_flags_vertical = 3
 size_preset = "custom"
 override_size = Vector2(241, 272)
 sub_elements = [NodePath("VBoxContainer/content/InventoryUI")]

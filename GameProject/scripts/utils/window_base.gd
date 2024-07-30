@@ -38,6 +38,9 @@ func _ready():
 				n.on_enable();
 			if n.has_method("on_disable"):
 				close_requested.connect(n.on_disable)
+				
+func _process(delta):
+	size = override_size;
 	
 func on_enable(_options: Dictionary = {}):
 	if visible:
@@ -79,9 +82,6 @@ func on_enable(_options: Dictionary = {}):
 
 func _change_title(s: String):
 	title.text = s;
-	
-func _process(delta):
-	size = $VBoxContainer.size;
 
 func handle_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
