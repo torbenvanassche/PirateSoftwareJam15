@@ -68,6 +68,10 @@ func _drop_data(_at_position, data):
 	typed_data.item_slot.redraw()
 	redraw();
 	
+func _input(event):
+	if event is InputEventMouseButton && (event as InputEventMouseButton).button_index == 2:
+		pass;
+	
 func _notification(what):
 	match what:
 		NOTIFICATION_DRAG_END:

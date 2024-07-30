@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://cb1bg8nw38u7l"]
+
+[ext_resource type="Shader" path="res://shaders/water.gdshader" id="1_uycal"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_of6ng"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ms2e1"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_veo3c"]
+seamless = true
+noise = SubResource("FastNoiseLite_ms2e1")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wy7q5"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_r7w5f"]
+seamless = true
+noise = SubResource("FastNoiseLite_wy7q5")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lh4kp"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gbd3y"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_lh4kp")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qtped"]
+render_priority = 0
+shader = ExtResource("1_uycal")
+shader_parameter/speed = 0.1
+shader_parameter/color = Color(0.4316, 0.71048, 0.83, 1)
+shader_parameter/deep_water = Color(0.600686, 0.629081, 0.665738, 1)
+shader_parameter/beer_law_factor = 2.0
+shader_parameter/_distance = 0.0
+shader_parameter/edge_color = Color(0.523502, 0.535903, 0.616154, 1)
+shader_parameter/edge_scale = 0.25
+shader_parameter/near = 1.0
+shader_parameter/far = 50.0
+shader_parameter/wave_strength = Vector2(0.05, 0.01)
+shader_parameter/wave_frequ = Vector2(1, 1)
+shader_parameter/time_factor = Vector2(1, 1)
+shader_parameter/noise1 = SubResource("NoiseTexture2D_veo3c")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_r7w5f")
+shader_parameter/normalmap = SubResource("NoiseTexture2D_gbd3y")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_of6ng")
+surface_material_override/0 = SubResource("ShaderMaterial_qtped")

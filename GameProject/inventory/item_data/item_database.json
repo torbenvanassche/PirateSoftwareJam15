@@ -12,7 +12,7 @@
 		"stack_size": 10
 	},
 	"water": {
-		"name": "a bottle of water",
+		"name": "water bucket",
 		"description": "A bottle of water, gathered from a river.",
 		"asset_path": "water",
 		"stack_size": 1
@@ -21,9 +21,11 @@
 		"name": "Potion of Shadow shifting",
 		"description": "A potion created to allow the user to sink into their shadow.",
 		"stack_size": 10,
+		"asset_path": "potion_shadow_form",
 		"components": [
 			"bluemoon_mushroom",
 			"water"
-		]
+		],
+		"brew_color": "#4d004d"
 	}
 }

@@ -3,7 +3,9 @@ class_name Manager
 
 var player: Player;
 var camera_controller: CameraController;
-@export var world_space_drawer: WSD; 
+@export var world_space_drawer: WSD;
+ 
+var campfire: Campfire;
 
 static var instance: Manager;
 

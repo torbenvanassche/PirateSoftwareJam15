@@ -25,7 +25,7 @@ var animation_tree: AnimationTree;
 
 var current_triggers: Array[Area3D];
 var do_processing: bool = true;
-var can_transform: bool = true;
+var can_transform: bool = false;
 
 enum {IDLE, WALK, JUMP}
 var player_state = IDLE;
@@ -111,7 +111,7 @@ func _physics_process(delta):
 		player_state = IDLE;
 		
 	if do_processing:
-		if Input.is_action_just_pressed("jump") and is_on_floor():
+		if Input.is_action_just_pressed("jump") and is_on_floor() && is_human:
 			animation_tree.set("parameters/jump/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 			velocity.y = jump_velocity;
 			pass

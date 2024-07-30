@@ -13,8 +13,10 @@ var mesh_instance: Node3D;
 func _ready():
 	var item_data = ItemManager.get_item(item_id);
 	if item_data != {}:
-		mesh_instance = ItemManager.get_scene(item_data).instantiate();
-		add_child(mesh_instance);
+		var packed_scene = ItemManager.get_scene(item_data);
+		if packed_scene != null:
+			mesh_instance = packed_scene.instantiate();
+			add_child(mesh_instance);
 	timer.wait_time = cooldown_timer;
 	
 func on_interact():

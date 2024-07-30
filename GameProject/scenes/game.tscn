@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://w4f6rjthf1xq" path="res://models/props/props 2/SM_Env_Rock_Pile_07.glb" id="12_r2rnu"]
 [ext_resource type="PackedScene" uid="uid://cviw7r7ve4fjh" path="res://models/props/props 2/SM_Prop_Bridge_01.glb" id="13_v45le"]
 [ext_resource type="PackedScene" uid="uid://cc5ul3ngb6iju" path="res://models/props/props 2/SM_Prop_Wagon_Broken_01.glb" id="14_1i6cn"]
-[ext_resource type="PackedScene" uid="uid://ulx1lvm86f65" path="res://models/props/props 2/SM_Prop_Well_01.glb" id="15_w84jh"]
 [ext_resource type="PackedScene" uid="uid://dcdbvjiw3egq7" path="res://models/props/props 3/SM_Env_Tree_Burnt_02.glb" id="16_fxy68"]
 [ext_resource type="PackedScene" uid="uid://41hfmw7eyhpx" path="res://models/props/props 3/SM_Env_Tree_Dead_04.glb" id="17_l7vry"]
 [ext_resource type="PackedScene" uid="uid://dka4ewg12ndqh" path="res://models/props/tree_stump.glb" id="18_d0n35"]
@@ -47,6 +46,7 @@
 [ext_resource type="PackedScene" uid="uid://bojyukytykgrs" path="res://models/props/props 2/SM_Env_Rock_Cliff_01.glb" id="45_7fmlw"]
 [ext_resource type="PackedScene" uid="uid://bsvmeixxq30no" path="res://models/props/props 2/SM_Env_Rock_Cliff_03.glb" id="46_h51cg"]
 [ext_resource type="PackedScene" uid="uid://dmgvpe2u32ggo" path="res://models/props/props 3/SM_Env_Bush_01.glb" id="47_6bgbo"]
+[ext_resource type="PackedScene" uid="uid://dlhmaqbqhyxlo" path="res://scenes/well.tscn" id="47_iq5yo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_shc8u"]
 render_priority = 0
@@ -194,9 +194,6 @@ transform = Transform3D(-0.991641, 0.0184466, 0.1277, 0.00788963, 0.996544, -0.0
 
 [node name="SM_Prop_Wagon_Broken_012" parent="static_environment" instance=ExtResource("14_1i6cn")]
 transform = Transform3D(-0.138758, 0, 0.990326, -0.157891, 0.987209, -0.0221227, -0.977659, -0.159433, -0.136983, 1.09227, 6.91537, -9.36584)
-
-[node name="SM_Prop_Well_012" parent="static_environment" instance=ExtResource("15_w84jh")]
-transform = Transform3D(-0.92719, 0, -0.37459, 0, 1, 0, 0.37459, 0, -0.92719, -9.1879, 8.44455, -5.05538)
 
 [node name="SM_Env_Tree_Burnt_022" parent="static_environment" instance=ExtResource("16_fxy68")]
 transform = Transform3D(2.77047, 0, 0, 0, 2.77047, 0, 0, 0, 2.77047, -12.2306, 5.57351, -30.9676)
@@ -856,3 +853,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.4838, 4.68524, -12.6802)
 
 [node name="SM_Env_Bush_016" parent="." instance=ExtResource("47_6bgbo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.3374, 4.22792, -10.4851)
+
+[node name="Area3D" parent="." instance=ExtResource("47_iq5yo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.15521, 8.22236, -5.3813)
