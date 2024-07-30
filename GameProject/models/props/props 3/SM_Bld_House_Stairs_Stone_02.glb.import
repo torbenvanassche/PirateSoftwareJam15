@@ -38,7 +38,8 @@ _subresources={
 },
 "nodes": {
 "PATH:SM_Bld_House_Stairs_Stone_02": {
-"generate/physics": true
+"generate/physics": true,
+"physics/shape_type": 2
 }
 }
 }
