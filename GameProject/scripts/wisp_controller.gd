@@ -10,7 +10,3 @@ func transition_color(color: Color):
 			wisp.set_color(wisp.gradient_white);
 		else:
 			print("Color provided was not valid")
-		
-func _ready():
-	transition_color(Color.BLACK)
-	pass

@@ -22,12 +22,14 @@ func _ready():
 func on_interact():
 	Manager.instance.player.inventory.add_item_by_id(item_id, 1);
 	collision_shape.disabled = true;
-	mesh_instance.visible = false;
+	if mesh_instance != null:
+		mesh_instance.visible = false;
 	timer.start();
 	
 func on_timer_end():
 	collision_shape.disabled = false;
-	mesh_instance.visible = true;
+	if mesh_instance != null:
+		mesh_instance.visible = true;
 
 func on_area_enter():
 	Manager.instance.world_space_drawer.show_rect(sprite);
