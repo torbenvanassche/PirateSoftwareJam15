@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://c57b16nj7p50k"]
+[gd_scene load_steps=54 format=3 uid="uid://c57b16nj7p50k"]
 
 [ext_resource type="PackedScene" uid="uid://cuqpjlp4i7pkb" path="res://scenes/camera.tscn" id="3_o5mjl"]
 [ext_resource type="Shader" path="res://shaders/outline.gdshader" id="4_r3k4d"]
@@ -47,6 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://bsvmeixxq30no" path="res://models/props/props 2/SM_Env_Rock_Cliff_03.glb" id="46_h51cg"]
 [ext_resource type="PackedScene" uid="uid://dmgvpe2u32ggo" path="res://models/props/props 3/SM_Env_Bush_01.glb" id="47_6bgbo"]
 [ext_resource type="PackedScene" uid="uid://dlhmaqbqhyxlo" path="res://scenes/well.tscn" id="47_iq5yo"]
+[ext_resource type="PackedScene" uid="uid://cey5jkfjmlydv" path="res://scenes/light_wisp_with_movement.tscn" id="48_ko7py"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_shc8u"]
 render_priority = 0
@@ -584,7 +585,7 @@ transform = Transform3D(1.74814, 0, 0, 0, 1.74814, 0, 0, 0, 1.74814, 39.0345, -6
 transform = Transform3D(1.2264, 0, 0, 0, 1.2264, 0, 0, 0, 1.2264, 38.6663, -6.49082, -9.91277)
 
 [node name="SM_Env_Bush_Small_026" parent="vegetation" instance=ExtResource("27_270re")]
-transform = Transform3D(1.65928, 0, 0, 0, 1.65928, 0, 0, 0, 1.65928, 40.4674, -1.64288, 1.24352)
+transform = Transform3D(1.65928, 0, 0, 0, 1.65928, 0, 0, 0, 1.65928, 38.8912, -1.97567, 0.0508337)
 
 [node name="SM_Env_Fern_069" parent="vegetation" instance=ExtResource("28_2t30s")]
 transform = Transform3D(1.59342, -0.189539, -0.0378255, 0.193276, 1.56261, 0.311843, 1.86265e-09, -0.314128, 1.57406, 30.4206, 5.92922, 19.5361)
@@ -856,3 +857,61 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.3374, 4.22792, -10.4851)
 
 [node name="Area3D" parent="." instance=ExtResource("47_iq5yo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.15521, 8.22236, -5.3813)
+
+[node name="Wisps" type="Node3D" parent="."]
+
+[node name="Wisp_1_target" type="Node3D" parent="Wisps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.3407, 7.22185, -3.08494)
+
+[node name="LightWisp_1" parent="Wisps" node_paths=PackedStringArray("target") instance=ExtResource("48_ko7py")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.991, 50.0979, 24.3468)
+target = NodePath("../Wisp_1_target")
+time_to_destination = 10.0
+
+[node name="Wisp_2_target" type="Node3D" parent="Wisps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.78926, 18.0821, 13.3561)
+
+[node name="LightWisp_2" parent="Wisps" node_paths=PackedStringArray("target") instance=ExtResource("48_ko7py")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.6759, 48.5913, 33.9653)
+target = NodePath("../Wisp_2_target")
+time_to_destination = 10.0
+
+[node name="Wisp_3_target" type="Node3D" parent="Wisps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4982, 10.211, 6.47654)
+
+[node name="LightWisp_3" parent="Wisps" node_paths=PackedStringArray("target") instance=ExtResource("48_ko7py")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8331, 45.1954, 33.6152)
+target = NodePath("../Wisp_3_target")
+time_to_destination = 10.0
+
+[node name="Wisp_4_target" type="Node3D" parent="Wisps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8301, 5.21316, -36.7919)
+
+[node name="LightWisp_4" parent="Wisps" node_paths=PackedStringArray("target") instance=ExtResource("48_ko7py")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.5867, 34.2206, 22.51)
+target = NodePath("../Wisp_4_target")
+time_to_destination = 10.0
+
+[node name="Wisp_5_target" type="Node3D" parent="Wisps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.7293, 9.48267, -2.62954)
+
+[node name="LightWisp_5" parent="Wisps" node_paths=PackedStringArray("target") instance=ExtResource("48_ko7py")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8886, 45.9579, 30.6228)
+target = NodePath("../Wisp_5_target")
+time_to_destination = 10.0
+
+[node name="Wisp_6_target" type="Node3D" parent="Wisps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.403058, 16.0862, 37.4611)
+
+[node name="LightWisp_6" parent="Wisps" node_paths=PackedStringArray("target") instance=ExtResource("48_ko7py")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.6603, 47.5114, 43.4451)
+target = NodePath("../Wisp_6_target")
+time_to_destination = 10.0
+
+[node name="Wisp_7_target" type="Node3D" parent="Wisps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.2053, 1.64608, -43.7699)
+
+[node name="LightWisp_7" parent="Wisps" node_paths=PackedStringArray("target") instance=ExtResource("48_ko7py")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.642, 45.4928, 42.1054)
+target = NodePath("../Wisp_7_target")
+time_to_destination = 10.0
