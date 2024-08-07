@@ -12,8 +12,7 @@ class_name Mover extends Node
 @export var gradient_black: GradientTexture1D;
 
 func _ready():
-	#create_tween().tween_property(self, "position", target.position, time_to_destination)
-	set_color(gradient_black)
+	create_tween().tween_property(self, "position", target.position, time_to_destination)
 	
 func set_color(gradient: GradientTexture1D):
 	(wisp.process_material as ParticleProcessMaterial).color_ramp = gradient;

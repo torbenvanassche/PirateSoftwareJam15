@@ -1,16 +1,15 @@
-[gd_scene load_steps=59 format=3 uid="uid://c57b16nj7p50k"]
+[gd_scene load_steps=55 format=3 uid="uid://c57b16nj7p50k"]
 
 [ext_resource type="PackedScene" uid="uid://cuqpjlp4i7pkb" path="res://scenes/camera.tscn" id="3_o5mjl"]
-[ext_resource type="Shader" path="res://shaders/outline.gdshader" id="4_r3k4d"]
 [ext_resource type="PackedScene" uid="uid://fjthfaw7y0rj" path="res://models/env/groundplane.glb" id="4_typib"]
-[ext_resource type="PackedScene" uid="uid://eybvp4b45810" path="res://models/env/river.glb" id="5_072mw"]
 [ext_resource type="PackedScene" uid="uid://cjookd7f5kqrj" path="res://models/env/rockwall.glb" id="6_r3iyf"]
 [ext_resource type="PackedScene" uid="uid://btc5eljbycubc" path="res://scenes/campfire.tscn" id="7_v3iri"]
 [ext_resource type="PackedScene" uid="uid://c68os6cnjx62" path="res://models/buildings/Cottage.glb" id="8_l5dyg"]
 [ext_resource type="PackedScene" uid="uid://b36ddsdbnkdw4" path="res://models/props/SM_Prop_Meadow_Fence_01.glb" id="10_2g8be"]
+[ext_resource type="PackedScene" uid="uid://eybvp4b45810" path="res://models/env/river.glb" id="10_5r0oj"]
 [ext_resource type="PackedScene" uid="uid://bodtsih535a4t" path="res://models/props/props 2/SM_Prop_Meadow_Fence_Post_01.glb" id="11_24xjg"]
 [ext_resource type="PackedScene" uid="uid://w4f6rjthf1xq" path="res://models/props/props 2/SM_Env_Rock_Pile_07.glb" id="12_r2rnu"]
-[ext_resource type="PackedScene" path="res://scenes/river_collision.tscn" id="13_ueojl"]
+[ext_resource type="PackedScene" uid="uid://gji5y0r4es2v" path="res://scenes/river_collision.tscn" id="13_ueojl"]
 [ext_resource type="PackedScene" uid="uid://cviw7r7ve4fjh" path="res://models/props/props 2/SM_Prop_Bridge_01.glb" id="13_v45le"]
 [ext_resource type="PackedScene" uid="uid://cc5ul3ngb6iju" path="res://models/props/props 2/SM_Prop_Wagon_Broken_01.glb" id="14_1i6cn"]
 [ext_resource type="PackedScene" uid="uid://dcdbvjiw3egq7" path="res://models/props/props 3/SM_Env_Tree_Burnt_02.glb" id="16_fxy68"]
@@ -50,27 +49,9 @@
 [ext_resource type="PackedScene" uid="uid://dmgvpe2u32ggo" path="res://models/props/props 3/SM_Env_Bush_01.glb" id="47_6bgbo"]
 [ext_resource type="PackedScene" uid="uid://dlhmaqbqhyxlo" path="res://scenes/well.tscn" id="47_iq5yo"]
 [ext_resource type="PackedScene" uid="uid://cey5jkfjmlydv" path="res://scenes/light_wisp_with_movement.tscn" id="48_ko7py"]
-[ext_resource type="PackedScene" uid="uid://1moex47vlnkp" path="res://scenes/waterfall_particle.tscn" id="49_xdxxw"]
+[ext_resource type="PackedScene" path="res://scenes/waterfall_particle.tscn" id="49_xdxxw"]
 [ext_resource type="PackedScene" uid="uid://crjea7bibtxhn" path="res://models/props/props 2/SM_Env_Rock_Cliff_05.glb" id="51_nnu20"]
 [ext_resource type="PackedScene" uid="uid://c3ynovciw5q1e" path="res://models/props/props 2/SM_Env_Rock_Chunk_01.glb" id="52_bk5iq"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_shc8u"]
-render_priority = 0
-shader = ExtResource("4_r3k4d")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ye7d4"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_ga03j"]
-material = SubResource("ShaderMaterial_ye7d4")
-flip_faces = true
-size = Vector2(2, 2)
 
 [sub_resource type="QuadMesh" id="QuadMesh_u6j8n"]
 
@@ -82,14 +63,6 @@ albedo_color = Color(0, 0, 0, 1)
 [node name="CameraRoot" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_o5mjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3216, 9.90298, -21.8712)
 target = NodePath("../CharacterBody3D")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CameraRoot"]
-transform = Transform3D(1, -0.000296706, 0, 0.000296706, 1, 0, 0, 0, 1, 0, 0, 0)
-sorting_offset = -1000.0
-material_override = SubResource("ShaderMaterial_shc8u")
-extra_cull_margin = 16384.0
-mesh = SubResource("QuadMesh_ga03j")
-skeleton = NodePath("../../..")
 
 [node name="campfire_area" parent="." instance=ExtResource("7_v3iri")]
 transform = Transform3D(0.998753, -0.0499306, 0, 0.0499306, 0.998753, 0, 0, 0, 1, -26.205, 6.5981, -20.7586)
@@ -131,7 +104,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0474, 3.26832, -12.9446)
 [node name="SM_Env_Rock_Cliff_033" parent="Environment/rockwall" instance=ExtResource("46_h51cg")]
 transform = Transform3D(0.800752, 0, 0.598996, 0, 1, 0, -0.598996, 0, 0.800752, 43.0632, 17.9119, 20.7472)
 
-[node name="river" parent="Environment" instance=ExtResource("5_072mw")]
+[node name="river" parent="Environment" instance=ExtResource("10_5r0oj")]
+
+[node name="river collision" parent="Environment/river" instance=ExtResource("13_ueojl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.2813, 0)
 
 [node name="Waterfall" type="Node3D" parent="Environment/river"]
 
@@ -146,8 +122,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39599, 8.01915, 14.836)
 
 [node name="Waterfall_particle4" parent="Environment/river/Waterfall" instance=ExtResource("49_xdxxw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1707, 8.01915, 14.2512)
-
-[node name="river collision" parent="Environment/river" instance=ExtResource("13_ueojl")]
 
 [node name="Rocks" type="Node3D" parent="Environment"]
 
@@ -1106,12 +1080,22 @@ item_id = "mystilavender"
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -31.6892, 5.41205, -17.7657)
 item_id = "mystilavender"
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.232154, -0.730477, -0.642268, -0.32929, -0.562295, 0.758546, -0.915245, 0.387592, -0.109999, 0, 0, 0)
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.284054, -0.427135, 0.858411, 0.285728, 0.816902, 0.50103, -0.915245, 0.387592, -0.11, 0, 29.3173, 0)
 light_color = Color(0.96, 0.776, 0.48, 1)
-light_energy = 2.094
+light_energy = 0.5
+light_indirect_energy = 0.3
+light_angular_distance = 0.2
+shadow_opacity = 0.6
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.232154, -0.730477, -0.642268, -0.32929, -0.562295, 0.758546, -0.915245, 0.387592, -0.11, 0, 28.5699, 0)
+light_color = Color(0.96, 0.776, 0.48, 1)
+light_energy = 0.5
+light_indirect_energy = 0.2
 light_angular_distance = 0.2
 shadow_enabled = true
+shadow_opacity = 0.45
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("27_f6hob")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0173, 7.26647, -15.6403)
@@ -1120,11 +1104,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0173, 7.26647, -15.6403)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.15521, 8.22236, -5.3813)
 cooldown_timer = 1.0
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.890281, -0.0558605, -0.451972, 0, 0.992449, -0.12266, 0.455411, -0.109202, -0.883559, 24.041, 33.3745, -8.41107)
-
 [node name="SM_Env_Rock_Cliff_052" parent="." instance=ExtResource("51_nnu20")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0478, 12.5583, 27.9418)
 
 [node name="SM_Env_Rock_Chunk_012" parent="." instance=ExtResource("52_bk5iq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.30721, 14.0022, 26.0252)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0.000505406, 1.01445e-05, -0.000505406, 1, 2.53952e-05, -1.01317e-05, -2.54004e-05, 1, 0, 0, 0)
